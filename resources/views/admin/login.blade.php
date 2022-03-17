@@ -286,7 +286,7 @@ a.ssolink {
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign in to your account</span>
+              {{-- <span class="padding-bottom--15">Sign in to your account</span> --}}
               <form id="stripe-login" method="POST" action="{{route('login.attempt')}}" >
                 @csrf
                 <div class="field padding-bottom--24">
