@@ -18,8 +18,9 @@ class AdminTableSeeder extends Seeder
         if(User::where('id',1)->doesntexist()){
             User::create([
                 'name' => 'Karthick',
-                'email' =>  'admin@karthikelectronics.com',
-                'password' => bcrypt(123456787),
+                'email' =>  'admin@karthikelectronics.in',
+                'password' => bcrypt('12345678'),
+                'user_type' => 1,
             ]);
         }
     }

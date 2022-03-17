@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Auth::routes();
-Route::get('store/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('store/login', [LoginController::class, 'loginAttempt'])->name('login.attempt');
+Route::get('store-login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('store-login', [LoginController::class, 'loginAttempt'])->name('login.attempt');
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

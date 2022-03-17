@@ -3,6 +3,8 @@
   <meta charset="utf-8">
   <title>Stackfindover: Sign in</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
   <style>
         * {
   padding: 0;
@@ -33,6 +35,7 @@ a {
 .loginbackground {
     min-height: 692px;
     position: fixed;
+
     bottom: 0;
     left: 0;
     right: 0;
@@ -278,7 +281,7 @@ a.ssolink {
       </div>
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1><a href="javascript:void(0)" rel="dofollow">Welcome Admin</a></h1>
+          <h1><a href="javascript:void(0)" rel="dofollow">Welcome</a></h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -322,6 +325,40 @@ a.ssolink {
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            toastr.options = {
+        "closeButton": false,
+        "debug": true,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        }
+    });
+</script>
+<script type="text/javascript">
+        @if(Session::has('invalid-credentials'))
+            toastr.error('Invalid Credentials');
+        @endif
+        @if(Session::has('no-permission'))
+            toastr.info('Only For Vendors');
+        @endif
+        @if(Session::has('no-user'))
+            toastr.info('User Not Found');
+        @endif
+    </script>
 </body>
 
 </html>
