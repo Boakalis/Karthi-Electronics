@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard eCommerce HTML Template.">
 
-	<title>Ekka - Admin Dashboard eCommerce HTML Template.</title>
+	<title>{{@$globalSetting->name}} - Admin Dashboard</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light" id="body">
+<body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light compact-spacing" id="body">
 
 	<!--  WRAPPER  -->
 	<div class="wrapper">
@@ -78,6 +78,63 @@
 
 	<!-- Ekka Custom -->
 	<script src="{{asset('admin-assets/assets/js/ekka.js')}}"></script>
+
+    <script src="{{asset('tinymce/tinymce.min.js')}}"></script>
+<script>
+    var fileUploadUrl = "{{route('fileUploadEditor')}}";
+    const editor_config = {
+        force_p_newlines: false,
+        remove_linebreaks: false,
+        forced_root_block: "",
+        path_absolute: "{{ url('/') }}/",
+        selector: "textarea.tinymce-editor",
+        extended_valid_elements: false,
+        height: 300,
+        readonly: false,
+        menubar: true,
+        plugins: [
+            "codesample advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars  code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons paste textcolor colorpicker textpattern ",
+        ],
+        toolbar: "insertfile undo redo | codesample| styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+
+        relative_urls: false,
+        convert_urls: false,
+        images_upload_handler: function (blobInfo, success, failure) {
+            var xhr, formData;
+            xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open("POST", fileUploadUrl);
+            var token = "{{ csrf_token() }}"; //document.getElementById("_token").value;
+            xhr.setRequestHeader("X-CSRF-Token", token);
+            xhr.onload = function () {
+                var json;
+                if (xhr.status != 200) {
+                    failure("HTTP Error: " + xhr.status);
+                    return;
+                }
+                json = JSON.parse(xhr.responseText);
+
+                if (!json || typeof json.location != "string") {
+                    failure(xhr.responseText);
+                    return;
+                }
+                success(json.location);
+            };
+            formData = new FormData();
+            formData.append("file", blobInfo.blob(), blobInfo.filename());
+            xhr.send(formData);
+        },
+    };
+    tinymce.init(editor_config);
+
+    setTimeout(function(){
+    $(".alert").hide();
+    }, 3000);
+
+</script>
 </body>
 
 </html>

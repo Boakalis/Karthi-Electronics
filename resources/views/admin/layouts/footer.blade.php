@@ -2,7 +2,7 @@
     <div class="copyright bg-white">
         <p>
             Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-            href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
+            href="javacript:void(0)" target="_blank"> {{@$globalSetting->name}}</a>. All Rights Reserved.
           </p>
     </div>
 </footer>

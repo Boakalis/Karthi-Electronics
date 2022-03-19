@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\HelperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,13 @@ Route::post('store-login', [LoginController::class, 'loginAttempt'])->name('logi
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
+    /**Image Uploader Helper */
+    Route::post('/fileUploadEditor', [HelperController::class , 'fileUploadEditor'])
+        ->name('fileUploadEditor');
+    Route::post('/settings', [AdminController::class , 'settingsUpdate'])
+        ->name('settings.update');
+    Route::get('/banner-delete/{id}', [AdminController::class , 'bannerDelete'])
+        ->name('banner.delete');
 
 });

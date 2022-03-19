@@ -2,9 +2,9 @@
     <div id="sidebar" class="sidebar ec-sidebar-footer">
 
         <div class="ec-brand">
-            <a href="index.html" title="Ekka">
-                <img class="ec-brand-icon" src="assets/img/logo/ec-site-logo.png" alt="" />
-                <span class="ec-brand-name text-truncate">Ekka</span>
+            <a href="javascript:void(0)" title="{{@$globalSetting}}">
+                <img class="ec-brand-icon" src="{{asset(@$globalSetting->logo)}}" alt="" />
+                <span class="ec-brand-name text-truncate">{{@$globalSetting->name}}</span>
             </a>
         </div>
 
@@ -25,24 +25,19 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-account-group-outline"></i>
-                        <span class="nav-text">Vendors</span> <b class="caret"></b>
+                        <span class="nav-text">Dealers</span> <b class="caret"></b>
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="vendor-card.html">
-                                    <span class="nav-text">Vendor Grid</span>
+                                <a class="sidenav-item-link" href="">
+                                    <span class="nav-text">Dealers List</span>
                                 </a>
                             </li>
 
                             <li class="">
-                                <a class="sidenav-item-link" href="vendor-list.html">
-                                    <span class="nav-text">Vendor List</span>
-                                </a>
-                            </li>
-                            <li class="">
                                 <a class="sidenav-item-link" href="vendor-profile.html">
-                                    <span class="nav-text">Vendors Profile</span>
+                                    <span class="nav-text">Dealers Profile</span>
                                 </a>
                             </li>
                         </ul>
@@ -232,17 +227,18 @@
 
                 <!-- Other Pages -->
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
-                        <i class="mdi mdi-image-filter-none"></i>
-                        <span class="nav-text">Other Pages</span> <b class="caret"></b>
+                    <a class="sidenav-item-link" href="{{route('settings')}}">
+                        <i class="mdi mdi-settings-outline"></i>
+                        <span class="nav-text">Settings</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+
+                    {{-- <div class="collapse">
                         <ul class="sub-menu" id="otherpages" data-parent="#sidebar-menu">
                             <li class="has-sub">
                                 <a href="404.html">404 Page</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </li>
             </ul>
         </div>
