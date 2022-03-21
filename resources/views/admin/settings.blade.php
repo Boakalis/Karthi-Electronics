@@ -1,10 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
-<style>
-    .text-danger{
-        color: red;
-    }
-</style>
+
 <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
     <div>
         <h1>Settings</h1>
@@ -21,7 +17,7 @@
             <div class="card-body">
                 <div class="ec-cat-form">
                     @include('admin.layouts.error')
-
+                    
                     <form action="{{route('settings.update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">

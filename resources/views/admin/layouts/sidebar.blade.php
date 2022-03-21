@@ -2,7 +2,7 @@
     <div id="sidebar" class="sidebar ec-sidebar-footer">
 
         <div class="ec-brand">
-            <a href="javascript:void(0)" title="{{@$globalSetting}}">
+            <a href="javascript:void(0)" title="{{@$globalSetting->name }}">
                 <img class="ec-brand-icon" src="{{asset(@$globalSetting->logo)}}" alt="" />
                 <span class="ec-brand-name text-truncate">{{@$globalSetting->name}}</span>
             </a>
@@ -202,23 +202,23 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-diamond-stone"></i>
-                        <span class="nav-text">Icons</span> <b class="caret"></b>
+                        <span class="nav-text">Area Management</span> <b class="caret"></b>
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="icons" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="material-icon.html">
-                                    <span class="nav-text">Material Icon</span>
+                                <a class="sidenav-item-link" href="{{route('state')}}">
+                                    <span class="nav-text">State List</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="font-awsome-icons.html">
-                                    <span class="nav-text">Font Awsome Icon</span>
+                                <a class="sidenav-item-link" href="{{route('district')}}">
+                                    <span class="nav-text">District List</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="flag-icon.html">
-                                    <span class="nav-text">Flag Icon</span>
+                                <a class="sidenav-item-link" href="{{route('area')}}">
+                                    <span class="nav-text">Area List</span>
                                 </a>
                             </li>
                         </ul>
@@ -229,7 +229,7 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="{{route('settings')}}">
                         <i class="mdi mdi-settings-outline"></i>
-                        <span class="nav-text">Settings</span> <b class="caret"></b>
+                        <span class="nav-text">Settings</span>
                     </a>
 
                     {{-- <div class="collapse">

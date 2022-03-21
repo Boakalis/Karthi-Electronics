@@ -22,9 +22,19 @@
 
 	<!-- Ekka CSS -->
 	<link id="ekka-css" href="{{asset('admin-assets/assets/css/ekka.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	<!-- Data Tables -->
+	<link href='{{asset('admin-assets/assets/plugins/data-tables/datatables.bootstrap5.min.css')}}' rel='stylesheet'>
+	<link href='{{asset('admin-assets/assets/plugins/data-tables/responsive.datatables.min.css')}}' rel='stylesheet'>
 
+<style>
+    .text-danger{
+        color: red;
+    }
+</style>
 	<!-- FAVICON -->
 	<link href="{{asset('admin-assets/assets/img/favicon.png')}}" rel="shortcut icon" />
+    @livewireStyles
 
 </head>
 
@@ -78,7 +88,27 @@
 
 	<!-- Ekka Custom -->
 	<script src="{{asset('admin-assets/assets/js/ekka.js')}}"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function() {
+                toastr.options = {
+            "closeButton": false,
+            "debug": true,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            }
+        });
+    </script>
     <script src="{{asset('tinymce/tinymce.min.js')}}"></script>
 <script>
     var fileUploadUrl = "{{route('fileUploadEditor')}}";
@@ -134,7 +164,18 @@
     $(".alert").hide();
     }, 3000);
 
+    function logout() {
+        $('#logOut').submit();
+    }
 </script>
+	<!-- Data Tables -->
+	<script src='{{asset('admin-assets/assets/plugins/data-tables/jquery.datatables.min.js')}}'></script>
+	<script src='{{asset('admin-assets/assets/plugins/data-tables/datatables.bootstrap5.min.js')}}'></script>
+	<script src='{{asset('admin-assets/assets/plugins/data-tables/datatables.responsive.min.js')}}'></script>
+
+@yield('javascript')
+@livewireScripts
+@stack('scripts')
 </body>
 
 </html>

@@ -4,6 +4,11 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HelperController;
+use App\Http\Livewire\Area;
+use App\Http\Livewire\District;
+use App\Http\Livewire\Profile;
+use App\Http\Livewire\State;
+use App\Http\Livewire\Vendor;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +39,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         ->name('settings.update');
     Route::get('/banner-delete/{id}', [AdminController::class , 'bannerDelete'])
         ->name('banner.delete');
+    Route::get('/profile', [AdminController::class,'profile'])
+        ->name('profile');
+    Route::post('/profile', [AdminController::class,'profileUpdate'])
+        ->name('profile.update');
+    Route::post('/logout', [AdminController::class,'logOut'])
+        ->name('logout');
+
+    Route::get('/state', State::class)->name('state');
+    Route::get('/district', District::class)->name('district');
+    Route::get('/area', Area::class)->name('area');
+    Route::get('/dealer', Vendor::class)->name('vendor');
+
 
 });

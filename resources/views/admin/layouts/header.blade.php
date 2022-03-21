@@ -20,37 +20,44 @@
         <div class="navbar-right">
             <ul class="nav navbar-nav">
                 <!-- User Account -->
+                @php
+                    $user= Auth::user();
+                @endphp
                 <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link ec-drop" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
+                        <img src="{{asset($user->image)}}" class="user-image" alt="User Image" />
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right ec-dropdown-menu">
                         <!-- User image -->
                         <li class="dropdown-header">
-                            <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
+                            <img src="{{asset($user->image)}}" class="img-circle" alt="User Image" />
                             <div class="d-inline-block">
-                                John Deo <small class="pt-1">john.example@gmail.com</small>
+                                {{($user->name)}} <small class="pt-1">{{($user->email)}}</small>
                             </div>
                         </li>
                         <li>
-                            <a href="user-profile.html">
+                            <a href="{{route('profile')}}">
                                 <i class="mdi mdi-account"></i> My Profile
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">
                                 <i class="mdi mdi-email"></i> Message
                             </a>
                         </li>
                         <li>
                             <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-                        </li>
+                        </li> --}}
                         <li class="right-sidebar-in">
                             <a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Setting </a>
                         </li>
                         <li class="dropdown-footer">
-                            <a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                            <form method="POST" id="logOut" action="{{route('logout')}}">
+                                @csrf
+                            <a href="javascript:void(0)" onClick="logout()"> <i class="mdi mdi-logout"></i> Log Out </a>                            
+                            </form>
+
                         </li>
                     </ul>
                 </li>
@@ -618,9 +625,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="right-sidebar-in right-sidebar-2-menu">
-                    <i class="mdi mdi-settings-outline mdi-spin"></i>
-                </li>
+
             </ul>
         </div>
     </nav>
