@@ -17,7 +17,7 @@
             <div class="card-body">
                 <div class="ec-cat-form">
                     @include('admin.layouts.error')
-                    
+
                     <form action="{{route('settings.update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
@@ -74,7 +74,7 @@
                         </div>
 
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="text" class="col-12 col-form-label">Default Passoword</label>
                             <div class="col-7">
                                 <input id="password"  value="{{ @$data->default_password}}" name="default_password" class="form-control here slug-title" type="password">
@@ -82,7 +82,7 @@
                             @if ($errors->has('default_password'))
                             <span class="text-danger">{{ $errors->first('default_password') }}</span>
                             @endif
-                        </div>
+                        </div> --}}
 
 
                         <div class="form-group row">

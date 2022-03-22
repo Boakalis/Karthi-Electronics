@@ -26,7 +26,7 @@
 	<!-- Data Tables -->
 	<link href='{{asset('admin-assets/assets/plugins/data-tables/datatables.bootstrap5.min.css')}}' rel='stylesheet'>
 	<link href='{{asset('admin-assets/assets/plugins/data-tables/responsive.datatables.min.css')}}' rel='stylesheet'>
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <style>
     .text-danger{
         color: red;
@@ -89,11 +89,12 @@
 	<!-- Ekka Custom -->
 	<script src="{{asset('admin-assets/assets/js/ekka.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script type="text/javascript">
             $(document).ready(function() {
                 toastr.options = {
-            "closeButton": false,
-            "debug": true,
+                    "closeButton": false,
+                    "debug": true,
             "newestOnTop": false,
             "progressBar": false,
             "positionClass": "toast-top-right",
@@ -108,6 +109,30 @@
             "hideMethod": "fadeOut"
             }
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.select-2').select2({
+                dropdownParent: $("#select2Modal"),
+                placeholder: "Select...",
+                allowClear: true,
+                width: "100%"
+            });
+        });
+         //fix modal force focus
+   $.fn.modal.Constructor.prototype.enforceFocus = function () {
+      var that = this;
+      $(document).on('focusin.modal', function (e) {
+         if ($(e.target).hasClass('select2')) {
+            return true;
+         }
+
+         if (that.$element[0] !== e.target && !that.$element.has(e.target).length) {
+            that.$element.focus();
+         }
+      });
+   };
+
     </script>
     <script src="{{asset('tinymce/tinymce.min.js')}}"></script>
 <script>

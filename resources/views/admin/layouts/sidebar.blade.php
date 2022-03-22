@@ -30,21 +30,17 @@
                     <div class="collapse">
                         <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="">
+                                <a class="sidenav-item-link" href="{{route('vendor')}}">
                                     <span class="nav-text">Dealers List</span>
                                 </a>
                             </li>
 
-                            <li class="">
-                                <a class="sidenav-item-link" href="vendor-profile.html">
-                                    <span class="nav-text">Dealers Profile</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </li>
 
-                <!-- Users -->
+                {{-- <!-- Users -->
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-account-group"></i>
@@ -71,24 +67,24 @@
                         </ul>
                     </div>
                     <hr>
-                </li>
+                </li> --}}
 
                 <!-- Category -->
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-dns-outline"></i>
-                        <span class="nav-text">Categories</span> <b class="caret"></b>
+                        <span class="nav-text">CATEGORY SECTION</span> <b class="caret"></b>
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="main-category.html">
-                                    <span class="nav-text">Main Category</span>
+                                <a class="sidenav-item-link" href="{{route('category')}}">
+                                    <span class="nav-text">Category</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="sub-category.html">
-                                    <span class="nav-text">Sub Category</span>
+                                <a class="sidenav-item-link" href="{{route('subcategory')}}">
+                                    <span class="nav-text">Sub-Category</span>
                                 </a>
                             </li>
                         </ul>

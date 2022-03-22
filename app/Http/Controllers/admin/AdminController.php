@@ -108,6 +108,13 @@ class AdminController extends Controller
         return view('admin.profile',compact('data','tab'));
     }
 
+    public function dealerProfile($id)
+    {
+        $data = User::find($id);
+        $tab = 1;
+        return view('admin.vendor.profile',compact('data','tab'));
+    }
+
     public function profileUpdate(Request $request)
     {
 
@@ -133,7 +140,7 @@ class AdminController extends Controller
                 'password.max' => 'Password exceed maximum allowed character',
                 'confirm_password.same' => 'Password and Confirm Password Should be similar',
             ]
-        );        
+        );
 
 
         $data = [
@@ -156,12 +163,61 @@ class AdminController extends Controller
         ->with(Session::flash('alert-success', 'Settings Updated Successfully'));
     }
 
+    public function dealerProfileUpdate(Request $request ,$id)
+    {
+
+        $validatedData = $request->validate(
+            [
+                'email' => 'required|email|max:244',
+                'name' => 'required|string|max:244',
+                'store_name' => 'required|string|max:244',
+                'image' => 'nullable|image',
+                'password' => 'nullable|min:8|max:24',
+                'confirm_password' => 'nullable|min:8|max:24|same:password',
+            ],
+            [
+                'email.required' => 'Please Enter Email-address',
+                'store_name.required' => 'Store Name Required',
+                'name.required' => 'Name Required',
+                'store_name.max' => 'Maximum character exceeds',
+                'name.max' => 'Maximum character exceeds',
+                'email.email' => 'Please provide valid email-address',
+                'image.image' => 'Please provide valid image',
+                'password.required' => 'Confirm Password is required',
+                'password.min' => 'Password should had minimum 8 character',
+                'password.max' => 'Password exceed maximum allowed character',
+                'confirm_password.same' => 'Password and Confirm Password Should be similar',
+            ]
+        );
+
+
+        $data = [
+            'email' => $request->email,
+            'name' => $request->name,
+            'store_name' => $request->store_name,
+            'status' => $request->status
+        ];
+
+        if ($request->password != null) {
+            $data['password'] = bcrypt($request->password) ;
+        }
+        if( $request->hasFile('image') )
+        {   
+            $image =   ImageUpload::upload($request->image,'image');
+            $data['image'] = $image ;
+        }
+
+        User::where('id',$id)->update($data);
+        return redirect()->back()
+        ->with(Session::flash('alert-success', 'Settings Updated Successfully'));
+    }
+
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
     }
 
-    
+
 
 }
