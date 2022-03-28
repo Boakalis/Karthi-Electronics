@@ -3,18 +3,21 @@
 namespace App\Http\Livewire;
 
 use App\Models\Admin\ImageUpload;
+use App\Models\Banner as ModelsBanner;
 use App\Models\Category as ModelsCategory;
+use App\Models\Product;
+use App\Models\SubCategory;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
-
-class Category extends Component
+class Banner extends Component
 {
     use WithFileUploads;
-    public $name , $image ,$slug ,$status =1 ,$categories ,$editId ,$data;
+    public $name , $image ,$slug ,$status =1 ,$categories ,$editId ,$data,$option_id=null ,$type_id = null ,$options = null;
 
     protected $listeners = [
-        'resetData'
+        'resetData',
+        'changeOption'
     ];
 
     public function mount()
@@ -24,7 +27,8 @@ class Category extends Component
 
     protected $rules = [
         'name' => 'required|max:255|string',
-        'status' => 'required'
+        'status' => 'required',
+        'type_id' => 'required',
     ];
 
 
@@ -32,14 +36,14 @@ class Category extends Component
     {
         if ($this->editId != null) {
             $validatedData = $this->validate([
-                'name' => 'required|max:255|unique:categories,name,'.$this->editId,
+
                 'status' => 'required',
                 'image' => 'nullable|image',
             ]);
 
             $data = [
-                'name' => $this->name,
-                'slug' => Str::slug($this->name) ,
+                'option_id' => $this->option_id,
+                'type_id' => $this->type_id,
                 'status' => $this->status,
             ];
 
@@ -48,50 +52,36 @@ class Category extends Component
                 $exploded_image =explode('/',$image);
                 $data['image'] = $exploded_image[2];
             }
-
-            ModelsCategory::where('id',$this->editId)->update($data);
-
+            ModelsBanner::where('id',$this->editId)->update($data);
             $this->resetData();
             $this->emit('updated');
-
         } else {
-
             $validatedData = $this->validate([
-                'name' => 'required|max:255|unique:categories,name',
                 'status' => 'required',
                 'image' => 'required|image',
             ]);
-
-
-            $this->slug = Str::slug($this->name);
             $image =   $this->image->store('public/media');
             $exploded_image =explode('/',$image);
-
-            ModelsCategory::create([
-                'name' => $this->name,
-                'slug' => $this->slug,
+            ModelsBanner::create([
+                'type_id' => $this->type_id,
+                'option_id' => $this->option_id,
                 'image' => $exploded_image[2],
+                'status' => $this->status,
             ]);
             $this->resetData();
             $this->emit('stored');
-
         }
-
-
-
-
-
     }
 
     public function status($value)
     {
-        $category = ModelsCategory::where('id',$value)->first() ;
-        if ($category->status == 1) {
-        ModelsCategory::where('id',$value)->update([
+        $banner = ModelsBanner::where('id',$value)->first() ;
+        if ($banner->status == 1) {
+        ModelsBanner::where('id',$value)->update([
             'status' => 0,
         ]);
         } else {
-        ModelsCategory::where('id',$value)->update([
+        ModelsBanner::where('id',$value)->update([
             'status' => 1,
         ]);
         }
@@ -101,12 +91,12 @@ class Category extends Component
 
     public function edit($id)
     {
-        $data = ModelsCategory::find($id);
+        $data = ModelsBanner::find($id);
         $this->editId = $id;
         $this->image = null;
-        $this->name = $data->name;
+        $this->changeType($data->type_id);
+        $this->option_id = $data->option_id;
         $this->status = $data->status;
-
     }
 
     public function updated($value)
@@ -117,6 +107,9 @@ class Category extends Component
     public function resetData()
     {
         $this->name = null;
+        $this->options = null;
+        $this->type_id = null;
+        $this->option_id = null;
         $this->slug = null;
         $this->image = null;
         $this->status = 1;
@@ -127,7 +120,7 @@ class Category extends Component
 
     public function hydrate()
     {
-        $this->emit('datatable') ;
+        $this->emit('select') ;
     }
 
     public function changeEvent($value)
@@ -135,10 +128,30 @@ class Category extends Component
         $this->status = $value ;
     }
 
+    public function changeType($value)
+    {
+        $this->type_id = $value ;
+        if ($this->type_id == 0) {
+           $this->options = null;
+        }
+        if ($this->type_id == 1) {
+           $this->options = SubCategory::where('status',1)->get();
+        }
+        if ($this->type_id == 2) {
+           $this->options = Product::where('status',1)->get();
+        }
+    }
+
+    public function changeOption($value)
+    {
+
+        $this->option_id = $value ;
+
+    }
 
     public function render()
     {
-        $this->categories = ModelsCategory::get();
-        return view('livewire.category')->extends('admin.layouts.master')->section('content');
+        $banners = ModelsBanner::get();
+        return view('livewire.banner',compact('banners'))->extends('admin.layouts.master')->section('content');
     }
 }

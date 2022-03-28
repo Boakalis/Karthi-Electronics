@@ -2,7 +2,7 @@
     <div class="breadcrumb-wrapper breadcrumb-contacts">
         <div>
             <h1>State Details</h1>
-            <p class="breadcrumbs"><span><a href="{{route('dashboard')}}>Home</a></span>
+            <p class="breadcrumbs"><span><a href="{{route('dashboard')}}">Home</a></span>
                 <span><i class="mdi mdi-chevron-right"></i></span>State
             </p>
         </div>

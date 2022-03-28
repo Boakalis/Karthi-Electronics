@@ -2,7 +2,8 @@
     <div class="breadcrumb-wrapper breadcrumb-contacts">
         <div>
             <h1>Profile Details</h1>
-            <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+            <p class="breadcrumbs"><span><a href="{{route('dashboard')}}">Home</a></span>
+
                 <span><i class="mdi mdi-chevron-right"></i></span>Profile
             </p>
         </div>

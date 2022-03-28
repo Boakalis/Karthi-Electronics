@@ -105,7 +105,6 @@
                                                         id="flexSwitchCheckChecked" {{@$category->status == 1 ? 'checked' : ''}}>
                                                     <label class="form-check-label" for="flexSwitchCheckChecked"></label>
                                                 </div>
-                                            </td>
                                             <td>
                                                 <div class="">
                                                     <button type="button" class="btn btn-outline-success" wire:click=edit({{$category->id}}) >Edit</button>

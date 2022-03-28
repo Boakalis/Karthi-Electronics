@@ -95,35 +95,53 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-palette-advanced"></i>
-                        <span class="nav-text">Products</span> <b class="caret"></b>
+                        <span class="nav-text">PRODUCTS </span>
+                        @if (@$notificationData > 0)
+                        <button type="button" class=" btn-sm btn text-warning glow-button">New</button>
+                        <b class="caret"></b>
+                        @endif
                     </a>
                     <div class="collapse">
                         <ul class="sub-menu" id="products" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="product-add.html">
-                                    <span class="nav-text">Add Product</span>
+                                <a class="sidenav-item-link" href="{{route('product.index')}}">
+                                    <span class="nav-text">Products List</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="product-list.html">
-                                    <span class="nav-text">List Product</span>
+                                <a class="sidenav-item-link" href="{{route('product.new')}}">
+                                    <span class="nav-text {{@$notificationData > 0 ? ' text-danger flashit':''}}" >New Products</span>
+
+
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="product-grid.html">
-                                    <span class="nav-text">Grid Product</span>
+                                <a class="sidenav-item-link" href="{{route('product.reject')}}">
+                                    <span class="nav-text">Rejected Product</span>
                                 </a>
                             </li>
-                            <li class="">
-                                <a class="sidenav-item-link" href="product-detail.html">
-                                    <span class="nav-text">Product Detail</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </li>
 
                 <!-- Orders -->
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)">
+                        <i class="mdi-image-filter-frames mdi"></i>
+                        <span class="nav-text">Banners</span> <b class="caret"></b>
+                    </a>
+                    <div class="collapse">
+                        <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
+                            <li class="">
+                                <a class="sidenav-item-link" href="new-order.html">
+                                    <span class="nav-text">Banner Lists</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-cart"></i>

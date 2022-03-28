@@ -19,6 +19,7 @@
 	<!-- PLUGINS CSS STYLE -->
 	<link href="{{asset('admin-assets/assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 	<link href="{{asset('admin-assets/assets/plugins/simplebar/simplebar.css')}}" rel="stylesheet" />
+	<link href="{{asset('css/developer.css')}}" rel="stylesheet" />
 
 	<!-- Ekka CSS -->
 	<link id="ekka-css" href="{{asset('admin-assets/assets/css/ekka.css')}}" rel="stylesheet" />
@@ -27,9 +28,17 @@
 	<link href='{{asset('admin-assets/assets/plugins/data-tables/datatables.bootstrap5.min.css')}}' rel='stylesheet'>
 	<link href='{{asset('admin-assets/assets/plugins/data-tables/responsive.datatables.min.css')}}' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
 <style>
     .text-danger{
         color: red;
+    }
+    .text-success{
+        color: green;
+    }
+    .text-warning{
+        color: yellow;
     }
 </style>
 	<!-- FAVICON -->
@@ -134,6 +143,11 @@
    };
 
     </script>
+    <script src="{{asset('repeater.js')}}"></script>
+    <script>
+        /* Create Repeater */
+        $("#repeater").createRepeater();
+    </script>
     <script src="{{asset('tinymce/tinymce.min.js')}}"></script>
 <script>
     var fileUploadUrl = "{{route('fileUploadEditor')}}";
@@ -187,11 +201,53 @@
 
     setTimeout(function(){
     $(".alert").hide();
-    }, 3000);
+    }, 10000);
 
     function logout() {
         $('#logOut').submit();
     }
+
+    function deleteData(url,id) {
+console.log(url +','+ id);
+        Swal.fire({
+        title: "Are you sure want to delete?",
+        // text: "Action is irreversible. Do you want to proceed?",
+        position: "center",
+        // backdrop: "linear-gradient(yellow, orange)",
+        background: "white",
+        allowOutsideClick: true,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        showCancelButton: true,
+        confirmButtonText: "Go Ahead",
+        cancelButtonText: "No",
+        confirmButtonColor: "#00ff55",
+        cancelButtonColor: "#999999",
+        reverseButtons: true,
+        }).then((result) => {
+            $.ajax({
+            type:'POST',
+            url: url,
+            data: {
+                '_token' : "{{csrf_token()}}",
+                'id' : id,
+            },
+            success:function(response){
+
+                if (response.status == 200) {
+                    toastr.success('Deleted Successfully');
+                    location.reload();
+                }
+                else {
+                    toastr.error('Something went wrong. Try again later');
+                }
+            }
+        });
+        })
+
+    }
+
+
 </script>
 	<!-- Data Tables -->
 	<script src='{{asset('admin-assets/assets/plugins/data-tables/jquery.datatables.min.js')}}'></script>

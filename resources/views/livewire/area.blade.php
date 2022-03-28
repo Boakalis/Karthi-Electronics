@@ -59,7 +59,7 @@
                                                 class="btn btn-success btn-sm ">PIN</button>
                                             <button wire:click="edit({{ $data->id }})"
                                                 class="btn btn-primary btn-sm ">EDIT</button>
-                                            {{-- <button onclick=""deleteInitate({{$data->id}})"" class="btn btn-danger btn-sm " >Delete</button> --}}      
+                                            {{-- <button onclick=""deleteInitate({{$data->id}})"" class="btn btn-danger btn-sm " >Delete</button> --}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -170,7 +170,8 @@
                                                 <label for="state">State</label>
                                                 <select class="form-control" wire:model="state"
                                                     wire:click="changeState($event.target.value)" id="">
-                                                    <option value="">Select State</option>
+                                                    <option value="">
+                                                         State</option>
                                                     @if (isset($states) && !empty($states))
                                                         @foreach ($states as $state)
                                                             <option value="{{ $state->id }}">{{ $state->name }}
