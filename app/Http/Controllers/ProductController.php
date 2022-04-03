@@ -15,12 +15,11 @@ use Session;
 use Illuminate\Support\Str;
 
 
-
-
 class ProductController extends Controller
 {
     public function index()
     {
+
         $products = Product::with('dealer', 'subcategory')->get();
         return view('admin.products.index', compact('products'));
     }

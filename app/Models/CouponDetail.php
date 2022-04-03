@@ -10,4 +10,8 @@ class CouponDetail extends Model
 {
     use SoftDeletes;
     use HasFactory;
+
+
+    protected $guarded = [];
+
 }

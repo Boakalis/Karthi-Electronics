@@ -22,12 +22,12 @@
                 </li>
 
                 <!-- Vendors -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-account-group-outline"></i>
                         <span class="nav-text">Dealers</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('vendor')}}">
@@ -41,12 +41,12 @@
                 </li>
 
                 {{-- <!-- Users -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-account-group"></i>
                         <span class="nav-text">Users</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="users" data-parent="#sidebar-menu">
                             <li>
                                 <a class="sidenav-item-link" href="user-card.html">
@@ -70,12 +70,12 @@
                 </li> --}}
 
                 <!-- Category -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-dns-outline"></i>
                         <span class="nav-text">CATEGORY SECTION</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('category')}}">
@@ -92,7 +92,7 @@
                 </li>
 
                 <!-- Products -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-palette-advanced"></i>
                         <span class="nav-text">PRODUCTS </span>
@@ -101,7 +101,7 @@
                         <b class="caret"></b>
                         @endif
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="products" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('product.index')}}">
@@ -126,12 +126,12 @@
                 </li>
 
                 <!-- Orders -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi-image-filter-frames mdi"></i>
                         <span class="nav-text">Banners</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="new-order.html">
@@ -142,12 +142,12 @@
                         </ul>
                     </div>
                 </li>
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-cart"></i>
                         <span class="nav-text">Orders</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="new-order.html">
@@ -173,52 +173,32 @@
                     </div>
                 </li>
 
-                <!-- Reviews -->
-                <li>
-                    <a class="sidenav-item-link" href="review-list.html">
+
+                {{-- <li>
+                    <a class="sidenav-item-link" href="{{route('referals')}}">
                         <i class="mdi mdi-star-half"></i>
-                        <span class="nav-text">Reviews</span>
+                        <span class="nav-text">Referal</span>
+                    </a>
+                </li> --}}
+
+                <li>
+                    <a class="sidenav-item-link" href="{{route('user')}}">
+                        <i class="mdi mdi-account-group-outline"></i>
+                        <span class="nav-text">Users</span>
                     </a>
                 </li>
 
                 <!-- Brands -->
-                <li>
-                    <a class="sidenav-item-link" href="brand-list.html">
-                        <i class="mdi mdi-tag-faces"></i>
-                        <span class="nav-text">Brands</span>
-                    </a>
-                    <hr>
-                </li>
 
-                <!-- Authentication -->
-                <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
-                        <i class="mdi mdi-login"></i>
-                        <span class="nav-text">Authentication</span> <b class="caret"></b>
-                    </a>
-                    <div class="collapse">
-                        <ul class="sub-menu" id="authentication" data-parent="#sidebar-menu">
-                            <li class="">
-                                <a href="sign-in.html">
-                                    <span class="nav-text">Sign In</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="sign-up.html">
-                                    <span class="nav-text">Sign Up</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+
 
                 <!-- Icons -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-diamond-stone"></i>
                         <span class="nav-text">Area Management</span> <b class="caret"></b>
                     </a>
-                    <div class="collapse">
+                    <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="icons" data-parent="#sidebar-menu">
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('state')}}">
@@ -240,15 +220,15 @@
                 </li>
 
                 <!-- Other Pages -->
-                <li class="has-sub">
+                <li class="has-sub expand">
                     <a class="sidenav-item-link" href="{{route('settings')}}">
                         <i class="mdi mdi-settings-outline"></i>
                         <span class="nav-text">Settings</span>
                     </a>
 
-                    {{-- <div class="collapse">
+                    {{-- <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="otherpages" data-parent="#sidebar-menu">
-                            <li class="has-sub">
+                            <li class="has-sub expand">
                                 <a href="404.html">404 Page</a>
                             </li>
                         </ul>

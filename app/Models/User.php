@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [
-     
+
     ];
 
     /**
@@ -39,4 +39,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class);
+    }
+
+    public function code()
+    {
+        return $this->hasOne(ReferalCode::class);
+    }
+
+    public function referList()
+    {
+        return $this->hasMany(User::class,'referred_by');
+    }
+
+
+    public function referer()
+    {
+        return $this->belongsTo(User::class,'referred_by','id');
+    }
+
 }

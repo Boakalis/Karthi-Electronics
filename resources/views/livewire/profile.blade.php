@@ -18,7 +18,7 @@
                     <div class="ec-disp">
                         <div class="text-center widget-profile px-0 border-0">
                             <div class="card-img mx-auto rounded-circle">
-                                <img src="assets/img/user/u6.jpg" alt="user image">
+                                <img src="{{$vendor->image != null ? asset($vendor->image) : 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png'}}" alt="user image">
                             </div>
                             <div class="card-body">
                                 <h4 class="py-2 text-dark">John deo</h4>

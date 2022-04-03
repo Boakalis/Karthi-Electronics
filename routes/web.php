@@ -4,14 +4,21 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HelperController;
+use App\Http\Controllers\CouponController;
+use App\Http\Controllers\CouponControllerr;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReferalController;
+use App\Http\Controllers\UserController;
 use App\Http\Livewire\Area;
 use App\Http\Livewire\Banner;
 use App\Http\Livewire\Category;
 use App\Http\Livewire\District;
+use App\Http\Livewire\Order;
 use App\Http\Livewire\Profile;
+use App\Http\Livewire\Referals;
 use App\Http\Livewire\State;
 use App\Http\Livewire\SubCategory;
+use App\Http\Livewire\User;
 use App\Http\Livewire\Vendor;
 
 /*
@@ -51,9 +58,16 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         ->name('dealer.profile');
     Route::post('/dealer-profile/{id}', [AdminController::class,'dealerProfileUpdate'])
         ->name('dealer.profile.update');
+    Route::get('/user-profile/{id}', [UserController::class,'userProfile'])
+        ->name('user.profile');
+    Route::post('/user-profile/{id}', [UserController::class,'userProfileUpdate'])
+        ->name('user.profile.update');
     Route::post('/logout', [AdminController::class,'logOut'])
         ->name('logout');
 
+    Route::get('/orders', Order::class)->name('order');
+    Route::get('/users', User::class)->name('user');
+    Route::get('/referals', Referals::class)->name('referals');
     Route::get('/states', State::class)->name('state');
     Route::get('/districts', District::class)->name('district');
     Route::get('/areas', Area::class)->name('area');
@@ -92,4 +106,16 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     ->name('product.delete');
 
 
+
+    Route::get('/coupons', [CouponControllerr::class, 'index'])->name('admin.coupon.index');
+    Route::get('/create-coupon', [CouponControllerr::class, 'create'])->name('admin.coupon.create');
+    Route::get('/edit-coupon/{id}', [CouponControllerr::class, 'edit'])->name('admin.coupon.edit');
+    Route::post('/store-coupon', [CouponControllerr::class, 'store'])->name('admin.coupon.store');
+    Route::post('/coupon-status', [CouponControllerr::class, 'status'])->name('admin.coupon.status');
+    Route::post('/update-coupon', [CouponControllerr::class, 'update'])->name('admin.coupon.update');
+    Route::post('/delete-coupon', [CouponControllerr::class, 'update'])->name('admin.coupon.delete');
+
+
+
 });
+

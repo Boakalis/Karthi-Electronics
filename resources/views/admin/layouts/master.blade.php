@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 	<link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PLUGINS CSS STYLE -->
 	<link href="{{asset('admin-assets/assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet">
@@ -94,7 +95,7 @@
 
 	<!-- Option Switcher -->
 	<script src="{{asset('admin-assets/assets/plugins/options-sidebar/optionswitcher.js')}}"></script>
-
+    <script src="https://kit.fontawesome.com/1b0bb62797.js" crossorigin="anonymous"></script>
 	<!-- Ekka Custom -->
 	<script src="{{asset('admin-assets/assets/js/ekka.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

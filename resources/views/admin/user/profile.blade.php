@@ -317,7 +317,7 @@
                         <div class="tab-pane fade active show " id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="tab-pane-content mt-5">
 
-                                <form method="POST" action="{{route('dealer.profile.update',$data->id)}}" enctype="multipart/form-data" >
+                                <form method="POST" action="{{route('user.profile.update',$data->id)}}" enctype="multipart/form-data" >
                                 @csrf
                                     <div class="form-group row mb-6">
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
@@ -338,7 +338,7 @@
                                     <div class="row mb-2">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="name">Owner Name</label>
+                                                <label for="name">User Name</label>
                                                 <input type="text" class="form-control"  name="name" id="name"  value="{{@$data->name}}"  >
                                                 @if ($errors->has('name'))
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -346,7 +346,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        {{-- <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="lastName">Store name</label>
                                                 <input type="text" class="form-control" name="store_name" id="storeName" value="{{@$data->store_name}}"  >
@@ -354,33 +354,33 @@
                                                 <span class="text-danger">{{ $errors->first('store_name') }}</span>
                                             @endif
                                             </div>
+                                        </div> --}}
+                                        <div class="form-group col-lg-6 mb-4">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" name="email" id="email" value="{{@$data->email}}"  >
+                                                @if ($errors->has('email'))
+                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                                @endif
+                                        </div>
+                                        <div class="form-group mb-4 col-lg-6 ">
+                                            <label for="newPassword">New password</label>
+                                            <input type="password" class="form-control" id="password" name="password" value=""  >
+                                                @if ($errors->has('password'))
+                                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                                @endif
+                                        </div>
+
+                                        <div class="form-group mb-4 col-lg-6">
+                                            <label for="conPassword">Confirm password</label>
+                                            <input type="password" name="confirm_password" class="form-control" id="conPassword" value=""  >
+                                                @if ($errors->has('confirm_password'))
+                                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                                @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group mb-4">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" value="{{@$data->email}}"  >
-                                            @if ($errors->has('email'))
-                                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                            @endif
-                                    </div>
 
 
-                                    <div class="form-group mb-4">
-                                        <label for="newPassword">New password</label>
-                                        <input type="password" class="form-control" id="password" name="password" value=""  >
-                                            @if ($errors->has('password'))
-                                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                                            @endif
-                                    </div>
-
-                                    <div class="form-group mb-4">
-                                        <label for="conPassword">Confirm password</label>
-                                        <input type="password" name="confirm_password" class="form-control" id="conPassword" value=""  >
-                                            @if ($errors->has('confirm_password'))
-                                                <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
-                                            @endif
-                                    </div>
 
                                     <div class="form-group mb-4">
                                         <label for="status">Status</label>
