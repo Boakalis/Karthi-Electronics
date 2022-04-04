@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin\ImageUpload;
+use App\Models\admin\ImageUpload;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Session;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Livewire\Vendor;
-use App\Models\Admin\ImageUpload;
+use App\Models\admin\ImageUpload;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Banner;
-use App\Models\Admin\ImageUpload;
+use App\Models\admin\ImageUpload;
 use App\Models\Settings;
 use Session;
 use Illuminate\Http\Request;

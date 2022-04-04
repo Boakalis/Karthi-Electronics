@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Admin\ImageUpload;
+use App\Models\admin\ImageUpload;
 use App\Models\Banner as ModelsBanner;
 use App\Models\Category as ModelsCategory;
 use App\Models\Product;

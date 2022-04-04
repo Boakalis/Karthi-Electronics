@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Admin\ImageUpload;
+use App\Models\admin\ImageUpload;
 use App\Models\Category as ModelsCategory;
 use Livewire\Component;
 use Livewire\WithFileUploads;
