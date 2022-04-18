@@ -134,7 +134,7 @@
                     <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="new-order.html">
+                                <a class="sidenav-item-link" href="{{route('banner')}}">
                                     <span class="nav-text">Banner Lists</span>
                                 </a>
                             </li>

@@ -30,13 +30,36 @@
                                     @endif
                                 </div>
                                 <div class="form-group row">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" wire:model="title"
+                                         id="" />
+                                    @if ($errors->has('title'))
+                                        <span class="text-danger">{{ $errors->first('title') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" wire:model="name"
+                                         id="" />
+                                    @if ($errors->has('name'))
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group row">
+                                    <label for="description">Description</label>
+                                    <textarea name="" id="" cols="20" rows="5" wire:model="description" ></textarea>
+                                    @if ($errors->has('description'))
+                                        <span class="text-danger">{{ $errors->first('description') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group row">
                                     <label for="type">Select Option</label>
                                     <select class="form-control select" wire:model="option_id" onchange="changeOption(event)"
                                          id="" style="width:100%">
                                             <option value="">Select Option</option>
                                         @if (isset($options) && !empty($options))
                                             @foreach ($options as $option)
-                                                <option value="{{ $option->id }}">{{ $option->name }}</option>
+                                                <option value="{{ $option->slug }}">{{ $option->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>
@@ -88,7 +111,7 @@
                                 <tr>
                                     <th>Image</th>
                                     <th>Banner Type</th>
-                                    <th>Category</th>
+                                    <th>Category/Product</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -133,6 +156,8 @@
                                                 <div class="">
                                                     <button type="button" class="btn btn-outline-success"
                                                         wire:click=edit({{ $banner->id }})>Edit</button>
+                                                    <button type="button" class="btn btn-outline-danger"
+                                                        wire:click=delete({{ $banner->id }})>Delete</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -156,6 +181,9 @@
                 width: "resolve",
                 placeholder: 'Select Option'
             });
+        });
+        Livewire.on('deleted', function() {
+            location.reload();
         });
 
         $(document).ready(function() {

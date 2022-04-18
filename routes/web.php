@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HelperController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CouponControllerr;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReferalController;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,9 @@ use App\Http\Livewire\State;
 use App\Http\Livewire\SubCategory;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Vendor;
+use App\Http\Livewire\Web\Home;
+use App\Http\Livewire\Web\Product;
+use App\Http\Livewire\Web\SubCategory as WebSubCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +36,9 @@ use App\Http\Livewire\Vendor;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', Home::class)->name('home');
+Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
+Route::get('/{category}/{slug}', Product::class)->name('web.product');
 
 // Auth::routes();
 Route::get('store-login', [LoginController::class, 'showLoginForm'])->name('login');

@@ -167,7 +167,7 @@
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label">Product Description</label>
-                                            <textarea disabled  class="form-control " name="description"> {!!@$data->description!!} </textarea>
+                                            <textarea disabled  class="form-control tinymce-editor " name="description"> {!!@$data->description!!} </textarea>
                                         </div>
                                         <div class="col-12 mt-3">
                                             <label class="form-label">Is Product had variants?</label>
@@ -176,17 +176,23 @@
                                                 <label></label>
                                             </div>
                                         </div>
-                                        <div class="col-6 normal">
+                                        <div class="col-4 normal">
                                             <label for="dealer" class="col-12 col-form-label">Dealer Price <span>(In &#8377; )</span></label>
                                             <div class="col-12">
                                                 <input  id="dealer" disabled value="{{@$data->dealer_price}}" name="dealer_price" class="form-control" type="number" />
                                             </div>
                                         </div>
                                         @if (Auth::user()->user_type ==1)
-                                            <div class="col-6 normal">
+                                            <div class="col-4 normal">
                                                 <label for="sale" class="col-12 col-form-label">Sale Price <span>(In &#8377; )</span></label>
                                                 <div class="col-12">
                                                     <input id="sale" disabled name="sale_price" value="{{@$data->sale_price}}" class="form-control" type="number" />
+                                                </div>
+                                            </div>
+                                            <div class="col-4 normal">
+                                                <label for="sale" class="col-12 col-form-label">Discount Price <span>(In &#8377; )</span></label>
+                                                <div class="col-12">
+                                                    <input id="sale" disabled name="sale_price" value="{{@$data->discounted_price}}" class="form-control" type="number" />
                                                 </div>
                                             </div>
                                         @endif
@@ -227,8 +233,14 @@
                                                                     <input id="sp" disabled  value="{{$variant->seller_price}}"  name="variants_old[{{$key}}][sale_price]" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
+                                                            <div class="col-md-3">
+                                                                <label for="sp" class="col-12 col-form-label">Discounted Price</label>
+                                                                <div class="col-12">
+                                                                    <input id="sp" disabled  value="{{$variant->discounted_price}}"  name="variants_old[{{$key}}][sale_price]" class="form-control"  type="number" />
+                                                                </div>
+                                                            </div>
                                                             @endif
-                                                            <input id="" disabled value="{{$variant->id}}"  name="variants_old[{{$key}}][id]" class="form-control"  type="hidden" />
+                                                            {{-- <input id="" disabled value="{{$variant->id}}"  name="variants_old[{{$key}}][id]" class="form-control"  type="hidden" /> --}}
 
                                                             <div class="col-md-3">
                                                                 <label for="sp" class="col-12 col-form-label">Status</label>

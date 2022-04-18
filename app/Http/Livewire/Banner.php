@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 class Banner extends Component
 {
     use WithFileUploads;
-    public $name , $image ,$slug ,$status =1 ,$categories ,$editId ,$data,$option_id=null ,$type_id = null ,$options = null;
+    public $name , $image ,$slug ,$status =1 ,$categories ,$editId ,$data,$option_id=null ,$type_id = null ,$options = null ,$description,$title;
 
     protected $listeners = [
         'resetData',
@@ -43,6 +43,9 @@ class Banner extends Component
 
             $data = [
                 'option_id' => $this->option_id,
+                'name' => $this->name,
+                'description' => $this->description,
+                'title' => $this->title,
                 'type_id' => $this->type_id,
                 'status' => $this->status,
             ];
@@ -67,6 +70,11 @@ class Banner extends Component
                 'option_id' => $this->option_id,
                 'image' => $exploded_image[2],
                 'status' => $this->status,
+                'title' => $this->title,
+                'name' => $this->name,
+                'description' => $this->description,
+                'type_id' => $this->type_id,
+                'status' => $this->status,
             ]);
             $this->resetData();
             $this->emit('stored');
@@ -89,11 +97,21 @@ class Banner extends Component
 
     }
 
+
+    public function delete($id)
+    {
+        $data = ModelsBanner::where('id',$id)->delete();
+        $this->emit('deleted');
+    }
+
     public function edit($id)
     {
         $data = ModelsBanner::find($id);
         $this->editId = $id;
         $this->image = null;
+        $this->name = $data->name;
+        $this->title = $data->title;
+        $this->description = $data->description;
         $this->changeType($data->type_id);
         $this->option_id = $data->option_id;
         $this->status = $data->status;

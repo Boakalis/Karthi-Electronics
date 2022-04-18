@@ -169,6 +169,10 @@
                                             <label class="form-label">Product Description</label>
                                             <textarea  class="form-control tinymce-editor" name="description"> {{@$data->description}} </textarea>
                                         </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Short Description</label>
+                                            <textarea  class="form-control" name="short_description" required> {{@$data->short_description}}</textarea>
+                                        </div>
                                         <div class="col-12 mt-3">
                                             <label class="form-label">Is Product had variants?</label>
                                             <div class="form-check form-check-inline">
@@ -176,17 +180,23 @@
                                                 <label></label>
                                             </div>
                                         </div>
-                                        <div class="col-6 normal">
+                                        <div class="col-4 normal">
                                             <label for="dealer" class="col-12 col-form-label">Dealer Price <span>(In &#8377; )</span></label>
                                             <div class="col-12">
                                                 <input  id="dealer" value="{{@$data->dealer_price}}" name="dealer_price" class="form-control" type="number" />
                                             </div>
                                         </div>
                                         @if (Auth::user()->user_type ==1)
-                                            <div class="col-6 normal">
+                                            <div class="col-4 normal">
                                                 <label for="sale" class="col-12 col-form-label">Sale Price <span>(In &#8377; )</span></label>
                                                 <div class="col-12">
                                                     <input id="sale" name="sale_price" value="{{@$data->sale_price}}" class="form-control" type="number" />
+                                                </div>
+                                            </div>
+                                            <div class="col-4 normal">
+                                                <label for="sale" class="col-12 col-form-label">Discounted Price <span>(In &#8377; )</span></label>
+                                                <div class="col-12">
+                                                    <input id="ds" name="discounted_price" value="{{@$data->discounted_price}}" class="form-control" type="number" />
                                                 </div>
                                             </div>
                                         @endif
@@ -225,6 +235,12 @@
                                                                 <label for="sp" class="col-12 col-form-label">Seller Price<span>(In &#8377; )</span></label>
                                                                 <div class="col-12">
                                                                     <input id="sp"  value="{{$variant->seller_price}}"  name="variants_old[{{$key}}][sale_price]" class="form-control"  type="number" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label for="spd" class="col-12 col-form-label">Discount Price</label>
+                                                                <div class="col-12">
+                                                                    <input id="sp"  value="{{$variant->discounted_price}}"  name="variants_old[{{$key}}][discounted_price]" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
                                                             @endif
@@ -273,6 +289,12 @@
                                                                 <label for="sp" class="col-12 col-form-label">Seller Price<span>(In &#8377; )</span></label>
                                                                 <div class="col-12">
                                                                     <input id="sp" data-name="sale_prices" class="form-control"  type="number" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label for="sp" class="col-12 col-form-label">Discount Price</label>
+                                                                <div class="col-12">
+                                                                    <input id="spd" data-name="discounted_price" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
                                                             @endif

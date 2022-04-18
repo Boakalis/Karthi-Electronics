@@ -50,6 +50,7 @@ class ProductController extends Controller
             'name' => 'required|max:255',
             'subcategory_id' => 'required',
             'description' => 'nullable',
+            'short_description' => 'nullable|max:255',
             'dealer_price' => 'required_without:is_products_variant',
             // 'sale_price' => 'required_without:is_products_variant' ,
             'variants' => 'required_if:is_products_variant,1',
@@ -72,6 +73,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'subcategory_id' => $request->subcategory_id,
             'description' => $request->description,
+            'short_description' => $request->short_description,
             'colors' => json_encode($request->colors, true),
             'is_featured' => $request->is_featured,
             'is_exclusive' => $request->is_exclusive,
@@ -89,7 +91,10 @@ class ProductController extends Controller
         if ($request->is_products_variant != 1) {
             $data['dealer_price'] = $request->dealer_price;
             $data['is_products_variant'] = null;
-            $data['sale_price'] = $request->sale_price;
+            if (Auth::user()->user_type == 1) {
+                $data['sale_price'] = $request->sale_price;
+                $data['discounted_price'] = $request->discounted_price;
+            }
         } else {
             $data['is_products_variant'] = 1;
         }
@@ -150,6 +155,7 @@ class ProductController extends Controller
 
                 if (Auth::user()->user_type == 1) {
                     $variantData['seller_price'] = $value['sale_prices'];
+                    $variantData['discounted_price'] = $value['discounted_price'];
                 }
 
                 Variant::create($variantData);
@@ -208,6 +214,7 @@ class ProductController extends Controller
             'name' => 'required|max:255',
             'subcategory_id' => 'required',
             'description' => 'nullable',
+            'short_description' => 'nullable|max:255',
             'dealer_price' => 'required_without:is_products_variant',
             // 'sale_price' => 'required_without:is_products_variant' ,
 
@@ -251,6 +258,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'subcategory_id' => $request->subcategory_id,
             'description' => $request->description,
+            'short_description' => $request->short_description,
             'colors' => json_encode($request->colors, true),
             'is_featured' => $request->is_featured,
             'is_exclusive' => $request->is_exclusive,
@@ -263,11 +271,15 @@ class ProductController extends Controller
         } else {
             $data['status'] = 2;
         }
-
         if ($request->is_products_variant != 1) {
             $data['dealer_price'] = $request->dealer_price;
-            // $data['is_products_variant'] = null;
-            $data['sale_price'] = $request->sale_price;
+            $data['is_products_variant'] = null;
+            if (Auth::user()->user_type == 1) {
+                $data['sale_price'] = $request->sale_price;
+                $data['discounted_price'] = $request->discounted_price;
+            }
+        } else {
+            $data['is_products_variant'] = 1;
         }
 
         if ($request->hasFile('image')) {
@@ -322,6 +334,13 @@ class ProductController extends Controller
                     // 'seller_price' => $old['sale_price'],
                     'status' => $old['status'],
                 ]);
+                if (Auth::user()->user_type == 1) {
+                    Variant::where([['id',$old['id']],['product_id',$productData->id]])->update([
+                        'seller_price' => $old['sale_price'],
+                        'discounted_price' => $old['discounted_price'],
+                    ]);
+                }
+
             }
         }
 
@@ -345,6 +364,7 @@ class ProductController extends Controller
 
                     if (Auth::user()->user_type == 1) {
                         $variantData['seller_price'] = $value['sale_prices'];
+                        $variantData['discounted_price'] = $value['discounted_price'];
                     }
 
                     Variant::create($variantData);
