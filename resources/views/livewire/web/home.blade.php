@@ -684,7 +684,7 @@
         <section class="section ec-offer-section section-space-mt section-space-mb">
             <h2 class="d-none">Offer</h2>
             <div class="container">
-                <div class="ec-offer-inner ofr-img" style="background-image:url({{asset('storage/media/'.$adData->image)}})">
+                <div class="ec-offer-inner ofr-img" style="background-image:url({{asset('storage/media/'.@$adData->image)}})">
                     {{-- <img src="{{asset('storage/media/'.@$adData->image)}}" alt="" class="offer_bg" />  --}}
                     <div class="col-sm-6 ec-offer-content">
                         <div class="ec-offer-content-inner">
