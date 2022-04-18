@@ -36,9 +36,7 @@ use App\Http\Livewire\web\SubCategory as WebSubCategory;
 |
 */
 
-Route::get('/', Home::class)->name('home');
-Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
-Route::get('/{category}/{slug}', Product::class)->name('web.product');
+
 
 // Auth::routes();
 Route::get('store-login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -123,3 +121,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
+Route::get('/', Home::class)->name('home');
+Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
+Route::get('/{category}/{slug}', Product::class)->name('web.product');
