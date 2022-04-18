@@ -135,7 +135,7 @@
                         <div class="ec-banner-left col-sm-6">
                             <div class="ec-banner-block ec-banner-block-1 col-sm-12">
                                 <div class="banner-block">
-                                    <img src="{{asset('storage/media/'.$productBannerData[0]['image'])}}" alt="" />
+                                    <img src="{{asset('storage/media/'.@$productBannerData[0]['image'])}}" alt="" />
                                     <div class="banner-content">
                                         <span class="ec-banner-stitle">{{@$productBannerData[0]['title']}}</span>
                                         <span class="ec-banner-title">{{@$productBannerData[0]['name']}}</span>
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if (isset($productBannerData[1]) && !empty($productBannerData[1]))                            
+                        @if (isset($productBannerData[1]) && !empty($productBannerData[1]))
                             <div class="ec-banner-right col-sm-6">
                                 <div class="ec-banner-block ec-banner-block-2 col-sm-12">
                                     <div class="banner-block">
@@ -544,7 +544,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 @endforeach
                             @endif
 
@@ -623,7 +623,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                 
+                            </div>
                             @endforeach
                         @endif
 
@@ -668,7 +668,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                 
+                            </div>
                             @endforeach
                         @endif
 
@@ -714,23 +714,23 @@
                     <div class="col">
                         <div class="tab-content">
                             <div class="row">
-                              
+
                                 @if (isset($categories) && !empty($categories))
                                     @foreach ($categories as $category)
                                     <div class="col-lg-2 col-xl-2 col-xxl-2 my-2">
                                         {{-- <div class="card card-default mt-24px"  > --}}
-                                            
+
                                             <div class="text-center">
                                                 <a href="javascript:0" class="text-secondary d-inline-block mb-3">
-                                                    <div class="image mb-3">  
+                                                    <div class="image mb-3">
                                                         <img src="{{asset('storage/media/'.@$category->image)}}" style="width:100px;height:100px;"  class="rounded-circle" alt="Avatar Image">
                                                     </div>
-        
+
                                                     <h5 class="card-title text-dark">{{@$category->name}}</h5>
-        
-                                                    
+
+
                                                 </a>
-                                                
+
                                             </div>
                                         {{-- </div> --}}
                                     </div>
@@ -739,7 +739,7 @@
                                 @endif
 
                             </div>
-                          
+
                         </div>
                     </div>
                 </div>
