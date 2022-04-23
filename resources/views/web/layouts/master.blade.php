@@ -58,11 +58,11 @@
             }
 
         </style>
-        <script src="{{ url('js/app.js') }}" ></script>
+        {{-- <script src="{{ url('js/app.js') }}" ></script> --}}
 
     </head>
     <body>
-        {{-- <div id="ec-overlay"><span class="loader_img"></span></div> --}}
+        <div id="ec-overlay"><span class="loader_img"></span></div>
 
         <!-- Header start  -->
         @include('web.layouts.header')
@@ -212,7 +212,7 @@
     </script>
 
         @livewireScripts
-     
+
         @stack('scripts')
     </body>
 </html>
