@@ -1,4 +1,8 @@
 <div>
+    <div class="container my-3 ">
+        <h4 class="float-left" >Shop</h4>
+        <small class="float-right" > <a href="">Home</a>&nbsp;-<a href="">Products</a>  </small>
+    </div>
     <section class="section ec-product-tab section-space-p">
         <div class="container">
             <div class="row">
@@ -22,7 +26,7 @@
                                             <div class="ec-product-hover"></div>
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
-                                                    <a href="product-left-sidebar.html" class="image">
+                                                    <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}" class="image">
                                                         <img class="main-image" src="{{asset($data->image)}}"
                                                             alt="Product" />
                                                         <img class="hover-image" src="{{asset($data->image)}}"
@@ -45,7 +49,7 @@
 
                                                     </div>
                                                 </div>
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">{{$data->name}}</a></h5>
+                                                <h5 class="ec-pro-title"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}">{{$data->name}}</a></h5>
                                                 {{-- <h6 class="ec-pro-stitle"><a href="shop-left-sidebar-col-3.html">{{@$data->category->name}}</a></h6> --}}
                                                 <div class="ec-pro-rat-price">
                                                     <div class="ec-pro-rat-pri-inner">
@@ -75,9 +79,9 @@
                                                                     <button title="Add To Cart" class="add-to-cart btn btn-primary">Add To
                                                                         Cart</button>
                                                                 @else
-                                                                    <button title="Add To Cart" class="add-to-cart btn btn-primary">View </button>
+                                                                    <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}" title="Add To Cart" class="add-to-cart btn btn-primary">View </a >
                                                                 @endif
-                                                        <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
+                                                        <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}" class="ec-btn-group quickview" data-link-action="quickview"
                                                             title="Quick view" data-bs-toggle="modal"
                                                             data-bs-target="#ec_quickview_modal"><img
                                                                 src="assets/images/icons/quickview.svg" class="svg_img pro_svg"

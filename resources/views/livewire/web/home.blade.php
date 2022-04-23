@@ -10,7 +10,7 @@
                             @foreach ($categories as $category)
                                 <div class="ec_cat_content">
                                     <div class="ec_cat_inner">
-                                        <a href="#">
+                                        <a href="">
 
                                             <div class="ec-cat-image">
                                                 <img src="{{ asset('storage/media/' . $category->image) }}" class="svg_img cat_svg" alt="" />
@@ -997,3 +997,6 @@
         <!--services Section End -->
 
 </div>
+@push('scripts')
+
+@endpush

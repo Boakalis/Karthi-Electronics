@@ -706,7 +706,7 @@ select {
 			}
 		}
 	}
-	
+
 	.section {
 		i {
 			font-size: 16px;
@@ -768,7 +768,7 @@ select {
 	margin: 0;
 	padding: 0;
 	.bg {
-		margin: 5px; 
+		margin: 5px;
 		a{
 			@include ease3;
 			box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -1882,7 +1882,7 @@ li.ec-brand-item {
 	width: 100%;
 	min-height: 300px;
 	background-image: url("../images/offer-image/offer_bg_5.png");
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -3638,7 +3638,7 @@ section.ec-instagram-section {
   .ec-main-slider{
     .slide-1, .slide-2, .slide-3 {
       height: 60vh;
-    } 
+    }
   }
   .ec-insta-inner {
     img {

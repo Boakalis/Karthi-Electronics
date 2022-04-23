@@ -150,9 +150,9 @@
                             <!-- Header wishlist End -->
                             <!-- Header Cart Start -->
                             <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                                <div class="header-icon"><img src="assets/images/icons/cart_5.svg"
+                                <div class="header-icon"><img style="width: 20px;height:20px;"  src="{{asset('web/assets/images/icons/cart_5.svg')}}"
                                         class="svg_img header_svg" alt="" /></div>
-                                <span class="ec-btn-title"><span class="ec-cart-count">3</span> item(s) - $350.00</span>
+                                <span class="ec-btn-title"  ><span id="count" class="step">3</span></span>
 
                             </a>
                             <!-- Header Cart End -->

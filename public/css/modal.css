@@ -1,0 +1,258 @@
+/* @import "compass/reset";
+/* START modal-container with login & sign in */
+ .modal-btn {
+	 display: block;
+	 color: #1f6b58;
+	 background: #a4e5d5;
+	 width: 160px;
+	 height: 50px;
+	 line-height: 50px;
+	 font-size: 22px;
+	 outline: solid #1f6b58 1px;
+	 border-radius: 3px;
+	 cursor: pointer;
+	 text-align: center;
+	 transition: 0.1s ease-in;
+}
+ .modal-btn:hover {
+	 transform: scale(1.3);
+	 filter: drop-shadow(3px 7px 4px rgba(0, 0, 0, 0.2));
+	 font-size: 23px;
+}
+ .modal-close-btn {
+	 display: inline-block;
+	 margin: 10px;
+	 width: 50px;
+	 height: 50px;
+	 cursor: pointer;
+	 transition: 0.2s;
+}
+ .modal-close-btn::before, .modal-close-btn::after {
+	 content: '';
+	 position: absolute;
+	 height: 50px;
+	 width: 1px;
+	 background: #1f6b58;
+	 left: calc(50%-1px);
+	 transform: rotate(-45deg);
+}
+ .modal-close-btn::after {
+	 transform: rotate(45deg);
+}
+ .modal-close-btn:hover {
+	 transform: rotate(90deg) scale(1.1);
+}
+ .modal-container .modal-content, .modal-container .modal-backdrop {
+	 height: 0;
+	 width: 0;
+	 opacity: 0;
+	 visibility: hidden;
+	 overflow: hidden;
+	 cursor: pointer;
+	 transition: opacity 0.2s ease-in;
+}
+ .modal-container #modal-toggle {
+	 display: none;
+}
+ .modal-container #modal-toggle:checked ~ .modal-backdrop {
+	 background-color: rgba(0, 0, 0, 0.6);
+	 width: 100vw;
+	 height: 100vh;
+	 position: fixed;
+	 left: 0;
+	 top: 0;
+	 z-index: 9;
+	 visibility: visible;
+	 opacity: 1;
+	 transition: opacity 0.2s ease-in;
+}
+ .modal-container #modal-toggle:checked ~ .modal-content {
+	 opacity: 1;
+	 text-align: center;
+	 background-color: #fff;
+	 width: 500px;
+	 height: 490px;
+	 position: fixed;
+	 top: 5%;
+	 left: calc(50% - 250px);
+	 border-radius: 4px;
+	 z-index: 999;
+	 pointer-events: auto;
+	 cursor: auto;
+	 visibility: visible;
+	 box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+ @media (max-width: 700px) {
+	 .modal-container #modal-toggle:checked ~ .modal-content {
+		 width: 100%;
+		 height: 100%;
+		 overflow: auto;
+		 top: 0;
+		 left: 0;
+		 border-radius: 0px;
+		 padding: 0;
+	}
+}
+ @media (max-height: 500px) {
+	 .modal-container #modal-toggle:checked ~ .modal-content {
+		 overflow: scroll;
+		 height: 100%;
+	}
+}
+/* BASIC FUNCTIONALITY .tabs */
+ .tabs {
+	 margin: 10px 0;
+	 display: -webkit-flex;
+	 display: -moz-flex;
+	 display: -ms-flex;
+	 display: -o-flex;
+	 display: flex;
+	 flex-wrap: wrap;
+}
+ .tabs > .radio {
+	 display: none;
+}
+ .tabs > .radio:checked + .table + .tabs-content {
+	 display: block;
+}
+ .tabs > .table {
+	 order: -1;
+	 flex-basis: 50%;
+	 flex-shrink: 1;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+	 white-space: nowrap;
+}
+ .tabs .tabs-content {
+	 width: 100%;
+	 display: none;
+}
+/* END BASIC FUNCTIONALITY .tabs */
+/* THEME for .tabs with login & sign-in */
+ .tabs > .table {
+	 text-align: center;
+	 padding: 20px 0;
+	 border-bottom: solid #a4e5d5 5px;
+	 cursor: pointer;
+}
+ .tabs > .table:hover {
+	 background: rgba(164, 229, 213, 0.2);
+}
+ .tabs > .radio:checked + .table {
+	 background: #a4e5d5;
+	 cursor: auto;
+}
+ .tabs > .radio:checked + .table span {
+	 display: inline-block;
+	 transform: scale(1.2);
+	 font-weight: 500;
+	 transition: 0.1s;
+}
+ .tabs > .tabs-content {
+	 padding: 20px 10px;
+}
+/* END THEME for .tabs with login & sign-in */
+/* START style login & sign up */
+ .tabs > .tabs-content form {
+	 display: -webkit-flex;
+	 display: -moz-flex;
+	 display: -ms-flex;
+	 display: -o-flex;
+	 display: flex;
+	 -webkit-flex-direction: column;
+	 -moz-flex-direction: column;
+	 -ms-flex-direction: column;
+	 -o-flex-direction: column;
+	 flex-direction: column;
+}
+ .tabs > .tabs-content form input {
+	 padding: 10px;
+	 margin: 10px;
+	 border: solid 1px #1f6b58;
+	 font-size: 14px;
+}
+ .tabs > .tabs-content .login_socnet {
+	 display: -webkit-flex;
+	 display: -moz-flex;
+	 display: -ms-flex;
+	 display: -o-flex;
+	 display: flex;
+	 justify-content: space-around;
+	 -ms-align-items: center;
+	 align-items: center;
+}
+ .tabs > .tabs-content .login_socnet a {
+	 color: #000;
+	 padding: 10px;
+	 font-size: 40px;
+	 text-decoration: none;
+	 transition: 0.2s;
+}
+ .tabs > .tabs-content .login_socnet a:hover {
+	 transform: scale(1.3);
+	 filter: drop-shadow(1px 5px 2px rgba(0, 0, 0, 0.3));
+}
+ .tabs > .tabs-content .login_socnet .fa-vk {
+	 color: #45668e;
+}
+ .tabs > .tabs-content .login_socnet .fa-google-plus {
+	 color: #dd4b39;
+}
+ .tabs > .tabs-content .login_socnet .fa-facebook {
+	 color: #3b5998;
+}
+ .tabs > .tabs-content input[type="submit"] {
+	 background: #00b488;
+	 background: #a4e5d5;
+	 border: none;
+	 color: #1f6b58;
+	 font-size: 18px;
+	 cursor: pointer;
+}
+ .tabs > .tabs-content .forgot-password label {
+	 color: #1f6b58;
+	 margin: 0 auto;
+	 width: 50%;
+	 text-decoration: none;
+	 font-size: 12px;
+	 line-height: 1.5;
+}
+ .tabs > .tabs-content .forgot-password label:hover {
+	 text-decoration: underline;
+}
+/* END style login & sign up */
+ .forgot-password #forgot-password-toggle {
+	 display: none;
+}
+ .forgot-password .forgot-password-content {
+	 height: 0;
+	 width: 0;
+	 opacity: 0;
+	 visibility: hidden;
+	 overflow: hidden;
+	 cursor: pointer;
+	 transition: opacity 0.2s ease-in;
+}
+ .forgot-password .forgot-password-content input[type="email"] {
+	 width: 80%;
+	 margin-right: 0px;
+	 border-right: none;
+}
+ .forgot-password .forgot-password-content input[type="submit"] {
+	 width: 20%;
+	 margin-left: 0px;
+}
+ .forgot-password #forgot-password-toggle:checked ~ .forgot-password-content {
+	 display: -webkit-flex;
+	 display: -moz-flex;
+	 display: -ms-flex;
+	 display: -o-flex;
+	 display: flex;
+	 opacity: 1;
+	 width: 100%;
+	 height: 100%;
+	 z-index: 999;
+	 pointer-events: auto;
+	 cursor: auto;
+	 visibility: visible;
+} */

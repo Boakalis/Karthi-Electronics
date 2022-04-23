@@ -257,6 +257,12 @@ console.log(url +','+ id);
 
 @yield('javascript')
 @livewireScripts
+<script>
+  Livewire.on('login', function(data) {
+
+           alert(1)
+        });
+        </script>
 @stack('scripts')
 </body>
 
