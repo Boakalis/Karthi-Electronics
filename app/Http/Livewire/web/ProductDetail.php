@@ -62,8 +62,8 @@ class ProductDetail extends Component
                 ]);
             }
         }else{
-            // $this->emit('login');
-            return redirect()->route('login');
+            $this->emit('login');
+            // return redirect()->route('login');
         }
 
 
