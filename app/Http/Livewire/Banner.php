@@ -153,7 +153,7 @@ class Banner extends Component
            $this->options = null;
         }
         if ($this->type_id == 1) {
-           $this->options = SubCategory::where('status',1)->get();
+           $this->options = ModelsCategory::where('status',1)->get();
         }
         if ($this->type_id == 2) {
            $this->options = Product::where('status',1)->get();

@@ -230,7 +230,7 @@
                                                                     name="variants_old[{{$key}}][dealer_price]" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
-                                                            @if (AUth::user()->user_type ==1)
+                                                            @if (Auth::user()->user_type ==1)
                                                             <div class="col-md-3">
                                                                 <label for="sp" class="col-12 col-form-label">Seller Price<span>(In &#8377; )</span></label>
                                                                 <div class="col-12">
@@ -284,7 +284,7 @@
                                                                     <input id="dp" data-name="dealer_prices" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
-                                                            @if (AUth::user()->user_type ==1)
+                                                            @if (Auth::user()->user_type ==1)
                                                             <div class="col-md-3">
                                                                 <label for="sp" class="col-12 col-form-label">Seller Price<span>(In &#8377; )</span></label>
                                                                 <div class="col-12">
@@ -374,6 +374,15 @@
                                                 {{-- <option value="2" {{$data->status ==2 ?'selected' : ''}}  >Waiting for Approval</option> --}}
                                                 <option value="0" {{$data->status ==0 ?'selected' : ''}}  >Inactive</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        
+                                        @endif
+                                        @if (Auth::user()->user_type ==1)
+                                        <div class="col-md-6">
+                                            <label for="sp" class="col-12 col-form-label">Ultra Coin</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" value="{{@$data->ultra_coin}}" id="ultra" name="ultra_coin" value="" placeholder="Enter Ultra Coin Value" />
                                             </div>
                                         </div>
                                         @endif

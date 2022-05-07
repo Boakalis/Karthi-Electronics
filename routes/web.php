@@ -12,10 +12,13 @@ use App\Http\Controllers\ReferalController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Area;
 use App\Http\Livewire\Banner;
+use App\Http\Livewire\Cart;
 use App\Http\Livewire\Category;
 use App\Http\Livewire\District;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Order;
+use App\Http\Livewire\OrderSuccess;
+use App\Http\Livewire\OrderTrack;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Referals;
 use App\Http\Livewire\Register;
@@ -23,9 +26,11 @@ use App\Http\Livewire\State;
 use App\Http\Livewire\SubCategory;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Vendor;
+use App\Http\Livewire\Web\Category as WebCategory;
 use App\Http\Livewire\web\Home;
 use App\Http\Livewire\web\Product;
 use App\Http\Livewire\web\ProductDetail;
+use App\Http\Livewire\Web\ProductPage;
 use App\Http\Livewire\web\SubCategory as WebSubCategory;
 
 /*
@@ -124,9 +129,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
-Route::get('/', Home::class)->name('home');
+Route::get('/',  Home::class)->name('home');
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
+Route::get('/cart', Cart::class)->name('cart');
+Route::get('/categories', WebCategory::class)->name('category');
+Route::get('/products', ProductPage::class)->name('product');
+Route::get('/order-success', OrderSuccess::class)->name('order-success');
+Route::get('/track-order', OrderTrack::class)->name('track-order');
 Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
 Route::get('/{category}/{slug}', Product::class)->name('web.product');
 Route::get('/{category}/{product}/{slug}', ProductDetail::class)->name('web.product.detail');

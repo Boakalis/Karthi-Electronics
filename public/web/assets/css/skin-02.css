@@ -16603,7 +16603,7 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .ec-style .ec-button .whatsapp {
   width: 23px;
   height: 23px;
-  background-image: url(../images/common/whatsapp.png);
+  background-image: url(../web/images/common/whatsapp.png);
   background-repeat: no-repeat;
   background-size: 100%;
   display: table;
@@ -32214,7 +32214,7 @@ input[type=email]:focus::-webkit-input-placeholder {
    vendor Page CSS
    	- Single Vendor
    	- Multi Vendor
-   	- Vendor Sidebar 
+   	- Vendor Sidebar
    	- Vendor Dashboard
    	- Vendor Upload
    	- Vendor Profile

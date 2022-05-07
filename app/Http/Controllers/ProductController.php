@@ -115,6 +115,7 @@ class ProductController extends Controller
 
         if (Auth::user()->user_type == 1) {
             $data['dealer_id'] = $request->dealer_id;
+            $data['ultra_coin'] = $request -> ultra_coin;
         } else {
             $data['dealer_id'] = Auth::user()->id;
         }
@@ -177,7 +178,7 @@ class ProductController extends Controller
         $data = Product::where('slug', $slug)->with('variants')->first();
         $dealers = User::where('user_type', 2)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
-        return view('admin.products.review', compact('data','dealers','categories'));
+        return view('admin.products.edit', compact('data','dealers','categories'));
     }
 
 
@@ -217,7 +218,6 @@ class ProductController extends Controller
             'short_description' => 'nullable|max:255',
             'dealer_price' => 'required_without:is_products_variant',
             // 'sale_price' => 'required_without:is_products_variant' ,
-
             'image' => 'nullable|image',
         ], [
             'name.required' => 'Please Enter Name',
@@ -297,6 +297,7 @@ class ProductController extends Controller
 
         if (Auth::user()->user_type == 1) {
             $data['dealer_id'] = $request->dealer_id;
+            $data['ultra_coin'] = $request -> ultra_coin;
         } else {
             $data['dealer_id'] = Auth::user()->id;
         }

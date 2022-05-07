@@ -22,7 +22,7 @@
                                     <select class="form-control" wire:model="type_id"
                                         wire:click="changeType($event.target.value)" id="">
                                         <option value="0">None</option>
-                                        <option value="1">Sub-Category</option>
+                                        <option value="1">Category</option>
                                         <option value="2">Product</option>
                                     </select>
                                     @if ($errors->has('type_id'))

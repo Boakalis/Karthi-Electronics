@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('cart_details', function (Blueprint $table) {
-            $table->integer('color_id')->nullable();
+            $table->string('color_id')->nullable();
             $table->integer('variant_id')->nullable();
 
         });

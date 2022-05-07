@@ -172,7 +172,7 @@ aria-hidden="true">
                             <input type="text" name="amount" placeholder="Enter Amount for coupon" wire:model="amount"  class="form-control" />
                             @error('amount') <span class="text-danger error">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-1 col-4 offer"  >
+                        {{-- <div class="mb-1 col-4 offer"  >
                             <label>Offer Type: </label>
                             <select  name="offer_type" id="offer_type"  class="form-control offer-type " wire:model="offer_type" >
                                 <option value="1" selected >New</option>
@@ -194,12 +194,12 @@ aria-hidden="true">
                             <label>Select Product: </label>
                             <select  name="product_id"  class="form-control" wire:model="product_id" >
                                 @foreach ($products as $product)
-                                <option value="{{$product->id}}"  >{{$product->english_name}}</option>
+                                <option value="{{$product->id}}"  >{{$product->name}}</option>
                                 @endforeach
                             </select>
                             @error('product_id') <span class="text-danger error">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="mb-1  col-4">
+                        </div> --}}
+                        {{-- <div class="mb-1  col-4">
                             <label >User Limit: </label>
                             <input type="text" name="user_limit" placeholder="Maximum Amount for coupon" wire:model="user_limit" class="form-control" />
                             @error('user_limit') <span class="text-danger error">{{ $message }}</span> @enderror
@@ -208,7 +208,7 @@ aria-hidden="true">
                             <label >Coupon Limit: </label>
                             <input type="text" name="max_limit" placeholder="Maximum Amount for coupon" class="form-control" wire:model="max_limit" />
                             @error('max_limit') <span class="text-danger error">{{ $message }}</span> @enderror
-                        </div>
+                        </div> --}}
                         <div class="mb-1 col-4 ">
                             <label>Expiry Date: </label>
                             <input type="text" wire:model="valid_date" name="valid_date" placeholder="Exipiry-Date" class="form-control flatpickr-basic flatpickr-input" />

@@ -70,75 +70,12 @@
 
         @yield('content')
 
+
         <!-- Footer Start -->
         @include('web.layouts.footer')
         <!-- Footer Area End -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-12 col-xs-12" >
-                                {{-- <!-- Swiper -->
-                                <div class="qty-product-cover">
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/39_2.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/40_1.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/40_2.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/41_1.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="qty-nav-thumb">
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/39_1.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/39_2.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/40_1.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/40_2.jpg" alt="" />
-                                    </div>
-                                    <div class="qty-slide">
-                                        <img class="img-responsive" src="assets/images/product-image/41_1.jpg" alt="" />
-                                    </div>
-                                </div> --}}
-                                <img src="{{asset('12.jpg')}}" style="height: 100%" alt="">
 
-                            </div>
-                            <div class="col-md-7 col-sm-12 col-xs-12">
-                                <div class="login">
-                                    <center> <h4 class="text-uppercase">Login</h4> </center>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal end -->
 
         <!-- Click To ChatPro -->
 
@@ -168,27 +105,30 @@
         </div>
         <!--successfully toast end --> --}}
 
+
+
         <!-- Vendor JS -->
-        <script src="{{asset('web/assets/js/vendor/jquery-3.5.1.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/vendor/popper.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/vendor/bootstrap.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/vendor/jquery-migrate-3.3.0.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/vendor/modernizr-3.11.2.min.js')}}" data-turbolinks-eval="false" ></script>
+        <script src="{{asset('web/assets/js/vendor/jquery-3.5.1.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/vendor/popper.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/vendor/bootstrap.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
 
         <!--Plugins JS-->
-        <script src="{{asset('web/assets/js/plugins/swiper-bundle.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/countdownTimer.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/scrollup.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/jquery.zoom.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/slick.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/infiniteslidev2.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/chat-pro.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/vendor/jquery.magnific-popup.min.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/plugins/jquery.sticky-sidebar.js')}}" data-turbolinks-eval="false" ></script>
+        <script src="{{asset('web/assets/js/plugins/swiper-bundle.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/countdownTimer.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/scrollup.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/jquery.zoom.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/slick.min.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/infiniteslidev2.js')}}"></script>
+        <script src="{{asset('web/assets/js/plugins/fb-chat.js')}}"></script>
 
         <!-- Main Js -->
-        <script src="{{asset('web/assets/js/vendor/index.js')}}" data-turbolinks-eval="false" ></script>
-        <script src="{{asset('web/assets/js/demo-5.js')}}" data-turbolinks-eval="false" ></script>
+        <script src="{{asset('web/assets/js/vendor/index.js')}}"></script>
+        <script src="{{asset('web/assets/js/demo-5.js')}}"></script>
+
+
+
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {

@@ -536,7 +536,7 @@ h2, h3, h4, h5, h6 {
 			}
 		}
 	}
-	
+
 	.section {
 		i {
 			font-size: 16px;
@@ -600,7 +600,7 @@ h2, h3, h4, h5, h6 {
 	.bg {
 		@include ease3;
 		margin: 3px;
-		padding: 2px; 
+		padding: 2px;
     	border-radius: 30px;
 		&:hover {
 			box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -764,7 +764,7 @@ h2, h3, h4, h5, h6 {
 		.whatsapp {
 			width: 23px;
 			height: 23px;
-			background-image: url(../images/common/whatsapp.png);
+			background-image: url(../web/images/common/whatsapp.png);
 			background-repeat: no-repeat;
 			background-size: 100%;
 			display: table;
@@ -996,7 +996,7 @@ h2, h3, h4, h5, h6 {
 	background: $flot-btn-bg;
 	.ec-header-btn {
 		position: relative;
-		display: block;		
+		display: block;
 		.svg_img {
 			width: 45px;
 			height: 45px;
@@ -1144,9 +1144,9 @@ h2, h3, h4, h5, h6 {
 						border: 0;
 						padding: 4px 5px;
 						border-radius: 0;
-						box-shadow: none; 
+						box-shadow: none;
 						&:focus-visible, &:focus {
-							box-shadow: none !important; 
+							box-shadow: none !important;
 							border: 0 !important;
 							outline: none !important;
 						}
@@ -1588,7 +1588,7 @@ h2, h3, h4, h5, h6 {
 			font-size: 30px;
 			font-weight: 700;
 			color: #fff;
-			border-bottom: 1px solid;	
+			border-bottom: 1px solid;
 		}
 		p {
 			text-align: center;
@@ -1607,51 +1607,51 @@ h2, h3, h4, h5, h6 {
 @keyframes slideInUp {
   0% {
     opacity: 0;
-    transform: translateY(50%); 
+    transform: translateY(50%);
   }
   100% {
     opacity: 1;
-    transform: none; 
-  } 
+    transform: none;
+  }
 }
 @keyframes slideInDown {
   0% {
     opacity: 0;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
   }
   100% {
     opacity: 1;
-    transform: none; 
-  } 
+    transform: none;
+  }
 }
 @keyframes slideInleft {
   0% {
     opacity: 0;
-    transform: translateX(50%); 
+    transform: translateX(50%);
   }
   100% {
     opacity: 1;
-    transform: none; 
-  } 
+    transform: none;
+  }
 }
 @keyframes slideInRight {
   0% {
     opacity: 0;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
   }
   100% {
     opacity: 1;
-    transform: none; 
-  } 
+    transform: none;
+  }
 }
 
 @keyframes fadeIn {
   0% {
-    opacity: 0; 
+    opacity: 0;
   }
   100% {
-    opacity: 1; 
-  } 
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
@@ -1660,9 +1660,9 @@ h2, h3, h4, h5, h6 {
     transform: scale(0.5);
   }
   100% {
-    opacity: 1; 
+    opacity: 1;
     transform: none;
-  } 
+  }
 }
 @keyframes zoomReverseIn {
   0% {
@@ -1670,20 +1670,20 @@ h2, h3, h4, h5, h6 {
     transform: scale(1.5);
   }
   100% {
-    opacity: 1; 
+    opacity: 1;
     transform: none;
-  } 
+  }
 }
 
 @keyframes flipInY {
   0% {
-    opacity: 0; 
+    opacity: 0;
     transform: rotateY(90deg);
   }
   100% {
-    opacity: 1; 
+    opacity: 1;
     transform: none;
-  } 
+  }
 }
 
 

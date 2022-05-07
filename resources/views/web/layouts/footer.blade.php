@@ -5,15 +5,15 @@
                 <div class="row">
                     <div class="col-sm-12 col-lg-4 ec-footer-contact">
                         <div class="ec-footer-widget">
-                            <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo-5.png"
-                                        alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo-5.png"
+                            <div class="ec-footer-logo"><a href="#"><img src="{{asset('web/bassets/images/logo/footer-logo-5.png')}}"
+                                        alt=""><img class="dark-footer-logo" src="{{asset('web/bassets/images/logo/dark-logo-5.png')}}"
                                         alt="Site Logo" style="display: none;" /></a></div>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             <h4 class="ec-footer-heading">Ask Me questions</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
                                     <li class="ec-footer-link">
-                                        <span class="call-img"><img src="assets/images/icons/call_5.svg"
+                                        <span class="call-img"><img src="{{asset('web/bassets/images/icons/call_5.svg')}}"
                                                 class="svg_img foo_img" alt="" /></span>
                                         <span class="call-desc">
                                             <span>Got questions? Call us 24/7!</span>
@@ -91,9 +91,9 @@
                         </div>
                         <div class="ec-footer-widget ec-share">
                             <ul>
-                                <li class="ec-share-link"><a href="#"><img src="assets/images/icons/iphone.png"
+                                <li class="ec-share-link"><a href="#"><img src="{{asset('web/bassets/images/icons/iphone.png')}}"
                                             alt="" /></a></li>
-                                <li class="ec-share-link"><a href="#"><img src="assets/images/icons/google.png"
+                                <li class="ec-share-link"><a href="#"><img src="{{asset('web/bassets/images/icons/google.png')}}"
                                             alt="" /></a></li>
                             </ul>
                         </div>
@@ -116,7 +116,7 @@
                     <div class="col footer-bottom-right">
                         <div class="footer-bottom-payment d-flex justify-content-end">
                             <div class="payment-link">
-                                <img src="assets/images/icons/payment.png" alt="">
+                                <img src="{{asset('web/bassets/images/icons/payment.png')}}" alt="">
                             </div>
 
                         </div>

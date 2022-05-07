@@ -11,7 +11,7 @@
                                     <h2 class="ec-slide-stitle">{{@$slider->title}}</h2>
                                     <h1 class="ec-slide-title">{{@$slider->name}}</h1>
                                     <p>{{@$slider->description}}</p>
-                                    <a href="{{route('web.subcategory',@$slider->option_id)}}" class="btn btn-lg btn-secondary">Shop Now</a>
+                                    <a href="{{route('web.subcategory',@$slider->category->slug)}}" class="btn btn-lg btn-secondary">Shop Now</a>
                                 </div>
                             </div>
                         </div>

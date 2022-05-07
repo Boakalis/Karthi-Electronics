@@ -75,7 +75,9 @@ class User extends Component
 
     public function mount()
     {
-        $this->vendors = ModelUser::where('user_type',3)->where('email','LIKE','%'.$this->search.'%')->with('referer','wallet')->get();
+        $this->vendors = ModelUser::
+        // where('user_type',3)
+        where('email','LIKE','%'.$this->search.'%')->with('referer','wallet')->get();
 
 
     }

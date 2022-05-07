@@ -48,9 +48,9 @@
                                     <div class="ec-pro-image-outer">
                                         <div class="ec-pro-image">
                                             <a href="product-left-sidebar.html" class="image">
-                                                <img class="main-image" src="assets/images/product-image/39_1.jpg"
+                                                <img class="main-image" src="{{asset('web/assets/images/product-image/39_1.jpg')}}"
                                                     alt="Product" />
-                                                <img class="hover-image" src="assets/images/product-image/39_2.jpg"
+                                                <img class="hover-image" src="{{asset('web/assets/images/product-image/39_2.jpg')}}"
                                                     alt="Product" />
                                             </a>
                                         </div>
@@ -61,7 +61,7 @@
                                                 <div class="ec-pro-color">
                                                     <ul class="ec-opt-swatch ec-change-img">
                                                         <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/39_1.jpg"
+                                                                data-src="{{asset('web/assets/images/product-image/39_1.jpg')}}"
                                                                 data-src-hover="assets/images/product-image/39_2.jpg"
                                                                 data-tooltip="Gray"><span
                                                                     style="background-color:#ef7ca3;"></span></a></li>
@@ -506,7 +506,7 @@
                                 <div class="ec-pro-image-outer">
                                     <div class="ec-pro-image">
                                         <a href="product-left-sidebar.html" class="image">
-                                            <img class="main-image" src="assets/images/product-image/39_1.jpg"
+                                            <img class="main-image" src="{{asset('web/assets/images/product-image/39_1.jpg')}}"
                                                 alt="Product" />
                                         </a>
                                     </div>

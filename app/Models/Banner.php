@@ -12,4 +12,14 @@ class Banner extends Model
     use SoftDeletes;
     protected $guarded = [];
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class,'type_id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class,'type_id');
+    }
+
 }

@@ -311,7 +311,7 @@
                                                                     <input id="dp" data-name="dealer_prices" class="form-control"  type="number" />
                                                                 </div>
                                                             </div>
-                                                            @if (AUth::user()->user_type ==1)
+                                                            @if (Auth::user()->user_type ==1)
 
                                                             <div class="col-md-3">
                                                                 <label for="sp" class="col-12 col-form-label">Seller Price<span>(In &#8377; )</span></label>
@@ -398,6 +398,12 @@
                                                 {{-- <option value="2">Waiting for Approval</option> --}}
                                                 <option value="0">Inactive</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="sp" class="col-12 col-form-label">Ultra Coin</label>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="ultra" name="ultra_coin" value="" placeholder="Enter Ultra Coin Value" />
                                             </div>
                                         </div>
                                         @endif
