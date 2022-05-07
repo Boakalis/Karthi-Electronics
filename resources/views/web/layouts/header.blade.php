@@ -241,7 +241,7 @@
                             <li class=""><a href="{{route('home')}}">Home</a>
 
                             </li>
-                            <li class=""><a href="{{route('category')}}">Categorie</a>
+                            <li class=""><a href="{{route('category')}}">Categories</a>
                             </li>
                             <li class=""><a href="{{route('product')}}">Products</a>
                             </li>
@@ -255,11 +255,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col ec-spe-offer-block">
+                {{-- <div class="col ec-spe-offer-block">
                     <div class="ec-spe-offer-link">
                         <a href="offer.html" class="ec-spe-offer-title">Special offer</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
