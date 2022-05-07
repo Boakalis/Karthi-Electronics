@@ -107,6 +107,8 @@
                                                 </div>
                                             </div>
                                         @endforeach
+                                    @else
+                                        <center><h1>No Data Found</h1></center>
                                     @endif
                                 </div>
                             </div>
