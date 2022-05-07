@@ -134,7 +134,7 @@
             <div class="row m-tb-minus-15">
                 <div class="">
                     <div class="row">
-
+                        @if (isset($productBannerData[0]) && !empty($productBannerData[0]))
                         <div class="ec-banner-left col-6">
                             <div class="ec-banner-block ec-banner-block-1 col-sm-12">
                                 <div class="banner-block">
@@ -150,6 +150,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         @if (isset($productBannerData[1]) && !empty($productBannerData[1]))
                             <div class="ec-banner-right col-6">
                                 <div class="ec-banner-block ec-banner-block-2 col-sm-12">
