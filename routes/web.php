@@ -26,11 +26,11 @@ use App\Http\Livewire\State;
 use App\Http\Livewire\SubCategory;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Vendor;
-use App\Http\Livewire\Web\Category as WebCategory;
+use App\Http\Livewire\web\Category as WebCategory;
 use App\Http\Livewire\web\Home;
 use App\Http\Livewire\web\Product;
 use App\Http\Livewire\web\ProductDetail;
-use App\Http\Livewire\Web\ProductPage;
+use App\Http\Livewire\web\ProductPage;
 use App\Http\Livewire\web\SubCategory as WebSubCategory;
 
 /*
