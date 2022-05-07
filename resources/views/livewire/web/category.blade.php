@@ -36,7 +36,7 @@
                         <div class="shop-pro-content">
                             <div class="shop-pro-inner">
                                 <div class="row">
-                                    @if (isset($datas) && !empty($datas))
+                                    @if (isset($datas) && $datas->count() >0)
                                         @foreach ($datas as $data)
                                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                                 <div class="ec-product-inner">
