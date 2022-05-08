@@ -430,49 +430,7 @@
         </div>
     </section>
 
-    <section class="section  section-space-p">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-title-block">
-                    <div class="section-title">
-                        <h2 class="ec-title">Browse Our Store</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-tb-minus-15 my-2">
-                <div class="col">
-                    <div class="row">
-                        @if (isset($categories) && !empty($categories))
-                        @foreach ($categories as $category)
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-6 my-2">
-                                    <div class="ec-product-inner">
-                                        {{-- <div class="ec-product-hover"></div> --}}
-                                        <div class="ec-pro-image-outer">
-                                            <div class="text-center">
-
-                                                <a href="{{ route('web.subcategory', $category->slug) }}" class="image">
-                                                    <img class="responsive-image"  src="{{ asset('storage/media/' . @$category->image) }}"
-                                                        alt="Product" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <center  >
-                                            <h6 class="ec-pro-title fw-bold mt-3"><a
-                                                    href="{{ route('web.subcategory', $category->slug) }}">
-                                                    {{ $category->name }}</a></h6>
-                                        </center>
-
-
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
 
     <section class="section  section-space-p">
