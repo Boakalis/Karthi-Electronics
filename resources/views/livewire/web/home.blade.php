@@ -547,7 +547,7 @@
                 text-transform: uppercase;
                 text-align: center;
 
-                font-weight: 500;" href="{{route('product')}}" class="btn btn-primary">View All Products</a></center>
+                font-weight: 500;" href="{{route('web.single.product')}}" class="btn btn-primary">View All Products</a></center>
 
 
         </div>
