@@ -197,7 +197,7 @@
 
         Livewire.on('stored', function() {
             $('#formReset').trigger("reset");
-            toastr.success('Category Added');
+            toastr.success('Banner Added');
             location.reload();
         });
         function changeOption(e) {
@@ -205,7 +205,7 @@
         }
         Livewire.on('updated', function() {
 
-            toastr.info('Category Updated');
+            toastr.info('Banner Updated');
             location.reload();
         });
     </script>
