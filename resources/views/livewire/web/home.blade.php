@@ -31,7 +31,7 @@
     @include('web.layouts.includes.slider')
     <!--  category Section Start -->
     <section class="section ec-category-section d-none d-lg-block d-xl-block section-space-mb"
-        style="background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);">
+        style="background: white;">
         <div class="container">
             <div class="row">
                 <div class="ec_cat_slider">
