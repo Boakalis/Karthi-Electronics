@@ -17,8 +17,10 @@ use App\Http\Livewire\Category;
 use App\Http\Livewire\District;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Order;
+use App\Http\Livewire\OrderIndex;
 use App\Http\Livewire\OrderSuccess;
 use App\Http\Livewire\OrderTrack;
+use App\Http\Livewire\OrderView;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Referals;
 use App\Http\Livewire\Register;
@@ -31,7 +33,9 @@ use App\Http\Livewire\web\Home;
 use App\Http\Livewire\web\Product;
 use App\Http\Livewire\web\ProductDetail;
 use App\Http\Livewire\web\ProductPage;
+use App\Http\Livewire\web\Profile as WebProfile;
 use App\Http\Livewire\web\SubCategory as WebSubCategory;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,8 +128,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('/coupon-status', [CouponControllerr::class, 'status'])->name('admin.coupon.status');
     Route::post('/update-coupon', [CouponControllerr::class, 'update'])->name('admin.coupon.update');
     Route::post('/delete-coupon', [CouponControllerr::class, 'update'])->name('admin.coupon.delete');
-
-
+    // Route::get('/orders', [OrderIndex::class])->name('admin.order.index');
 
 });
 
@@ -135,8 +138,14 @@ Route::get('/register', Register::class)->name('register');
 Route::get('/cart', Cart::class)->name('cart');
 Route::get('/categories', WebCategory::class)->name('category');
 Route::get('/products', ProductPage::class)->name('product');
+Route::get('/profile', WebProfile::class)->name('user.profile');
 Route::get('/order-success', OrderSuccess::class)->name('order-success');
+Route::get('/orders', OrderView::class)->name('order.view');
 Route::get('/track-order', OrderTrack::class)->name('track-order');
+Route::get('/log-out', function(){
+    Auth::logout();
+    return redirect()->route('home');
+})->name('logOut');
 Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
 Route::get('/{category}/{slug}', Product::class)->name('web.product');
 Route::get('/{category}/{product}/{slug}', ProductDetail::class)->name('web.product.detail');

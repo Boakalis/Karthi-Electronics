@@ -11,8 +11,8 @@ class Register extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required|email',
-        'mobile' => 'required|numeric|digits_between:7,10',
+        'email' => 'required|email|unique:users,email',
+        'mobile' => 'required|numeric|digits_between:8,15|unique:mobile',
         'password' => 'min:6|required',
         'confirmPassword' => 'required|min:6|same:password'
 
@@ -30,7 +30,7 @@ class Register extends Component
             'name' => $this->name,
             'email' => $this->email,
             'mobile' => $this->mobile,
-            'password' => $this->password,
+            'password' => bcrypt($this->password),
             'user_type' => 3,
             'status' => 1,
         ]);

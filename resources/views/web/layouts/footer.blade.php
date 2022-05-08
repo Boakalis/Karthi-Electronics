@@ -1,14 +1,14 @@
 <footer class="ec-footer">
     <div class="footer-container">
-        <div class="footer-top section-space-footer-p">
+        <div class="footer-top section-space-footer-p p-0 pt-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-lg-4 ec-footer-contact">
+                    <div class="col-sm-12 col-lg-3 ec-footer-contact">
                         <div class="ec-footer-widget">
-                            <div class="ec-footer-logo"><a href="#"><img src="{{asset('web/bassets/images/logo/footer-logo-5.png')}}"
-                                        alt=""><img class="dark-footer-logo" src="{{asset('web/bassets/images/logo/dark-logo-5.png')}}"
-                                        alt="Site Logo" style="display: none;" /></a></div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="ec-footer-logo"><a href="#"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
+                                {{-- <img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" /> --}}
+                                    </a></div>
+                            <p>{!!@$globalSetting->address!!}</p>
                             <h4 class="ec-footer-heading">Ask Me questions</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
@@ -16,77 +16,47 @@
                                         <span class="call-img"><img src="{{asset('web/bassets/images/icons/call_5.svg')}}"
                                                 class="svg_img foo_img" alt="" /></span>
                                         <span class="call-desc">
-                                            <span>Got questions? Call us 24/7!</span>
-                                            <span><a href="tel:+80080018588">(800) 8001-8588</a>, <a href="tel:+0600874548">(0600) 874 548</a></span>
+                                            <span>Got questions? Call us 12/7! (10AM -10PM)</span>
+                                            <span><a href="tel:+91{{@$globalSetting->phone}}">+91 {{@$globalSetting->phone}}</a></span>
                                         </span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="ec-footer-widget ec-footer-social">
-                            <h4 class="ec-footer-heading">Follow Us</h4>
+                       
+                    </div>
+                    <div class="col-sm-12 col-lg-3 ec-footer-info">
+                        <div class="ec-footer-widget">
+                            <h4 class="ec-footer-heading">Account</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="list-inline-item"><a href="#"><i class="ecicon eci-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i
-                                                class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="ecicon eci-linkedin"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i class="ecicon eci-twitter"></i></a>
-                                    </li>
+                                    <li class="ec-footer-link"><a href="about-us.html">My Account</a></li>
+                                    <li class="ec-footer-link"><a href="track-order.html">Order History</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-2 ec-footer-info">
+                    <div class="col-sm-12 col-lg-3 ec-footer-account">
+                        <div class="ec-footer-widget">
+                            <h4 class="ec-footer-heading">Services</h4>
+                            <div class="ec-footer-links">
+                                <ul class="align-items-center">
+                                    <li class="ec-footer-link"><a href="privacy-policy.html">Privacy policy </a></li>
+                                    <li class="ec-footer-link"><a href="terms-condition.html">Terms & conditions</a></li>
+                                    <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 ec-footer-news">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Information</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
-                                    <li class="ec-footer-link"><a href="track-order.html">Delivery Information</a></li>
-                                    <li class="ec-footer-link"><a href="privacy-policy.html">Policy & policy </a></li>
-                                    <li class="ec-footer-link"><a href="terms-condition.html">Terms & conditions</a></li>
+                                    <li class="ec-footer-link"><a href="privacy-policy.html">About Us </a></li>
+                                    <li class="ec-footer-link"><a href="terms-condition.html">Track Order</a></li>
                                     <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
-                                    <li class="ec-footer-link"><a href="#">Returns</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-2 ec-footer-account">
-                        <div class="ec-footer-widget">
-                            <h4 class="ec-footer-heading">Customer Service</h4>
-                            <div class="ec-footer-links">
-                                <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#">Site Map</a></li>
-                                    <li class="ec-footer-link"><a href="wishlist.html">Wish List</a></li>
-                                    <li class="ec-footer-link"><a href="#">Brands</a></li>
-                                    <li class="ec-footer-link"><a href="offer.html">Gift Certificates</a></li>
-                                    <li class="ec-footer-link"><a href="#">Affiliate</a></li>
-                                    <li class="ec-footer-link"><a href="offer.html">Specials</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-4 ec-footer-news">
-                        <div class="ec-footer-widget">
-                            <h4 class="ec-footer-heading">Newsletter</h4>
-                            <div class="ec-footer-links">
-                                <ul class="align-items-center">
-                                    <li class="ec-footer-link">Sign up for our e-mail to get latest news.</li>
-                                </ul>
-                                <div class="ec-subscribe-form">
-                                    <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
-                                        action="#">
-                                        <div id="ec_news_signup" class="ec-form">
-                                            <input class="ec-email" type="email" required=""
-                                                placeholder="Enter your email" name="ec-email" value="" />
-                                            <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                name="subscribe" value="">subscribe</button>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                         <div class="ec-footer-widget ec-share">
@@ -107,7 +77,7 @@
                     <!-- Footer Copyright Start -->
                     <div class="col footer-copy">
                         <div class="footer-bottom-copy ">
-                            <div class="ec-copy">© 2021 <a class="site-name" href="#">Ekka</a>. All Rights Reserved
+                            <div class="ec-copy">© 2022 <a class="site-name text-uppercase" href="{{route('home')}}">{{@$globalSetting->name}}</a>. {{@$globalSetting->footer_text}}
                             </div>
                         </div>
                     </div>

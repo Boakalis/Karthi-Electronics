@@ -63,6 +63,8 @@
     @include('web.layouts.footer1')
     <!-- Footer Area End -->
 
+    @livewire('change-password')
+    @livewire('forgetpassword')
 
     <!-- Vendor JS -->
     <script src="{{asset('web/assets/js/vendor/jquery-3.5.1.min.js')}}"></script>
@@ -115,6 +117,11 @@
 
             $('#countData').html(val);
         });
+    </script>
+     <script>
+        function password() {
+            alert(1);
+        }
     </script>
     @stack('scripts')
 </body>

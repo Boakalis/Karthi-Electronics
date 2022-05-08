@@ -39,7 +39,7 @@ class AdminController extends Controller
                 'email' => 'nullable|email|max:244',
                 'name' => 'nullable|string|max:244',
                 'description' => 'nullable|string',
-                'default_password' => 'required|min:8|max:24',
+                // 'default_password' => 'required|min:8|max:24',
                 'facebook' => 'nullable|string|max:244',
                 'whatsapp' => 'nullable|string|max:244',
                 'logo' => 'nullable',

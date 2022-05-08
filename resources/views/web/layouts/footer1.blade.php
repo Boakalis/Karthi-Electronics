@@ -30,19 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-3 ec-footer-info">
-                        <div class="ec-footer-widget">
-                            <h4 class="ec-footer-heading">Information</h4>
-                            <div class="ec-footer-links">
-                                <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
-                                    {{-- <li class="ec-footer-link"><a href="faq.html">FAQ</a></li> --}}
-                                    <li class="ec-footer-link"><a href="#">Track Order</a></li>
-                                    <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+              
                     <div class="col-sm-12 col-lg-3 ec-footer-account">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Account</h4>
@@ -62,36 +50,27 @@
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
                                     {{-- <li class="ec-footer-link"><a href="#">Discount Returns</a></li> --}}
-                                    <li class="ec-footer-link"><a href="#">Policy & policy </a></li>
-                                    <li class="ec-footer-link"><a href="#">Customer Service</a></li>
+                                    <li class="ec-footer-link"><a href="#">Privacy policy </a></li>
                                     <li class="ec-footer-link"><a href="terms-condition.html">Term & condition</a>
+                                        <li class="ec-footer-link"><a href="#">Contact Us</a></li>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-sm-12 col-lg-3 ec-footer-news">
+                    <div class="col-sm-12 col-lg-3 ec-footer-info">
                         <div class="ec-footer-widget">
-                            <h4 class="ec-footer-heading">Newsletter</h4>
+                            <h4 class="ec-footer-heading">Information</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link">Get instant updates about our new products and
-                                        special promos!</li>
+                                    <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
+                                    {{-- <li class="ec-footer-link"><a href="faq.html">FAQ</a></li> --}}
+                                    <li class="ec-footer-link"><a href="#">Track Order</a></li>
+                                    <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
                                 </ul>
-                                <div class="ec-subscribe-form">
-                                    <form id="ec-newsletter-form" name="ec-newsletter-form" method="post" action="#">
-                                        <div id="ec_news_signup" class="ec-form">
-                                            <input class="ec-email" type="email" required=""
-                                                placeholder="Enter your email here..." name="ec-email" value="" />
-                                            <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
-                                                    aria-hidden="true"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,8 +97,8 @@
                     <!-- Footer Copyright Start -->
                     <div class="col text-center footer-copy">
                         <div class="footer-bottom-copy ">
-                            <div class="ec-copy">Copyright © 2021-2022 <a class="site-name text-upper"
-                                    href="#">ekka<span>.</span></a>. All Rights Reserved</div>
+                            <div class="ec-copy">Copyright © 2022 <a class="site-name text-upper"
+                                    href="{{route('home')}}">{{@$globalSetting->name}}<span>.</span></a>. {{@$globalSetting->footer_text}}</div>
                         </div>
                     </div>
                     <!-- Footer Copyright End -->

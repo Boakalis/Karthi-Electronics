@@ -39,7 +39,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Password*</label>
-                                    <input class="mb-0" type="text" wire:model="password" placeholder="Enter Password" required="">
+                                    <input class="mb-0" type="password" wire:model="password" placeholder="Enter Password" required="">
                                     @error('password')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('password')}} </span>
                                     @enderror
@@ -47,7 +47,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Confirm Password*</label>
-                                    <input class="mb-0" type="text" wire:model="confirmPassword" placeholder="Re-enter the password" required="">
+                                    <input class="mb-0" type="password" wire:model="confirmPassword" placeholder="Re-enter the password" required="">
                                     @error('confirmPassword')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('confirmPassword')}} </span>
                                     @enderror

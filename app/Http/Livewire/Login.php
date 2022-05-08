@@ -41,6 +41,8 @@ class Login extends Component
         }
     }
 
+    
+
     public function render()
     {
         return view('livewire.login')->extends('web.layouts.master1')->section('content');

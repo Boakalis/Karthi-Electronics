@@ -100,9 +100,7 @@
                         <!-- Ec Header Logo Start -->
                         <div class="align-self-center">
                             <div class="header-logo">
-                                <a href="index.html"><img src="{{asset('web/assets/images/logo/logo.png')}}" alt="Site Logo" /><img
-                                        class="dark-logo" src="{{asset('web/assets/images/logo/dark-logo.png')}}" alt="Site Logo"
-                                        style="display: none;" /></a>
+                                <a href="{{route('home')}}"><img  style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
                             </div>
                         </div>
                         <!-- Ec Header Logo End -->
@@ -124,19 +122,7 @@
                             <div class="ec-header-bottons">
 
                                 <!-- Header User Start -->
-                                <div class="ec-header-user dropdown">
-                                    <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
-                                            src="{{asset('web/assets/images/icons/user.svg')}}" class="svg_img header_svg" alt="" /></button>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        @guest
-                                        <li><a class="dropdown-item" href="{{route('login')}}l">Register</a></li>
-                                        <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
-                                        @endguest
-                                        @auth
-                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                        @endauth
-                                    </ul>
-                                </div>
+
                                 <!-- Header User End -->
                                 <!-- Header wishlist Start -->
                                 {{-- <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
@@ -147,12 +133,36 @@
                                 <!-- Header wishlist End -->
                                 <!-- Header Cart Start -->
                                 @if (!(\Request::is('cart')))
+                                    @auth
                                     <a href="{{route('cart')}}" class="ec-header-btn ">
                                         <div class="header-icon"><img src="{{asset('web/assets/images/icons/cart.svg')}}"
                                                 class="svg_img header_svg" alt="" /></div>
                                         <span class="ec-header-count cart-count-lable" id="countData">{{@$cartCount}}</span>
                                     </a>
+                                    @endauth
+                                    @guest
+                                    <a href="{{route('login')}}" class="ec-header-btn ">
+                                        <div class="header-icon"><img src="{{asset('web/assets/images/icons/cart.svg')}}"
+                                                class="svg_img header_svg" alt="" /></div>
+                                        <span class="ec-header-count cart-count-lable" id="countData">{{@$cartCount}}</span>
+                                    </a>
+                                    @endguest
                                 @endif
+                                <div class="ec-header-user dropdown">
+                                    <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
+                                            src="{{asset('web/assets/images/icons/user.svg')}}" class="svg_img header_svg" alt="" /></button>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        @guest
+                                        <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+                                        <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                                        @endguest
+                                        @auth
+                                        <li><a class="dropdown-item" href="checkout.html">My Account</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#changePassword" >Change Password</a></li>
+                                        <li><a class="dropdown-item" href="{{route('logOut')}}">LogOut</a></li>
+                                        @endauth
+                                    </ul>
+                                </div>
                                 <!-- Header Cart End -->
                             </div>
                         </div>
@@ -169,9 +179,7 @@
                     <!-- Ec Header Logo Start -->
                     <div class="col">
                         <div class="header-logo">
-                            <a href="index.html"><img src="{{asset('web/assets/images/logo/logo.png')}}" alt="Site Logo" /><img
-                                    class="dark-logo" src="{{asset('web/assets/images/logo/dark-logo.png')}}" alt="Site Logo"
-                                    style="display: none;" /></a>
+                            <a href="{{route('home')}}"><img  style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Ec Header Logo End -->
@@ -428,4 +436,5 @@
         </div>
     </div> --}}
     <!-- ekka Cart End -->
+    @livewire('change-password')
 </div>

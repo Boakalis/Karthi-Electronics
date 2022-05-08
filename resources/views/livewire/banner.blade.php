@@ -1,6 +1,6 @@
 <div>
     @php
-        use App\Models\SubCategory;
+        use App\Models\Category;
         use App\Models\Product;
     @endphp
     <div class="breadcrumb-wrapper breadcrumb-wrapper-2 breadcrumb-contacts">
@@ -136,9 +136,9 @@
                                             <td>
                                                 @if ($banner->type_id == 1)
 
-                                                     {{(SubCategory::where('id', $banner->option_id)->pluck('name')->first())}}
+                                                     {{(Category::where('slug', $banner->option_id)->pluck('name')->first())}}
                                                 @elseif ($banner->type_id == 2)
-                                                    {{Product::where('id', $banner->option_id)->pluck('name')->first()}}
+                                                    {{Product::where('slug', $banner->option_id)->pluck('name')->first()}}
                                                 @else
                                                     NOT AVAILABLE
                                                 @endif

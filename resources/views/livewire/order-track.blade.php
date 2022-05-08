@@ -11,7 +11,7 @@
                         <div class="ec-trackorder-top">
                             <h2 class="ec-order-id">order #{{@$data->orderId}}</h2>
                             <div class="ec-order-detail">
-                                <div>Expected arrival 14-02-2021-2022</div>
+                                <div>Expected arrival : {{\Carbon\Carbon::parse(@$data->order_date)->addDays(2)->format('d-m-Y')}}</div>
                                 {{-- <div>Grasshoppers <span>v534hb</span></div> --}}
                             </div>
                         </div>
@@ -26,10 +26,10 @@
                                     <li class="step0 {{@$data->status >= 2  ? 'active' : ''}} "><span class="ec-track-icon"> <img
                                                 src="{{asset('web/assets/images/icons/track_2.png')}}" alt="track_order"></span><span
                                             class="ec-progressbar-track"></span><span class="ec-track-title">preparing for &nbsp; dispatch</span></li>
-                                    <li class="step0 {{@$data->status >= 3  ? 'active' : ''}} "><span class="ec-track-icon"> <img
+                                    {{-- <li class="step0 {{@$data->status >= 3  ? 'active' : ''}} "><span class="ec-track-icon"> <img
                                                 src="{{asset('web/assets/images/icons/track_3.png')}}" alt="track_order"></span><span
                                             class="ec-progressbar-track"></span><span class="ec-track-title">order
-                                                <br>shipped</span></li>
+                                                <br>shipped</span></li> --}}
                                     <li class="step0 {{@$data->status >= 4  ? 'active' : ''}} "><span class="ec-track-icon"> <img
                                                 src="{{asset('web/assets/images/icons/track_4.png')}}" alt="track_order"></span><span
                                             class="ec-progressbar-track"></span><span class="ec-track-title">order <br>enroute</span></li>

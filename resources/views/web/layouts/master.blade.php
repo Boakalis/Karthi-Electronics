@@ -77,6 +77,8 @@
 
 
 
+        @livewire('forgetpassword')
+
         <!-- Click To ChatPro -->
 
         <!-- Click To ChatPro end-->
@@ -152,6 +154,12 @@
     </script>
 
         @livewireScripts
+
+        <script>
+            function password() {
+                alert(1);
+            }
+        </script>
 
         @stack('scripts')
     </body>

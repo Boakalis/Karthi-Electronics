@@ -356,43 +356,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5 col-sm-12 col-xs-12">
-                        {{--
-                        <!-- Swiper -->
-                        <div class="qty-product-cover">
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/39_2.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/40_1.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/40_2.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/41_1.jpg" alt="" />
-                            </div>
-                        </div>
-                        <div class="qty-nav-thumb">
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/39_1.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/39_2.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/40_1.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/40_2.jpg" alt="" />
-                            </div>
-                            <div class="qty-slide">
-                                <img class="img-responsive" src="assets/images/product-image/41_1.jpg" alt="" />
-                            </div>
-                        </div>
-                        --}}
+   
                         <img src="{{asset('12.jpg')}}" style="height: 100%;" alt="" />
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">

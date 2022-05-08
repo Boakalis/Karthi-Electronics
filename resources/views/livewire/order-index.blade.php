@@ -1,5 +1,4 @@
-@extends('admin.layouts.master')
-@section('content')
+<div>
     <div class="breadcrumb-wrapper breadcrumb-contacts">
         <div>
             <h1>Order Details</h1>
@@ -7,10 +6,10 @@
                 <span><i class=" mdi mdi-chevron-right"></i></span>Orders
             </p>
         </div>
-        <div>
-            <a href="{{route('product.create')}}"
+        {{-- <div>
+            <a href="{{route('data.create')}}"
                 class="btn btn-primary">Add</a>
-        </div>
+        </div> --}}
     </div>
     <div class="row">
         @include('admin.layouts.error')
@@ -49,15 +48,15 @@
                                                 @if ($product->status !=2)
 
                                                 <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox" onclick="statusChange({{@$product->id}})"
-                                                        id="flexSwitchCheckChecked" {{@$product->status == 1 ? 'checked' : ''}}>
+                                                    <input class="form-check-input" type="checkbox" onclick="statusChange({{@$data->id}})"
+                                                        id="flexSwitchCheckChecked" {{@$data->status == 1 ? 'checked' : ''}}>
                                                     <label class="form-check-label" for="flexSwitchCheckChecked"></label>
                                                 </div>
                                                 @else
-                                                <badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
+                                                <badge class="badge badge-{{$data->status == 1 ? 'success' : ($data->status == 2 ? 'warning' : 'danger')}}">{{$data->status == 1 ? 'Active' : ($data->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
                                                 @endif
                                             </td>
-                                            <td id="status{{$product->id}}"><badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
+                                            <td id="status{{$data->id}}"><badge class="badge badge-{{$data->status == 1 ? 'success' : ($data->status == 2 ? 'warning' : 'danger')}}">{{$data->status == 1 ? 'Active' : ($data->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
                                             </td>
                                             <td>
                                                 <div class=" mb-1">
@@ -70,9 +69,9 @@
                                                     </button>
 
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="{{route('product.show',$product->slug)}}">View</a>
-                                                        <a class="dropdown-item" href="{{route('product.edit',$product->slug)}}">Edit</a>
-                                                        <a class="dropdown-item" onclick="deleteData('{{route('product.delete')}}','{{@$product->id}}')" href="#">Delete</a>
+                                                        <a class="dropdown-item" href="{{route('data.show',$data->slug)}}">View</a>
+                                                        <a class="dropdown-item" href="{{route('data.edit',$data->slug)}}">Edit</a>
+                                                        <a class="dropdown-item" onclick="deleteData('{{route('data.delete')}}','{{@$data->id}}')" href="#">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -89,38 +88,4 @@
         </div>
     </div>
 
-@endsection
-@section('javascript')
-    <script>
-            function statusChange(id) {
-        // let token = "{{csrf_token()}}" ;
-        $.ajax({
-            type:'POST',
-            url: '/admin/change-status/'+id,
-            data: {
-                '_token' : "{{csrf_token()}}"
-            },
-            success:function(response){
-
-                if (response.status == 200) {
-                    toastr.success('Status Updated Successfully');
-                    if (response.currentStatus == 1) {
-
-                        $('#status'+id).html('<badge class="badge badge-success">Active</badge>');
-                    } else {
-                        $('#status'+id).html('<badge class="badge badge-danger">InActive</badge>');
-
-                    }
-                }
-                // else if(response.status == 0) {
-                //     toastr.error(' Product requires Atleast One variant');
-                // }
-                // else {
-                //     toastr.error('Something went wrong. Try again later');
-                // }
-            }
-        });
-    }
-    </script>
-@endsection
-
+</div>
