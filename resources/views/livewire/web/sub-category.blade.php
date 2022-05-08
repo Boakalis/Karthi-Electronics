@@ -41,10 +41,10 @@
                                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                                 <div class="ec-product-inner">
                                                     <div class="">
-                                                        <div class="ec-pro-image">
+                                                        <div class="ec-pro-image" style="border-radius: 10%" >
                                                             <a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}" class="">
                                                                 <img class=""
-                                                                    src="{{asset('storage/media/'.@$data->image)}}" style="width:100%;height:300px; " alt="Product" />
+                                                                    src="{{asset('storage/media/'.@$data->image)}}" style="width:100%;height:200px; " alt="Product" />
                                                                 {{-- <img class="hover-image"
                                                                     src="assets/images/product-image/6_2.jpg" alt="Product" /> --}}
                                                             </a>
@@ -67,7 +67,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="ec-pro-content">
-                                                        <h5 class="ec-pro-title"><a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}">{{@$data->name}}</a></h5>
+                                                        <h5 class="ec-pro-title text-center "><a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}">{{@$data->name}}</a></h5>
 
                                                         {{-- <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text.</div> --}}
                                                         {{-- <span class="ec-price">
