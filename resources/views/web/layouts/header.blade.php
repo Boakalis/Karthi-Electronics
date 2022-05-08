@@ -261,9 +261,9 @@
                             <li class=""><a class="text-uppercase" href="{{route('home')}}">Home</a>
 
                             </li>
-                            <li class=""><a class="text-uppercase" href="{{route('category')}}">Categories</a>
+                            <li class=""><a class="text-uppercase" href="{{route('web.category')}}">Categories</a>
                             </li>
-                            <li class=""><a class="text-uppercase" href="{{route('product')}}">Products</a>
+                            <li class=""><a class="text-uppercase" href="{{route('web.single.product')}}">Products</a>
                             </li>
                             <li class=""><a class="text-uppercase" href="{{route('track-order')}}">Track Order</a>
                             </li>

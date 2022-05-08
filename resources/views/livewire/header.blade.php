@@ -206,8 +206,8 @@
                         <div class="ec-main-menu">
                             <ul>
                                 <li><a href="{{route('home')}}">Home</a></li>
-                                <li><a href="{{route('category')}}">Categories</a></li>
-                                <li><a href="{{route('product')}}">Products</a></li>
+                                <li><a href="{{route('web.category')}}">Categories</a></li>
+                                <li><a href="{{route('web.single.product')}}">Products</a></li>
                                 @auth
                                     <li><a href="{{route('track-order')}}">Track Order</a></li>
                                 @endauth

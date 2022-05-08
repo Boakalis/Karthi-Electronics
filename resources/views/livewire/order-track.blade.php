@@ -46,7 +46,7 @@
             @endforeach
             <center>
 
-                <div class="ec-bg-swipe {{$perPage == $count ? 'd-none' : ''}} ">
+                <div class="ec-bg-swipe {{$perPage >= $count ? 'd-none' : ''}} ">
                     <button class="ec-btn-bg-swipe" wire:click="loadMore()">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
