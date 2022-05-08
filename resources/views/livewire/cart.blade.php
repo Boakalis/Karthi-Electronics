@@ -350,6 +350,9 @@
             $('#addAddress').modal('hide');
             toastr.success('Address updated');
         });
+        Livewire.on("no-address", function(data) {
+            toastr.success('Please Provide Address');
+        });
         Livewire.on("not-deliverable",function(){
 
             Swal.fire({

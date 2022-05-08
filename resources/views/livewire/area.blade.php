@@ -128,10 +128,10 @@
                     </ul>
                 </div>
 
-                <div class="modal-footer px-4">
+                {{-- <div class="modal-footer px-4">
                     <button type="button" class="btn btn-secondary btn-pill" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary btn-pill">Add new member</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

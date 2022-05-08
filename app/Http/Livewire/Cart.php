@@ -47,6 +47,11 @@ class Cart extends Component
 
     public function buyNow()
     {
+        if ($this->addressSelect == null) {
+            $this->emit('no-address');
+        } else {
+
+
 
         $order = Order::create([
             'user_id' => Auth::user()->id,
@@ -90,6 +95,7 @@ class Cart extends Component
         }
 
         return redirect()->route('order-success');
+    }
     }
 
 
