@@ -4,6 +4,8 @@
         @if (isset($sliderData) && !empty($sliderData))
             @foreach ($sliderData as $slider)
                 <a href="{{route('web.subcategory',@$slider->category->slug)}}" class="ec-slide-item d-flex slide-1"  style="background-image: url({{asset('storage/media/'.@$slider->image)}})" >
+                    @if (isset($slider->title) && !empty($slider->title))
+
                     <div class="container align-self-center">
                         <div class="row">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
@@ -20,6 +22,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </a>
             @endforeach
         @endif

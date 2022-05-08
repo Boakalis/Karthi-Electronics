@@ -14,12 +14,12 @@ class Banner extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'type_id');
+        return $this->belongsTo(Category::class,'option_id','slug');
     }
 
     public function product()
     {
-        return $this->belongsTo(Product::class,'type_id');
+        return $this->belongsTo(Product::class,'option_id','slug');
     }
 
 }
