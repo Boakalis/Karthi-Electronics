@@ -48,7 +48,8 @@ class SubCategory extends Component
 
             if ($this->image != NULL) {
                 $image =   $this->image->store('public/media');
-                $data['exploded_image'] =explode('/',$image);
+                $exp_image =explode('/',$image);
+                $data['image'] = $exp_image[2];
             }
 
             ModelsSubCategory::where('id',$this->editId)->update($data);
