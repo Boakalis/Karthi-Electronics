@@ -42,7 +42,7 @@
                                                 <div class="ec-product-inner">
                                                     <div class="">
                                                         <div class="ec-pro-image">
-                                                            <a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}" class="image">
+                                                            <a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}" class="">
                                                                 <img class=""
                                                                     src="{{asset('storage/media/'.@$data->image)}}" style="width:100%;height:300px; " alt="Product" />
                                                                 {{-- <img class="hover-image"
