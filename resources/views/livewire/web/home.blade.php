@@ -409,14 +409,12 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <center  >
-                                            <h6 class="ec-pro-title fw-bold mt-3"><a
-                                                    href="{{ route('web.subcategory', $category->slug) }}">
-                                                    {{ Str::limit(@$category->name, 30, '...') }}</a></h6>
-                                        </center>
-
-
                                     </div>
+                                    <center  >
+                                        <h6 class="ec-pro-title fw-bold mt-3"><a
+                                                href="{{ route('web.subcategory', $category->slug) }}">
+                                                {{ Str::limit(@$category->name, 30, '...') }}</a></h6>
+                                    </center>
                                 </div>
                             @endforeach
                         @endif
