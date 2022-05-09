@@ -161,7 +161,7 @@
                                         </div>
 
                                     </div>
-                                    @if (@$data->status !+ 0)
+                                    @if (@$data->status != 0)
                                         <div class="ec-single-qty" >
                                             @if (!empty($cart))
                                                 <div class="" style="width:120px;"  >
