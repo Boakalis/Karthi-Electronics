@@ -463,7 +463,7 @@
                                         <center>
                                             <h6 class="ec-pro-title fw-bold"><a
                                                     href="{{ route('web.product.detail', ['category' => $product->subcategory->category->slug, 'product' => $product->subcategory->slug, 'slug' => $product->slug]) }}">
-                                                    {{ Str::limit($product->name, 35, '...') }}</a></h6>
+                                                    {{ Str::limit($product->name, 30, '...') }}</a></h6>
                                         </center>
                                         <center>
                                             <span class="ec-price">
