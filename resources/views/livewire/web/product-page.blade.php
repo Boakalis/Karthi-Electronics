@@ -38,7 +38,7 @@
                             <div class="row">
                                 @if (isset($datas) && $datas->count() >0 )
                                     @foreach ($datas as $data)
-                                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 pro-gl-content">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 pro-gl-content">
                                             <div class="ec-product-inner">
                                                 <div class="ec-pro-image-outer">
                                                     <div class=" text-center
