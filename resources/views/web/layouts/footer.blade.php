@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-lg-3 ec-footer-contact">
                         <div class="ec-footer-widget">
-                            <div class="ec-footer-logo"><a href="#"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
+                            <div class="ec-footer-logo"><a href="#"><img style="width: 80px;height:80px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
                                 {{-- <img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" /> --}}
                                     </a></div>
                             <p>{!!@$globalSetting->address!!}</p>
@@ -23,7 +23,7 @@
                                 </ul>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="col-sm-12 col-lg-3 ec-footer-info">
                         <div class="ec-footer-widget">

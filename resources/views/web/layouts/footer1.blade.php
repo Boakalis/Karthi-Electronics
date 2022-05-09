@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-lg-3 ec-footer-contact">
                         <div class="ec-footer-widget">
-                            <div class="ec-footer-logo"><a href="#"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" /></a></div>
+                            <div class="ec-footer-logo"><a href="#"><img style="width: 80px;height:80px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" /></a></div>
                             <h4 class="ec-footer-heading">Contact us</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">

@@ -201,7 +201,7 @@
                 <!-- Ec Header Logo Start -->
                 <div class="col">
                     <div class="header-logo">
-                        <a href="{{route('home')}}"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
+                        <a href="{{route('home')}}"><img style="width: 80px;height:80px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
 
                     </div>
                 </div>
