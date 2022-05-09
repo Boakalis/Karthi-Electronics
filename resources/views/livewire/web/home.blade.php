@@ -461,9 +461,11 @@
                                             </div>
                                         </div>
                                         <center>
-                                            <h6 class="ec-pro-title fw-bold"><a
-                                                    href="{{ route('web.product.detail', ['category' => $product->subcategory->category->slug, 'product' => $product->subcategory->slug, 'slug' => $product->slug]) }}">
-                                                    {{ Str::limit($product->name, 15, '...') }}</a></h6>
+                                            <div class="col-12">
+                                                <h6 class="ec-pro-title fw-bold"><a
+                                                        href="{{ route('web.product.detail', ['category' => $product->subcategory->category->slug, 'product' => $product->subcategory->slug, 'slug' => $product->slug]) }}">
+                                                        {{ Str::limit($product->name, 30, '...') }}</a></h6>
+                                            </div>
                                         </center>
                                         <center>
                                             <span class="ec-price">
