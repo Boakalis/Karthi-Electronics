@@ -26,19 +26,19 @@ class ProductController extends Controller
 
     public function newProducts()
     {
-        $products = Product::where('status',2)->with('dealer', 'subcategory')->get();
+        $products = Product::where('status', 2)->with('dealer', 'subcategory')->get();
         return view('admin.products.new', compact('products'));
     }
 
     public function rejectedProducts()
     {
-        $products = Product::where('status',3)->with('dealer', 'subcategory')->get();
+        $products = Product::where('status', 3)->with('dealer', 'subcategory')->get();
         return view('admin.products.new', compact('products'));
     }
 
     public function create()
     {
-        $dealers = User::where('user_type','!=',3)->get();
+        $dealers = User::where('user_type', '!=', 3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
         return view('admin.products.create', compact('categories', 'dealers'));
     }
@@ -115,7 +115,7 @@ class ProductController extends Controller
 
         if (Auth::user()->user_type == 1) {
             $data['dealer_id'] = $request->dealer_id;
-            $data['ultra_coin'] = $request -> ultra_coin;
+            $data['ultra_coin'] = $request->ultra_coin;
         } else {
             $data['dealer_id'] = Auth::user()->id;
         }
@@ -145,25 +145,25 @@ class ProductController extends Controller
             }
             if (isset($request->variants) && !empty($request->variants)) {
 
-            foreach ($request->variants as  $value) {
+                foreach ($request->variants as  $value) {
 
-                $variantData = [
-                    'product_id' => $product->id,
-                    'dealer_id' => $dealer_id,
-                    'name'  => $value['variant_name'],
-                    'dealer_price' => $value['dealer_prices'],
+                    $variantData = [
+                        'product_id' => $product->id,
+                        'dealer_id' => $dealer_id,
+                        'name'  => $value['variant_name'],
+                        'dealer_price' => $value['dealer_prices'],
 
-                    'status' => $value['status'],
-                ];
+                        'status' => $value['status'],
+                    ];
 
-                if (Auth::user()->user_type == 1) {
-                    $variantData['seller_price'] = $value['sale_prices'];
-                    $variantData['discounted_price'] = $value['discounted_price'];
+                    if (Auth::user()->user_type == 1) {
+                        $variantData['seller_price'] = $value['sale_prices'];
+                        $variantData['discounted_price'] = $value['discounted_price'];
+                    }
+
+                    Variant::create($variantData);
                 }
-
-                Variant::create($variantData);
             }
-            @endif
         }
         return redirect()->route('product.index')->with(Session::flash('alert-success', 'Product Added Successfully'));
     }
@@ -171,17 +171,17 @@ class ProductController extends Controller
     public function edit($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where('user_type','!=',3)->get();
+        $dealers = User::where('user_type', '!=', 3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
-        return view('admin.products.edit', compact('data','dealers','categories'));
+        return view('admin.products.edit', compact('data', 'dealers', 'categories'));
     }
 
     public function review($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where('user_type','!=',3)->get();
+        $dealers = User::where('user_type', '!=', 3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
-        return view('admin.products.edit', compact('data','dealers','categories'));
+        return view('admin.products.edit', compact('data', 'dealers', 'categories'));
     }
 
 
@@ -196,7 +196,7 @@ class ProductController extends Controller
             //         'status' => 0,
             //      ]);
             // }else{
-                Variant::where('id',$id)->delete();
+            Variant::where('id', $id)->delete();
             // }
             return response()->json([
                 'status' => 200,
@@ -208,7 +208,6 @@ class ProductController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-
     }
 
     public function update(Request $request)
@@ -256,7 +255,7 @@ class ProductController extends Controller
         }
 
 
-        $productData = Product::where('slug',$request->slug)->first();
+        $productData = Product::where('slug', $request->slug)->first();
         $data = [
             'name' => $request->name,
             'subcategory_id' => $request->subcategory_id,
@@ -300,7 +299,7 @@ class ProductController extends Controller
 
         if (Auth::user()->user_type == 1) {
             $data['dealer_id'] = $request->dealer_id;
-            $data['ultra_coin'] = $request -> ultra_coin;
+            $data['ultra_coin'] = $request->ultra_coin;
         } else {
             $data['dealer_id'] = Auth::user()->id;
         }
@@ -319,32 +318,31 @@ class ProductController extends Controller
 
         if (empty($request->variants_old) && empty($request->variants)) {
             $data['is_products_variant'] = null;
-        }else{
+        } else {
             $data['is_products_variant'] = 1;
         }
 
 
         // $data['slug'] = Str::slug($request->name) . '&uniqId=' . $mdun;
 
-        $product = Product::where('slug',$request->slug)->update($data);
+        $product = Product::where('slug', $request->slug)->update($data);
 
 
         if (isset($request->variants_old) && !empty($request->variants_old)) {
             foreach ($request->variants_old as $key => $old) {
 
-                Variant::where([['id',$old['id']],['product_id',$productData->id]])->update([
+                Variant::where([['id', $old['id']], ['product_id', $productData->id]])->update([
                     'name' => $old['name'],
                     'dealer_price' => $old['dealer_price'],
                     // 'seller_price' => $old['sale_price'],
                     'status' => $old['status'],
                 ]);
                 if (Auth::user()->user_type == 1) {
-                    Variant::where([['id',$old['id']],['product_id',$productData->id]])->update([
+                    Variant::where([['id', $old['id']], ['product_id', $productData->id]])->update([
                         'seller_price' => $old['sale_price'],
                         'discounted_price' => $old['discounted_price'],
                     ]);
                 }
-
             }
         }
 
@@ -383,34 +381,33 @@ class ProductController extends Controller
     public function show($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where('user_type','!=',3)->get();
+        $dealers = User::where('user_type', '!=', 3)->get();
 
         $categories = Category::where('status', 1)->with('subcategory')->get();
-        return view('admin.products.show', compact('data','dealers','categories'));
+        return view('admin.products.show', compact('data', 'dealers', 'categories'));
     }
 
     public function changeStatus($id)
     {
-        $data =Product::where('id',$id)->first();
+        $data = Product::where('id', $id)->first();
         if ($data->status == 1) {
-            $datas['status'] = 0 ;
-        }else{
-            $datas['status'] = 1 ;
+            $datas['status'] = 0;
+        } else {
+            $datas['status'] = 1;
         }
-        Product::where('id',$id)->update($datas);
+        Product::where('id', $id)->update($datas);
 
         return response()->json([
             'status' => 200,
             'currentStatus' => $datas['status'],
         ]);
-
     }
 
     public function deleteProduct(Request $request)
     {
         try {
 
-            Product::where('id',$request->id)->delete();
+            Product::where('id', $request->id)->delete();
             return response()->json([
                 'status' => 200,
 
@@ -431,7 +428,7 @@ class ProductController extends Controller
             'subcategory_id' => 'required',
             'description' => 'nullable',
             'dealer_price' => 'required_without:is_products_variant',
-            'sale_price' => 'required_without:is_products_variant' ,
+            'sale_price' => 'required_without:is_products_variant',
 
             'image' => 'nullable|image',
         ], [
@@ -468,7 +465,7 @@ class ProductController extends Controller
         }
 
 
-        $productData = Product::where('slug',$request->slug)->first();
+        $productData = Product::where('slug', $request->slug)->first();
         $data = [
             'name' => $request->name,
             'subcategory_id' => $request->subcategory_id,
@@ -481,7 +478,7 @@ class ProductController extends Controller
         ];
 
         // if ($productData->status != 2) {
-            $data['status'] = $request->status;
+        $data['status'] = $request->status;
         // } else {
         //     $data['status'] = 2;
         // }
@@ -525,20 +522,20 @@ class ProductController extends Controller
 
         if (empty($request->variants_old) && empty($request->variants)) {
             $data['is_products_variant'] = null;
-        }else{
+        } else {
             $data['is_products_variant'] = 1;
         }
 
 
         // $data['slug'] = Str::slug($request->name) . '&uniqId=' . $mdun;
 
-        $product = Product::where('slug',$request->slug)->update($data);
+        $product = Product::where('slug', $request->slug)->update($data);
 
 
         if (isset($request->variants_old) && !empty($request->variants_old)) {
             foreach ($request->variants_old as $key => $old) {
 
-                Variant::where([['id',$old['id']],['product_id',$productData->id]])->update([
+                Variant::where([['id', $old['id']], ['product_id', $productData->id]])->update([
                     'name' => $old['name'],
                     'dealer_price' => $old['dealer_price'],
                     'seller_price' => $old['sale_price'],
@@ -577,6 +574,4 @@ class ProductController extends Controller
 
         return redirect()->route('product.index')->with(Session::flash('alert-success', 'Product Added Successfully'));
     }
-
 }
-
