@@ -14,7 +14,7 @@ class Home extends Component
         $categories = Category::where('status',1)->get();
         $products = Product::where('status',1)->orWhere('status',0)->with('subcategory','subcategory.category')->orderBy('id','DESC')->take(18)->get();
         $sliderData = Banner::where('type_id', 1)->orderBy('id','DESC')->inRandomOrder()->take(3)->get();
-        $productBannerData = Banner::where('type_id', 2)->with('product','product.subcategory.category')->orderBy('id','DESC')->inRandomOrder()->take(2)->get();
+        $productBannerData = Banner::where('type_id', 2)->with('product','product.subcategory.category')->orderBy('id','DESC')->take(2)->get();
         // dd($productBannerData);
         $adData = Banner::where('type_id', 0)->inRandomOrder()->first();
         $featuredProduct = Product::where([['is_featured',1]])->where('status',1)->orWhere('status',0)->orderBy('id','DESC')->take(16)->get();
