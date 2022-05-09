@@ -135,14 +135,16 @@
                         <div class="ec-banner-left col-6">
                             <div class="ec-banner-block ec-banner-block-1 col-sm-12">
                                 <div class="banner-block">
-                                    <img class="img-fluid" style="width:670px;height:250px;"
-                                        src="{{ asset('storage/media/' . @$productBannerData[0]['image']) }}" alt="" />
+                                    <a href="{{route('web.product.detail',['category'=>@$productBannerData[0]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[0]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[0]['product']['slug']])}}" class="btn-primary">
+                                        <img class="img-fluid" style="width:670px;height:250px;"
+                                        src="{{ asset('storage/media/' . @$productBannerData[0]['image']) }}" alt="" /></a>
+
                                     <div class="banner-content">
                                         <span class="ec-banner-stitle">{{ @$productBannerData[0]['title'] }}</span>
                                         <span class="ec-banner-title">{{ @$productBannerData[0]['name'] }}</span>
-                                        <span class="ec-banner-btn"><a href="{{route('web.product.detail',['category'=>@$productBannerData[0]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[0]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[0]['product']['slug']])}}" class="btn-primary">
+                                        {{-- <span class="ec-banner-btn"><a href="{{route('web.product.detail',['category'=>@$productBannerData[0]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[0]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[0]['product']['slug']])}}" class="btn-primary">
                                             Shop
-                                                Now</a></span>
+                                                Now</a></span> --}}
                                     </div>
                                 </div>
                             </div>
