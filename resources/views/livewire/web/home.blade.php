@@ -87,35 +87,32 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <center>
-                                            <h6 class="ec-pro-title fw-bold"><a
-                                                    href="{{ route('web.product.detail', ['category' => $featured->subcategory->category->slug, 'product' => $featured->subcategory->slug, 'slug' => $featured->slug]) }}">
-                                                    {{ Str::limit($featured->name, 30,'...') }}</a></h6>
-                                        </center>
-                                        <center>
-                                            <span class="ec-price">
-                                                @if ($featured->is_products_variant != 1)
-                                                    <span class="new-price"
-                                                        style="    color: #0d4fcf;
-                                                            font-weight: 700;
-                                                            font-size: 16px;">&#8377;{{ @$featured->discounted_price != null ? $featured->discounted_price : $featured->sale_price }}</span>
-                                                    @if (isset($featured->discounted_price) && !empty($featured->discounted_price))
-                                                        <span class="old-price"
-                                                            style="    font-size: 16px;
-                                                                text-decoration: line-through;
-                                                                color: #777;
-                                                                margin-left: 9px;">&#8377;{{ $featured->sale_price }}</span>
-                                                    @endif
-                                                @else
-                                                    <span class="new-price" style="    color: #0d4fcf;
-                                                            font-weight: 700;
-                                                            font-size: 16px;"> From
-                                                        &#8377;{{ @$featured->variants->first()->seller_price }}</span>
-                                                @endif
-                                            </span>
-                                        </center>
-
                                     </div>
+                                    <center>
+                                        <h6 class="ec-pro-title fw-bold"><a
+                                                href="{{ route('web.product.detail', ['category' => $featured->subcategory->category->slug, 'product' => $featured->subcategory->slug, 'slug' => $featured->slug]) }}">
+                                                {{ Str::limit($featured->name, 30,'...') }}</a></h6>
+                                        <span class="ec-price">
+                                            @if ($featured->is_products_variant != 1)
+                                                <span class="new-price"
+                                                    style="    color: #0d4fcf;
+                                                        font-weight: 700;
+                                                        font-size: 16px;">&#8377;{{ @$featured->discounted_price != null ? $featured->discounted_price : $featured->sale_price }}</span>
+                                                @if (isset($featured->discounted_price) && !empty($featured->discounted_price))
+                                                    <span class="old-price"
+                                                        style="    font-size: 16px;
+                                                            text-decoration: line-through;
+                                                            color: #777;
+                                                            margin-left: 9px;">&#8377;{{ $featured->sale_price }}</span>
+                                                @endif
+                                            @else
+                                                <span class="new-price" style="    color: #0d4fcf;
+                                                        font-weight: 700;
+                                                        font-size: 16px;"> From
+                                                    &#8377;{{ @$featured->variants->first()->seller_price }}</span>
+                                            @endif
+                                        </span>
+                                    </center>
                                 </div>
                             @endforeach
                         @endif
