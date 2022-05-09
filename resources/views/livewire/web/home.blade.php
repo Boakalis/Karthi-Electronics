@@ -415,7 +415,7 @@
                                         <center  >
                                             <h6 class="ec-pro-title fw-bold mt-3"><a
                                                     href="{{ route('web.subcategory', $category->slug) }}">
-                                                    {{ $category->name }}</a></h6>
+                                                    {{ Str::limit(@$category->name, 35, '...') }}</a></h6>
                                         </center>
 
 
@@ -430,7 +430,7 @@
         </div>
     </section>
 
-   
+
 
 
     <section class="section  section-space-p">
@@ -463,7 +463,7 @@
                                         <center>
                                             <h6 class="ec-pro-title fw-bold"><a
                                                     href="{{ route('web.product.detail', ['category' => $product->subcategory->category->slug, 'product' => $product->subcategory->slug, 'slug' => $product->slug]) }}">
-                                                    {{ Str::limit($product->name, 50) }}</a></h6>
+                                                    {{ Str::limit($product->name, 35, '...') }}</a></h6>
                                         </center>
                                         <center>
                                             <span class="ec-price">
@@ -767,14 +767,6 @@
 </div>
 @push('scripts')
 <script>
-    $(window).on('resize', function() {
-    if($(window).height() > 400) {
-        $('#body').addClass('limit1200');
-        $('#body').removeClass('limit400');
-    }else{
-        $('#body').addClass('limit400');
-        $('#body').removeClass('limit1200');
-    }
-})
+   
 </script>
 @endpush
