@@ -50,7 +50,7 @@
                                 <div class="single-product-scroll">
                                     <div class="single-product-cover">
                                         <div class="single-slide zoom-image-hover">
-                                            <img style="height:500px;width:100%;" class="" src="{{asset($data->image)}}"
+                                            <img style="height:300px;width:100%;" class="" src="{{asset($data->image)}}"
                                                 alt="">
                                         </div>
                                         @if (isset($data->images) && !empty($data->images))
