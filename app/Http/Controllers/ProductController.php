@@ -38,7 +38,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $dealers = User::where([['user_type', 2],['user_type',1]])->get();
+        $dealers = User::where('user_type','!=',3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
         return view('admin.products.create', compact('categories', 'dealers'));
     }
@@ -168,7 +168,7 @@ class ProductController extends Controller
     public function edit($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where([['user_type', 2],['user_type',1]])->get();
+        $dealers = User::where('user_type','!=',3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
         return view('admin.products.edit', compact('data','dealers','categories'));
     }
@@ -176,7 +176,7 @@ class ProductController extends Controller
     public function review($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where([['user_type', 2],['user_type',1]])->get();
+        $dealers = User::where('user_type','!=',3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
         return view('admin.products.edit', compact('data','dealers','categories'));
     }
@@ -380,7 +380,7 @@ class ProductController extends Controller
     public function show($slug)
     {
         $data = Product::where('slug', $slug)->with('variants')->first();
-        $dealers = User::where([['user_type', 2],['user_type',1]])->get();
+        $dealers = User::where('user_type','!=',3)->get();
 
         $categories = Category::where('status', 1)->with('subcategory')->get();
         return view('admin.products.show', compact('data','dealers','categories'));
