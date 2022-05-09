@@ -54,7 +54,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('store-login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('store-login', [LoginController::class, 'loginAttempt'])->name('login.attempt');
 
-Route::middleware(['dashboard'])->prefix('admin')->group(function () {
+Route::middleware(['dashboard','auth'])->prefix('admin')->group(function () {
 
 
 

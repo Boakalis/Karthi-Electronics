@@ -17,9 +17,9 @@ class DashboardAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        // if (Auth::user()->user_type == 3) {
-        //     return redirect()->route('home');
-        // }
+        if (Auth::user()->user_type == 3) {
+            return redirect()->route('home');
+        }
         return $next($request);
     }
 }
