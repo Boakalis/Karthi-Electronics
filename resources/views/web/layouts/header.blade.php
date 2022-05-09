@@ -183,7 +183,7 @@
                                     <li><a class="dropdown-item" href="{{route('cart')}}">My Cart</a></li>
                                     <li><a class="dropdown-item" href="{{route('order.view')}}">My Orders</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#changePassword" >Change Password</a></li>
-                                    <li><a class="dropdown-item" href="{{route('logOut')}}">Logout</a></li>
+                                    <li><a class="dropdown-item" href="{{route('user.logout')}}">Logout</a></li>
                                 @endauth
                             </ul>
                         </div>
