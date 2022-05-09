@@ -181,6 +181,12 @@
                                                 <a href="{{route('cart')}}" class="btn btn-success buy {{!empty($cart)?'' :'d-none'}} ">Buy Now</a>
                                             </div>
                                         </div>
+                                    @else
+                                        <div class="ec-single-qty">
+                                            <div class="ec-single-cart ">
+                                                <button class="btn bg-danger  "   >OUT OF STOCK</button>
+                                            </div>
+                                        </div>
                                     @endif
                                     {{-- <div class="ec-single-social">
                                         <ul class="mb-0">
