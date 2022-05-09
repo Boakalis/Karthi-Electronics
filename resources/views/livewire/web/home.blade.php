@@ -76,7 +76,7 @@
                     <div class="row">
                         @if (isset($featuredProduct) && !empty($featuredProduct))
                             @foreach ($featuredProduct as $featured)
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-6 ">
+                                <div class="col-lg-4 col-md-4 my-1 col-sm-6 col-6 ">
                                     <div class="ec-product-inner">
                                         {{-- <div class="ec-product-hover"></div> --}}
                                         <div class="ec-pro-image-outer">
@@ -446,7 +446,7 @@
                     <div class="row">
                         @if (isset($products) && !empty($products))
                             @foreach ($products as $product)
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-6 ">
+                                <div class="col-lg-4 col-md-4 col-sm-6 my-1 col-6 ">
                                     <div class="ec-product-inner">
                                         {{-- <div class="ec-product-hover"></div> --}}
                                         <div class="ec-pro-image-outer">
