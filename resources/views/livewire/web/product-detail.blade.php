@@ -128,7 +128,7 @@
                                             <span class="new-price">&#8377;&nbsp;{{ $seller_price - $discounted_price }}</span>
                                         </div>
                                         <div class="ec-single-stoke">
-                                            <span class="ec-single-ps-title "> <span class="badge btn-success badge-sm"> IN STOCK</span></span>
+                                            <span class="ec-single-ps-title "> <span class="badge bg-{{@$data->status == 1 ?'success' :'danger'}} badge-sm"> {{@$data->status == 1 ?'IN STOCK' :'OUT OF STOCK'}}</span></span>
                                             <span class="ec-single-ps-title "> <span data-bs-placement="top" title="On Every Successfull purchase, Ultra-Coin will be added to the wallet ,which will be used for purchase. One Ultracoin is equal to 1 rupees" class="badge btn-light text-dark p-0 badge-sm"><i class="fa-solid text-warning fa-bolt-lightning"></i>&nbsp;{{@$data->ultra_coin}} Ultra-Coin</span></span>
                                         </div>
                                     </div>
@@ -356,7 +356,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5 col-sm-12 col-xs-12">
-   
+
                         <img src="{{asset('12.jpg')}}" style="height: 100%;" alt="" />
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">

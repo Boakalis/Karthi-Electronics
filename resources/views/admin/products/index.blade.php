@@ -32,7 +32,7 @@
                                     <th>Is Featured</th>
                                     <th>Dealer Name</th>
                                     <th class="text-center">Is Variant Available</th>
-                                    <th>Toggle Status</th>
+                                    {{-- <th>Toggle Status</th> --}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -56,18 +56,18 @@
                                             <td>{{$product->dealer->name}}</td>
                                             <td class="text-center"><span class="mdi {{$product->is_products_variant != null ?'mdi-check-circle text-success' : 'mdi-mixer text-danger'}} "></span>
                                             </td>
-                                            <td>
+                                            {{-- <td>
                                                 @if ($product->status !=2)
 
                                                 <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox" onclick="statusChange({{@$product->id}})"
+                                                    <input class="form-check-input" type="checkbox" onchange="statusChange({{@$product->id}})"
                                                         id="flexSwitchCheckChecked" {{@$product->status == 1 ? 'checked' : ''}}>
                                                     <label class="form-check-label" for="flexSwitchCheckChecked"></label>
                                                 </div>
                                                 @else
                                                 <badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
                                                 @endif
-                                            </td>
+                                            </td> --}}
                                             <td id="status{{$product->id}}"><badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
                                             </td>
                                             <td>

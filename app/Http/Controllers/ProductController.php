@@ -89,6 +89,14 @@ class ProductController extends Controller
         }
 
         if ($request->is_products_variant != 1) {
+            $validatedVariantData = $request->validate([
+
+                'dealer_price' => 'required',
+                'sale_price' => 'required',
+                'discounted_price' => 'required',
+
+
+            ]);
             $data['dealer_price'] = $request->dealer_price;
             $data['is_products_variant'] = null;
             if (Auth::user()->user_type == 1) {
@@ -96,6 +104,15 @@ class ProductController extends Controller
                 $data['discounted_price'] = $request->discounted_price;
             }
         } else {
+            $validatedVariantData = $request->validate([
+
+                'variants' => 'required',
+                'variants.*.variant_name' => 'required',
+                'variants.*.dealer_prices' => 'required',
+                // 'variants.*.sale_prices' => 'required',
+                'variants.*.status' => 'required',
+
+            ]);
             $data['is_products_variant'] = 1;
         }
 
@@ -138,6 +155,7 @@ class ProductController extends Controller
 
 
         if ($request->is_products_variant != null) {
+
             if (Auth::user()->user_type == 1) {
                 $dealer_id = $request->dealer_id;
             } else {
@@ -389,6 +407,7 @@ class ProductController extends Controller
 
     public function changeStatus($id)
     {
+        return 1;
         $data = Product::where('id', $id)->first();
         if ($data->status == 1) {
             $datas['status'] = 0;
