@@ -1,4 +1,32 @@
 <div>
+    <style>
+
+        .responsive-image{
+          /* width: 800px; */
+          height: 300px;
+          }
+
+          @media only screen and (min-width: 801px) and (max-width: 1010px) {
+          .responsive-image {
+
+              /* width: 800px; */
+              height: 100px !important ;
+          }
+          }
+          @media only screen and (min-width: 450px) and (max-width: 800px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 200px;
+              }
+          }
+          @media only screen and (max-width: 449px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 100px;
+              }
+          }
+
+     </style>
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
@@ -17,7 +45,7 @@
                                                     {{-- ec-pro-image --}}
                                                     ">
                                                         <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}" class="">
-                                                            <img class="main-image" style="height: 300px;"
+                                                            <img class="main-image responsive-image"
                                                                 src="{{asset($data->image)}}" alt="Product" />
                                                             {{-- <img class="hover-image"
                                                                 src="{{asset($data->image)}}" alt="Product" /> --}}

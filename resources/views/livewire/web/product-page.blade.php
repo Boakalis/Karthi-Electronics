@@ -17,7 +17,7 @@
                                                     {{-- ec-pro-image --}}
                                                     ">
                                                         <a href="{{route('web.product.detail',['category' => $data->subcategory->category->slug ,'product' =>$data->subcategory->slug ,'slug' => $data->slug])}}" class="">
-                                                            <img class="main-image" style="height: 300px;"
+                                                            <img class="main-image responsive-image" 
                                                                 src="{{asset($data->image)}}" alt="Product" />
                                                             {{-- <img class="hover-image"
                                                                 src="{{asset($data->image)}}" alt="Product" /> --}}
