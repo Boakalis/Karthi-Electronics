@@ -143,6 +143,8 @@ class ProductController extends Controller
             } else {
                 $dealer_id = Auth::user()->id;
             }
+            if (isset($request->variants) && !empty($request->variants)) {
+
             foreach ($request->variants as  $value) {
 
                 $variantData = [
@@ -161,6 +163,7 @@ class ProductController extends Controller
 
                 Variant::create($variantData);
             }
+            @endif
         }
         return redirect()->route('product.index')->with(Session::flash('alert-success', 'Product Added Successfully'));
     }
