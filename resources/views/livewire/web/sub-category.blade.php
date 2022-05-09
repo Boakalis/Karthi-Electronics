@@ -1,4 +1,32 @@
 <div>
+    <style>
+
+        .responsive-image{
+          /* width: 800px; */
+          height: 300px;
+          }
+
+          @media only screen and (min-width: 801px) and (max-width: 1010px) {
+          .responsive-image {
+
+              /* width: 800px; */
+              height: 100px !important ;
+          }
+          }
+          @media only screen and (min-width: 450px) and (max-width: 800px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 200px;
+              }
+          }
+          @media only screen and (max-width: 449px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 100px;
+              }
+          }
+
+     </style>
     <div>
         <section class="ec-page-content section-space-p">
             <div class="container">
@@ -43,8 +71,8 @@
                                                     <div class="">
                                                         <div class="ec-pro-image" style="border-radius: 10%" >
                                                             <a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}" class="">
-                                                                <img class=""
-                                                                    src="{{asset('storage/media/'.@$data->image)}}" style="width:100%;height:200px; " alt="Product" />
+                                                                <img class="responsive-image"
+                                                                    src="{{asset('storage/media/'.@$data->image)}}"  alt="Product" />
                                                                 {{-- <img class="hover-image"
                                                                     src="assets/images/product-image/6_2.jpg" alt="Product" /> --}}
                                                             </a>
