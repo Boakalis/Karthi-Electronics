@@ -117,15 +117,15 @@
                                     <div class="ec-single-price-stoke">
                                         <div class="ec-single-price">
                                             <span class="ec-single-ps-title">M.R.P Price</span>
-                                            <span class="ec-single-sku"  text-decoration: line-through; >&#8377;&nbsp;{{ $seller_price }}</span>
+                                            <span class="ec-single-sku" style="text-decoration: line-through;"  >&#8377;&nbsp;{{ $seller_price }}</span>
                                         </div>
                                         <div class="ec-single-price">
                                             <span class="ec-single-ps-title">Price</span>
-                                            <span class="new-price">&#8377;&nbsp;{{ $discounted_price }}</span>
+                                            <span class="ec-single-sku">&#8377;&nbsp;{{ $discounted_price }}</span>
                                         </div>
                                         <div class="ec-single-price">
                                             <span class="ec-single-ps-title">You Save</span>
-                                            <span class="new-price">&#8377;&nbsp;{{ $seller_price - $discounted_price }}</span>
+                                            <span class="ec-single-sku">&#8377;&nbsp;{{ $seller_price - $discounted_price }}</span>
                                         </div>
                                         <div class="ec-single-stoke">
                                             <span class="ec-single-ps-title "> <span class="badge bg-{{@$data->status == 1 ?'success' :'danger'}} badge-sm"> {{@$data->status == 1 ?'IN STOCK' :'OUT OF STOCK'}}</span></span>
