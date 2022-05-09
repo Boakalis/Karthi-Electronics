@@ -152,14 +152,17 @@
                             <div class="ec-banner-right col-6">
                                 <div class="ec-banner-block ec-banner-block-2 col-sm-12">
                                     <div class="banner-block">
-                                        <img class="img-fluid" style="width:670px;height:250px;"
-                                            src="{{ asset('storage/media/' . $productBannerData[0]['image']) }}"
-                                            alt="" />
+                                        <a href="{{route('web.product.detail',['category'=>@$productBannerData[1]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[1]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[1]['product']['slug']])}}">
+
+                                            <img class="img-fluid" style="width:670px;height:250px;"
+                                                src="{{ asset('storage/media/' . $productBannerData[1]['image']) }}"
+                                                alt="" />
+                                        </a>
                                         <div class="banner-content">
                                             <span class="ec-banner-stitle">{{ @$productBannerData[1]['title'] }}</span>
                                             <span class="ec-banner-title">{{ @$productBannerData[1]['name'] }}</span>
-                                            <span class="ec-banner-btn"><a href="{{route('web.product.detail',['category'=>@$productBannerData[1]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[1]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[1]['product']['slug']])}}" class="btn-primary">Shop
-                                                    Now</a></span>
+                                            {{-- <span class="ec-banner-btn"><a href="{{route('web.product.detail',['category'=>@$productBannerData[1]['product']['subcategory']['category']['slug'] ,'product' =>@$productBannerData[1]['product']['subcategory']['slug'] ,'slug' => @$productBannerData[1]['product']['slug']])}}" class="btn-primary">Shop
+                                                    Now</a></span> --}}
                                         </div>
                                     </div>
                                 </div>
