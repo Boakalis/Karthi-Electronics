@@ -12,7 +12,7 @@ class Register extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email|unique:users,email',
-        'mobile' => 'required|numeric|digits_between:8,15|unique:mobile',
+        'mobile' => 'required|numeric|digits_between:8,15|unique:users,mobile',
         'password' => 'min:6|required',
         'confirmPassword' => 'required|min:6|same:password'
 
