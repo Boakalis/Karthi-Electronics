@@ -184,7 +184,7 @@
                                     @else
                                         <div class="ec-single-qty">
                                             <div class="ec-single-cart ">
-                                                <button class="btn bg-danger  "   >OUT OF STOCK</button>
+                                                <button class="btn bg-danger text-dark m-0 "   >OUT OF STOCK</button>
                                             </div>
                                         </div>
                                     @endif
