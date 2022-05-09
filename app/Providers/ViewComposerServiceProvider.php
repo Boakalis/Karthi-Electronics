@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Product;
 use App\Models\Settings;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,7 +34,14 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
 
         View::composer(['admin.layouts.sidebar'],function($view){
-            $notificationData = Product::where('status',2)->count();
+            if (Auth::user()->user_type ==1) {
+                $notificationData = Product::where('status',2)->count();
+
+            } else {
+
+                $notificationData = Product::where('status',3)->count();
+            }
+
             $view->with(compact('notificationData'));
 
         });

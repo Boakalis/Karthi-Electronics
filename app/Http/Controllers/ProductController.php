@@ -20,7 +20,14 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::with('dealer', 'subcategory')->get();
+        if (Auth::user()->user_type ==1) {
+
+            $products = Product::with('dealer', 'subcategory')->get();
+        } else {
+            $products = Product::where('dealer_id',Auth::user()->id)->with('dealer', 'subcategory')->get();
+        }
+
+
         return view('admin.products.index', compact('products'));
     }
 
@@ -87,15 +94,10 @@ class ProductController extends Controller
         } else {
             $data['status'] = 2;
         }
-
+        $category_id = SubCategory::where('id',$request->subcategory_id)->pluck('category_id')->first();
         if ($request->is_products_variant != 1) {
             $validatedVariantData = $request->validate([
-
                 'dealer_price' => 'required',
-                'sale_price' => 'required',
-                'discounted_price' => 'required',
-
-
             ]);
             $data['dealer_price'] = $request->dealer_price;
             $data['is_products_variant'] = null;
@@ -150,7 +152,7 @@ class ProductController extends Controller
 
 
         $data['slug'] = Str::slug($request->name) . '&uniqId=' . $mdun;
-
+        $data['category_id'] =$category_id;
         $product = Product::create($data);
 
 
@@ -199,7 +201,7 @@ class ProductController extends Controller
         $data = Product::where('slug', $slug)->with('variants')->first();
         $dealers = User::where('user_type', '!=', 3)->get();
         $categories = Category::where('status', 1)->with('subcategory')->get();
-        return view('admin.products.edit', compact('data', 'dealers', 'categories'));
+        return view('admin.products.review', compact('data', 'dealers', 'categories'));
     }
 
 
@@ -292,6 +294,9 @@ class ProductController extends Controller
             $data['status'] = 2;
         }
         if ($request->is_products_variant != 1) {
+            $validatedVariantData = $request->validate([
+                'dealer_price' => 'required',
+            ]);
             $data['dealer_price'] = $request->dealer_price;
             $data['is_products_variant'] = null;
             if (Auth::user()->user_type == 1) {
@@ -342,7 +347,8 @@ class ProductController extends Controller
 
 
         // $data['slug'] = Str::slug($request->name) . '&uniqId=' . $mdun;
-
+        $category_id = SubCategory::where('id',$request->subcategory_id)->pluck('category_id')->first();
+        $data['category_id'] = $category_id;
         $product = Product::where('slug', $request->slug)->update($data);
 
 
@@ -441,6 +447,12 @@ class ProductController extends Controller
 
     public function reviewUpdate(Request $request)
     {
+        if ($request->status == 3) {
+            Product::where('slug', $request->slug)->update([
+                'status' => 3,
+            ]);
+            return redirect()->route('product.index');
+        }
         // return $request;
         $validatedData = $request->validate([
             'name' => 'required|max:255',

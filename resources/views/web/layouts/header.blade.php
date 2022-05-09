@@ -133,14 +133,9 @@
                     <div class="align-self-center ec-header-search">
                         <div class="header-search">
                             <form class="ec-search-group-form" action="#">
-                                {{-- <div class="ec-search-select-inner">
+                                <div class="ec-search-select-inner">
                                     <div class="ec-search-cat-title">All</div>
-                                    <ul class="ec-search-cat-block">
-                                        <li><a href="#">Cloths</a></li>
-                                        <li><a href="#">Bag</a></li>
-                                        <li><a href="#">Shoes</a></li>
-                                    </ul>
-                                </div> --}}
+                                </div>
                                 <input class="form-control" placeholder="Search Here..." type="text">
                                 <button class="search_submit" type="submit"><i class="ecicon eci-search"></i></button>
                             </form>
@@ -180,13 +175,15 @@
                                     src="{{asset('web/assets/images/icons/user.svg')}}" class=" header_svg" alt="" /></button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 @guest
-                                <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
-                                <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                                    <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+                                    <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                                 @endguest
                                 @auth
-                                <li><a class="dropdown-item" href="{{route('profile')}}">My Account</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#changePassword" >Change Password</a></li>
-                                <li><a class="dropdown-item" href="{{route('logOut')}}">Logout</a></li>
+                                    <li><a class="dropdown-item" href="{{route('user.profile')}}">My Account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('cart')}}">My Cart</a></li>
+                                    <li><a class="dropdown-item" href="{{route('order.view')}}">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#changePassword" >Change Password</a></li>
+                                    <li><a class="dropdown-item" href="{{route('logOut')}}">Logout</a></li>
                                 @endauth
                             </ul>
                         </div>
@@ -213,14 +210,14 @@
                 <div class="col align-self-center ec-header-search">
                     <div class="header-search">
                         <form class="ec-search-group-form" action="#">
-                            {{-- <div class="ec-search-select-inner">
+                            <div class="ec-search-select-inner">
                                 <div class="ec-search-cat-title">All</div>
                                 <ul class="ec-search-cat-block">
                                     <li><a href="#">Cloths</a></li>
                                     <li><a href="#">Bag</a></li>
                                     <li><a href="#">Shoes</a></li>
                                 </ul>
-                            </div> --}}
+                            </div>
                             <input class="form-control" placeholder="Search Here..." type="text">
                             <button class="search_submit" type="submit"><i class="ecicon eci-search"></i></button>
                         </form>
@@ -265,8 +262,8 @@
                             </li>
                             <li class=""><a class="text-uppercase" href="{{route('web.single.product')}}">Products</a>
                             </li>
-                            <li class=""><a class="text-uppercase" href="{{route('track-order')}}">Track Order</a>
-                            </li>
+                            {{-- <li class=""><a class="text-uppercase" href="{{route('track-order')}}">Track Order</a>
+                            </li> --}}
                             <li class=""><a class="text-uppercase" href="{{route('home')}}">About Us</a>
                             </li>
                             <li class=""><a class="text-uppercase" href="{{route('home')}}">Contact Us</a>
@@ -300,127 +297,20 @@
                     </li>
                     <li class=""><a class="text-uppercase" href="{{route('web.single.product')}}">Products</a>
                     </li>
-                    <li class=""><a class="text-uppercase" href="{{route('track-order')}}">Track Order</a>
-                    </li>
+                    {{-- <li class=""><a class="text-uppercase" href="{{route('track-order')}}">Track Order</a>
+                    </li> --}}
                     <li class=""><a class="text-uppercase" href="{{route('home')}}">About Us</a>
                     </li>
                     <li class=""><a class="text-uppercase" href="{{route('home')}}">Contact Us</a>
                     </li>
                 </ul>
             </div>
-            {{-- <div class="header-res-lan-curr">
-                <div class="header-top-lan-curr">
-                    <!-- Language Start -->
-                    <div class="header-top-lan dropdown">
-                        <button class="dropdown-toggle text-upper" data-bs-toggle="dropdown">Language <i
-                                class="ecicon eci-caret-down" aria-hidden="true"></i></button>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Italiano</a></li>
-                        </ul>
-                    </div>
-                    <!-- Language End -->
-                    <!-- Currency Start -->
-                    <div class="header-top-curr dropdown">
-                        <button class="dropdown-toggle text-upper" data-bs-toggle="dropdown">Currency <i
-                                class="ecicon eci-caret-down" aria-hidden="true"></i></button>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a class="dropdown-item" href="#">USD $</a></li>
-                            <li><a class="dropdown-item" href="#">EUR €</a></li>
-                        </ul>
-                    </div>
-                    <!-- Currency End -->
-                </div>
-                <!-- Social Start -->
-                <div class="header-res-social">
-                    <div class="header-top-social">
-                        <ul class="mb-0">
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Social End -->
-            </div> --}}
+
         </div>
     </div>
     <!-- Ekka Menu End -->
     @livewire('change-password')
 </header>
 
-{{-- <div class="ec-side-cart-overlay"></div>
-<div id="ec-side-cart" class="ec-side-cart">
-    <div class="ec-cart-inner">
-        <div class="ec-cart-top">
-            <div class="ec-cart-title">
-                <span class="cart_title">My Cart</span>
-                <button class="ec-close">×</button>
-            </div>
-            <ul class="eccart-pro-items">
-                <li>
-                    <a href="product-left-sidebar.html" class="sidecart_pro_img"><img
-                            src="{{asset('web/assets/images/product-image/39_1.jpg')}}" alt="product"></a>
-                    <div class="ec-pro-content">
-                        <a href="single-product-left-sidebar.html" class="cart_pro_title">Instant camera with two album</a>
-                        <span class="cart-price"><span>$450</span> x 1</span>
-                        <div class="qty-plus-minus">
-                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                        </div>
-                        <a href="#" class="remove">×</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="product-left-sidebar.html" class="sidecart_pro_img"><img
-                            src="assets/images/product-image/40_1.jpg" alt="product"></a>
-                    <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Google nest wireless</a>
-                        <span class="cart-price"><span>$360</span> x 1</span>
-                        <div class="qty-plus-minus">
-                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                        </div>
-                        <a href="#" class="remove">×</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="product-left-sidebar.html" class="sidecart_pro_img"><img
-                            src="assets/images/product-image/41_1.jpg" alt="product"></a>
-                    <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Earbuds 3nd generation wireless</a>
-                        <span class="cart-price"><span>$30</span> x 1</span>
-                        <div class="qty-plus-minus">
-                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                        </div>
-                        <a href="#" class="remove">×</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="ec-cart-bottom">
-            <div class="cart-sub-total">
-                <table class="table cart-table">
-                    <tbody>
-                        <tr>
-                            <td class="text-left">Sub-Total :</td>
-                            <td class="text-right">$1350.00</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left">VAT (20%) :</td>
-                            <td class="text-right">$270.00</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left">Total :</td>
-                            <td class="text-right primary-color">$1620.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="cart_btn">
-                <a href="cart.html" class="btn btn-primary">View Cart</a>
-                <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-            </div>
-        </div>
-    </div>
-</div> --}}
+
 

@@ -82,7 +82,7 @@
 
                                                     <div class="dropdown-menu">
                                                         {{-- <a class="dropdown-item" href="{{route('product.show',$product->slug)}}">View</a> --}}
-                                                        <a class="dropdown-item" href="{{route('product.review',$product->slug)}}">Review Product</a>
+                                                        <a class="dropdown-item" href="{{ Auth::user()->user_type ==1 ? route('product.review',$product->slug) : route('product.edit',$product->slug)}}">Review Product</a>
                                                         {{-- <a class="dropdown-item" onclick="deleteData('{{route('product.delete')}}','{{@$product->id}}')" href="#">Delete</a> --}}
                                                     </div>
                                                 </div>

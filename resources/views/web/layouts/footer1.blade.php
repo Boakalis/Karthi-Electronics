@@ -15,22 +15,20 @@
                 <div class="row">
                     <div class="col-sm-12 col-lg-3 ec-footer-contact">
                         <div class="ec-footer-widget">
-                            <div class="ec-footer-logo"><a href="#"><img src="{{asset('web/assets/images/logo/footer-logo.png')}}"
-                                        alt=""><img class="dark-footer-logo" src="{{asset('web/assets/images/logo/dark-logo.png')}}"
-                                        alt="Site Logo" style="display: none;" /></a></div>
+                            <div class="ec-footer-logo"><a href="#"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" /></a></div>
                             <h4 class="ec-footer-heading">Contact us</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                    <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
-                                            0123 456 789</a></li>
+                                    <li class="ec-footer-link">{!!@$globalSetting->address!!}</li>
+                                    <li class="ec-footer-link">Got questions? Call us 12/7! (10AM -10PM)&nbsp;<a href="tel:+91{{@$globalSetting->phone}}">+91{{@$globalSetting->phone}}</a></li>
+
                                     <li class="ec-footer-link"><span>Email:</span><a
-                                            href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
+                                            href="{{@$globalSetting->email}}">{{@$globalSetting->email}}</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-              
+
                     <div class="col-sm-12 col-lg-3 ec-footer-account">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Account</h4>

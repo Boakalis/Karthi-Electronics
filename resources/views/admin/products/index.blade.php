@@ -68,7 +68,7 @@
                                                 <badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
                                                 @endif
                                             </td> --}}
-                                            <td id="status{{$product->id}}"><badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : 'danger')}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting for Approval' : 'Inactive')}}</badge>
+                                            <td id="status{{$product->id}}"><badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : ($product->status == 3 ? 'danger' : 'danger') )}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting For Approval' : ($product->status == 3 ? 'Rejected' : 'Inactive') )}}</badge>
                                             </td>
                                             <td>
                                                 <div class=" mb-1">

@@ -5,18 +5,18 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-        <title>Ekka - Ecommerce HTML Template.</title>
+        <title>{{@$globalSetting->name}} | One Stop Solution for all products</title>
         <meta
             name="keywords"
             content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops"
         />
         <meta name="description" content="Best ecommerce html template for single and multi vendor store." />
-        <meta name="author" content="ashishmaraviya" />
+        <meta name="author" content="dragonboa">
 
         <!-- site Favicon -->
-        <link rel="icon" href="assets/images/favicon/favicon-5.png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="assets/images/favicon/favicon-5.png" />
-        <meta name="msapplication-TileImage" content="assets/images/favicon/favicon-5.png" />
+        <link rel="icon" href="{{asset(@$globalSetting->favicon)}}" sizes="32x32" />
+        <link rel="apple-touch-icon" href="{{asset(@$globalSetting->favicon)}}" />
+        <meta name="msapplication-TileImage" content="{{asset(@$globalSetting->favicon)}}" />
 
         <!-- css Icon Font -->
         <link rel="stylesheet" href="{{asset('web/assets/css/vendor/ecicons.min.css')}}" />

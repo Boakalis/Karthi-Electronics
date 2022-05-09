@@ -356,6 +356,7 @@
                                                 <input type="color" name="colors[]" class="form-control form-control-color" id="exampleColorInput4" title="Choose your color" />
                                             </div>
                                         </div>
+                                        @if (Auth::user()->user_type == 1)
                                         <div class="col-8 form mb-25 mt-1">
                                             <label class="form-label">Trend Section</label>
                                             <div class="form-checkbox-box">
@@ -389,7 +390,7 @@
                                             <label class="form-label">Meta Keywords</label>
                                             <input type="text" class="form-control" id="keywords" name="keywords" value="" placeholder="Enter Meta Keywords" />
                                         </div>
-                                        @if (Auth::user()->user_type == 1)
+
                                         <div class="col-md-6">
                                             <label for="sp" class="col-12 col-form-label">Status</label>
                                             <div class="col-12">

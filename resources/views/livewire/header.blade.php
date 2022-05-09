@@ -157,9 +157,11 @@
                                         <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                                         @endguest
                                         @auth
-                                        <li><a class="dropdown-item" href="checkout.html">My Account</a></li>
+                                        <li><a class="dropdown-item" href="{{route('user.profile')}}">My Account</a></li>
+                                        <li><a class="dropdown-item" href="{{route('cart')}}">My Cart</a></li>
+                                        <li><a class="dropdown-item" href="{{route('order.view')}}">My Orders</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#changePassword" >Change Password</a></li>
-                                        <li><a class="dropdown-item" href="{{route('logOut')}}">LogOut</a></li>
+                                        <li><a class="dropdown-item" href="{{route('logOut')}}">Logout</a></li>
                                         @endauth
                                     </ul>
                                 </div>
@@ -208,9 +210,9 @@
                                 <li><a href="{{route('home')}}">Home</a></li>
                                 <li><a href="{{route('web.category')}}">Categories</a></li>
                                 <li><a href="{{route('web.single.product')}}">Products</a></li>
-                                @auth
+                                {{-- @auth
                                     <li><a href="{{route('track-order')}}">Track Order</a></li>
-                                @endauth
+                                @endauth --}}
                                 <li><a href="{{route('home')}}">About Us</a></li>
                                 <li><a href="{{route('home')}}">Contact Us</a></li>
                             </ul>

@@ -21,85 +21,63 @@
                     <hr>
                 </li>
 
-                <!-- Vendors -->
-                <li class="has-sub expand">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
-                        <i class="mdi mdi-account-group-outline"></i>
-                        <span class="nav-text">Dealers</span> <b class="caret"></b>
-                    </a>
-                    <div class="collapse" style="display: block">
-                        <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
-                            <li class="">
-                                <a class="sidenav-item-link" href="{{route('vendor')}}">
-                                    <span class="nav-text">Dealers List</span>
-                                </a>
-                            </li>
+                @if (Auth::user()->user_type ==1)
+                    <!-- Vendors -->
+                    <li class="has-sub expand">
+                        <a class="sidenav-item-link" href="javascript:void(0)">
+                            <i class="mdi mdi-account-group-outline"></i>
+                            <span class="nav-text">Dealers</span> <b class="caret"></b>
+                        </a>
+                        <div class="collapse" style="display: block">
+                            <ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
+                                <li class="">
+                                    <a class="sidenav-item-link" href="{{route('vendor')}}">
+                                        <span class="nav-text">Dealers List</span>
+                                    </a>
+                                </li>
 
 
-                        </ul>
-                    </div>
-                </li>
+                            </ul>
+                        </div>
+                    </li>
+                @endif
 
-                {{-- <!-- Users -->
-                <li class="has-sub expand">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
-                        <i class="mdi mdi-account-group"></i>
-                        <span class="nav-text">Users</span> <b class="caret"></b>
-                    </a>
-                    <div class="collapse" style="display: block">
-                        <ul class="sub-menu" id="users" data-parent="#sidebar-menu">
-                            <li>
-                                <a class="sidenav-item-link" href="user-card.html">
-                                    <span class="nav-text">User Grid</span>
-                                </a>
-                            </li>
 
-                            <li class="">
-                                <a class="sidenav-item-link" href="user-list.html">
-                                    <span class="nav-text">User List</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="sidenav-item-link" href="user-profile.html">
-                                    <span class="nav-text">Users Profile</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr>
-                </li> --}}
-
-                <!-- Category -->
-                <li class="has-sub expand">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
-                        <i class="mdi mdi-dns-outline"></i>
-                        <span class="nav-text">CATEGORY SECTION</span> <b class="caret"></b>
-                    </a>
-                    <div class="collapse" style="display: block">
-                        <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
-                            <li class="">
-                                <a class="sidenav-item-link" href="{{route('category')}}">
-                                    <span class="nav-text">Category</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="sidenav-item-link" href="{{route('subcategory')}}">
-                                    <span class="nav-text">Sub-Category</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                @if (Auth::user()->user_type ==1)
+                    <!-- Category -->
+                    <li class="has-sub expand">
+                        <a class="sidenav-item-link" href="javascript:void(0)">
+                            <i class="mdi mdi-dns-outline"></i>
+                            <span class="nav-text">CATEGORY SECTION</span> <b class="caret"></b>
+                        </a>
+                        <div class="collapse" style="display: block">
+                            <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
+                                <li class="">
+                                    <a class="sidenav-item-link" href="{{route('category')}}">
+                                        <span class="nav-text">Category</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="sidenav-item-link" href="{{route('subcategory')}}">
+                                        <span class="nav-text">Sub-Category</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                @endif
 
                 <!-- Products -->
                 <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
                         <i class="mdi mdi-palette-advanced"></i>
                         <span class="nav-text">PRODUCTS </span>
-                        @if (@$notificationData > 0)
-                        <button type="button" class=" btn-sm btn text-warning glow-button">New</button>
-                        <b class="caret"></b>
-                        @endif
+
+                            @if (@$notificationData > 0)
+                            <button type="button" class=" btn-sm btn text-warning glow-button">New</button>
+                            <b class="caret"></b>
+                            @endif
+
                     </a>
                     <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="products" data-parent="#sidebar-menu">
@@ -108,6 +86,7 @@
                                     <span class="nav-text">Products List</span>
                                 </a>
                             </li>
+                            @if (Auth::user()->user_type ==1)
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('product.new')}}">
                                     <span class="nav-text {{@$notificationData > 0 ? ' text-danger flashit':''}}" >New Products</span>
@@ -115,9 +94,10 @@
 
                                 </a>
                             </li>
+                            @endif
                             <li class="">
                                 <a class="sidenav-item-link" href="{{route('product.reject')}}">
-                                    <span class="nav-text">Rejected Product</span>
+                                    <span class="nav-text  {{(@$notificationData > 0 && Auth::user()->user_type ==2) ? ' text-danger flashit':''}}">Rejected Product</span>
                                 </a>
                             </li>
 
@@ -125,6 +105,7 @@
                     </div>
                 </li>
 
+                @if (Auth::user()->user_type ==1)
                 <!-- Orders -->
                 <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
@@ -142,8 +123,9 @@
                         </ul>
                     </div>
                 </li>
+                @endif
                 <li class="has-sub expand">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
+                    <a class="sidenav-item-link" href="">
                         <i class="mdi mdi-cart"></i>
                         <span class="nav-text">Orders</span> <b class="caret"></b>
                     </a>
@@ -170,18 +152,18 @@
                         <span class="nav-text">Referal</span>
                     </a>
                 </li> --}}
-
+                @if (Auth::user()->user_type ==1)
                 <li>
                     <a class="sidenav-item-link" href="{{route('user')}}">
                         <i class="mdi mdi-account-group-outline"></i>
                         <span class="nav-text">Users</span>
                     </a>
                 </li>
-
+                @endif
                 <!-- Brands -->
 
 
-
+                @if (Auth::user()->user_type ==1)
                 <!-- Icons -->
                 <li class="has-sub expand">
                     <a class="sidenav-item-link" href="javascript:void(0)">
@@ -208,7 +190,8 @@
                         </ul>
                     </div>
                 </li>
-
+                @endif
+                @if (Auth::user()->user_type ==1)
                 <!-- Other Pages -->
                 <li class="has-sub expand">
                     <a class="sidenav-item-link" href="{{route('settings')}}">
@@ -224,6 +207,7 @@
                         </ul>
                     </div> --}}
                 </li>
+                @endif
             </ul>
         </div>
     </div>

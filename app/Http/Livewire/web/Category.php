@@ -10,8 +10,8 @@ class Category extends Component
     public $datas ;
     public function render()
     {
-        $this->datas = ModelsCategory::where('status',1)->get();
+        $this->datas = ModelsCategory::where('status',1)->orderBy('id','DESC')->get();
         return view('livewire.web.category')->extends('web.layouts.master1')->section('content');
-    
+
     }
 }

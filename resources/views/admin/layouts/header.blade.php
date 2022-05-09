@@ -1,10 +1,10 @@
 <header class="ec-main-header" id="header">
     <nav class="navbar navbar-static-top navbar-expand-lg">
         <!-- Sidebar toggle button -->
-        <button id="sidebar-toggler" class="sidebar-toggle"></button>
+        {{-- <button id="sidebar-toggler" class="sidebar-toggle"></button> --}}
         <!-- search form -->
         <div class="search-form d-lg-inline-block">
-            <div class="input-group">
+            {{-- <div class="input-group">
                 <input type="text" name="query" id="search-input" class="form-control"
                     placeholder="search.." autofocus autocomplete="off" />
                 <button type="button" name="search" id="search-btn" class="btn btn-flat">
@@ -13,7 +13,7 @@
             </div>
             <div id="search-results-container">
                 <ul id="search-results"></ul>
-            </div>
+            </div> --}}
         </div>
 
         <!-- navbar right -->
@@ -55,7 +55,7 @@
                         <li class="dropdown-footer">
                             <form method="POST" id="logOut" action="{{route('logout')}}">
                                 @csrf
-                            <a href="javascript:void(0)" onClick="logout()"> <i class="mdi mdi-logout"></i> Log Out </a>                            
+                            <a href="javascript:void(0)" onClick="logout()"> <i class="mdi mdi-logout"></i> Log Out </a>
                             </form>
 
                         </li>
