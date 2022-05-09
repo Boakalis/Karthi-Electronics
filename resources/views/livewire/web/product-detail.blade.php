@@ -161,37 +161,27 @@
                                         </div>
 
                                     </div>
-                                    <div class="ec-single-qty" >
-                                        @if (!empty($cart))
-                                            <div class="" style="width:120px;"  >
-                                                <div class="qty my-2">
-                                                    <span class="minus bg-dark" wire:click="decrease">-</span>
-                                                    <input type="number" style="height: 100%;" class="count" name="qty" value="{{ @$cart->qty }}" />
-                                                    <span class="plus bg-dark" wire:click="increase">+</span>
+                                    @if (@$data->status !+ 0)
+                                        <div class="ec-single-qty" >
+                                            @if (!empty($cart))
+                                                <div class="" style="width:120px;"  >
+                                                    <div class="qty my-2">
+                                                        <span class="minus bg-dark" wire:click="decrease">-</span>
+                                                        <input type="number" style="height: 100%;" class="count" name="qty" value="{{ @$cart->qty }}" />
+                                                        <span class="plus bg-dark" wire:click="increase">+</span>
+                                                    </div>
+
                                                 </div>
+                                            @endif
 
+                                            <div class="ec-single-cart ">
+                                                <button class="btn btn-primary cart {{empty($cart)?'' :'d-none'}} "  wire:click="cart" >Add To Cart</button>
                                             </div>
-                                        @endif
-
-                                        <div class="ec-single-cart ">
-                                            <button class="btn btn-primary cart {{empty($cart)?'' :'d-none'}} "  wire:click="cart" >Add To Cart</button>
+                                            <div class="ec-single-cart ">
+                                                <a href="{{route('cart')}}" class="btn btn-success buy {{!empty($cart)?'' :'d-none'}} ">Buy Now</a>
+                                            </div>
                                         </div>
-                                        <div class="ec-single-cart ">
-                                            <a href="{{route('cart')}}" class="btn btn-success buy {{!empty($cart)?'' :'d-none'}} ">Buy Now</a>
-                                        </div>
-                                        {{-- <div class="ec-single-wishlist">
-                                            <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                                    src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                                    alt="" /></a>
-                                        </div>
-                                        <div class="ec-single-quickview">
-                                            <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#ec_quickview_modal"><img
-                                                    src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                    alt="" /></a>
-                                        </div> --}}
-                                    </div>
+                                    @endif
                                     {{-- <div class="ec-single-social">
                                         <ul class="mb-0">
                                             <li class="list-inline-item facebook"><a href="#"><i
