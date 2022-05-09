@@ -71,7 +71,7 @@
                                                     <div class="">
                                                         <div class="ec-pro-image" style="border-radius: 10%" >
                                                             <a href="{{route('web.product',['category'=>$data->category->slug,'slug' => $data->slug])}}" class="">
-                                                                <img class="responsive-image"
+                                                                <img class="responsive-image" style="width:100%"
                                                                     src="{{asset('storage/media/'.@$data->image)}}"  alt="Product" />
                                                                 {{-- <img class="hover-image"
                                                                     src="assets/images/product-image/6_2.jpg" alt="Product" /> --}}
