@@ -16,14 +16,14 @@
                             <form >
                                 <span class="ec-login-wrap">
                                     <label>Email Address*</label>
-                                    <input class="mb-0" type="text" wire:model="email" name="name" placeholder="Enter your email add..." required />
+                                    <input class="mb-0" type="text" wire:model.lazy="email" name="name" placeholder="Enter your email add..." required />
                                     @error('email')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('email')}} </span>
                                     @enderror
                                 </span>
                                 <span class="ec-login-wrap">
                                     <label>Password*</label>
-                                    <input class="mb-0" type="password" name="password" wire:model="password" placeholder="Enter your password" required />
+                                    <input class="mb-0" type="password" name="password" wire:model.lazy="password" placeholder="Enter your password" required />
                                     @error('password')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('password')}} </span>
                                     @enderror
@@ -51,6 +51,6 @@
     Livewire.on("credentials", function (data) {
         toastr.error("Please Check Credentials");
     });
-   
+
     </script>
 @endpush

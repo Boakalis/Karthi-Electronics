@@ -15,7 +15,7 @@
                             <form>
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Name*</label>
-                                    <input class="mb-0" type="text" wire:model="name" placeholder="Enter your first name" required="">
+                                    <input class="mb-0" type="text" wire:model.lazy="name" placeholder="Enter your first name" required="">
                                     @error('name')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('name')}} </span>
                                     @enderror
@@ -23,7 +23,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Email*</label>
-                                    <input class="mb-0" type="email" wire:model="email" placeholder="Enter your email add..." required="">
+                                    <input class="mb-0" type="email" wire:model.lazy="email" placeholder="Enter your email add..." required="">
                                     @error('email')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('email')}} </span>
                                     @enderror
@@ -31,7 +31,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Phone Number*</label>
-                                    <input class="mb-0" type="text" wire:model="mobile" placeholder="Enter your phone number" required="">
+                                    <input class="mb-0" type="text" wire:model.lazy="mobile" placeholder="Enter your phone number" required="">
                                     @error('mobile')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('mobile')}} </span>
                                     @enderror
@@ -39,7 +39,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Password*</label>
-                                    <input class="mb-0" type="password" wire:model="password" placeholder="Enter Password" required="">
+                                    <input class="mb-0" type="password" wire:model.lazy="password" placeholder="Enter Password" required="">
                                     @error('password')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('password')}} </span>
                                     @enderror
@@ -47,7 +47,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Confirm Password*</label>
-                                    <input class="mb-0" type="password" wire:model="confirmPassword" placeholder="Re-enter the password" required="">
+                                    <input class="mb-0" type="password" wire:model.lazy="confirmPassword" placeholder="Re-enter the password" required="">
                                     @error('confirmPassword')
                                     <span class=" mb-1 text-danger" style="font-size: 10px;"> {{$errors->first('confirmPassword')}} </span>
                                     @enderror
