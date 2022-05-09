@@ -66,9 +66,9 @@
                                 <div class="row">
                                     @if (isset($datas) && $datas->count() >0)
                                         @foreach ($datas as $data)
-                                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-6 pro-gl-content">
                                                 <div class="ec-product-inner">
-                                                    <div class="">
+                                                    <div class="text-center">
                                                         <div class="ec-pro-image">
                                                             <a href="{{route('web.subcategory',$data->slug)}}" class="image">
                                                                 <img class="responsive-image"
