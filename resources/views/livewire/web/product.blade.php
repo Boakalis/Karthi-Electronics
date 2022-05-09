@@ -72,7 +72,7 @@
                                                     <h5 class="ec-pro-title text-center"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}">{{$data->name}}</a></h5>
 
                                                     <div class="ec-pro-list-desc">{{ \Illuminate\Support\Str::limit(@$data->short_description, 150, $end='...') }}</div>
-                                                    <span class="ec-price">
+                                                    <span class="ec-price text-center">
                                                         @if ($data->is_products_variant != 1)
                                                             <span class="new-price">&#8377;{{@$data->discounted_price != null ? $data->discounted_price:$data->sale_price}}</span>
                                                             @if (isset($data->discounted_price) && !empty($data->discounted_price))
