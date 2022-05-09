@@ -69,7 +69,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="ec-pro-content">
-                                                    <h5 class="ec-pro-title"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}">{{$data->name}}</a></h5>
+                                                    <h5 class="ec-pro-title text-center"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}">{{$data->name}}</a></h5>
 
                                                     <div class="ec-pro-list-desc">{{ \Illuminate\Support\Str::limit(@$data->short_description, 150, $end='...') }}</div>
                                                     <span class="ec-price">
