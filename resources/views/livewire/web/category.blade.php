@@ -70,7 +70,7 @@
                                                 <div class="ec-product-inner">
                                                     <div class="text-center">
                                                         <div class="ec-pro-image">
-                                                            <a href="{{route('web.subcategory',$data->slug)}}" class="image">
+                                                            <a href="{{route('web.subcategory',$data->slug)}}" class="">
                                                                 <img class="responsive-image"
                                                                     src="{{asset('storage/media/'.@$data->image)}}"  alt="Product" />
                                                                 {{-- <img class="hover-image"
@@ -95,7 +95,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="ec-pro-content">
-                                                        <h5 class="ec-pro-title"><a href="{{route('web.subcategory',$data->slug)}}">{{@$data->name}}</a></h5>
+                                                        <h5 class="ec-pro-title text-center"><a href="{{route('web.subcategory',$data->slug)}}">{{@$data->name}}</a></h5>
 
                                                         {{-- <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text.</div> --}}
                                                         {{-- <span class="ec-price">
