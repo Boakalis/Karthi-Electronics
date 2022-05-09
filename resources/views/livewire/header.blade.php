@@ -100,7 +100,7 @@
                         <!-- Ec Header Logo Start -->
                         <div class="align-self-center">
                             <div class="header-logo">
-                                <a href="{{route('home')}}"><img  style="width: 80px;height:80px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
+                                <a href="{{route('home')}}"><img  style="width: 100px;height:100px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
                             </div>
                         </div>
                         <!-- Ec Header Logo End -->
@@ -181,7 +181,7 @@
                     <!-- Ec Header Logo Start -->
                     <div class="col">
                         <div class="header-logo">
-                            <a href="{{route('home')}}"><img  style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
+                            <a href="{{route('home')}}"><img  style="width: 100px;height:100px;" src="{{asset(@$globalSetting->logo)}}"  alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Ec Header Logo End -->
