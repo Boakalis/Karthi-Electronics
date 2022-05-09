@@ -154,11 +154,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', OrderView::class)->name('order.view');
     Route::get('/track-order', OrderTrack::class)->name('track-order');
     Route::get('/cart', Cart::class)->name('cart');
-    Route::get('/log-out', function () {
-        Auth::logout();
-        return redirect()->route('home');
-    })->name('logOut');
 });
+Route::get('/log-out', function () {
+    Auth::logout();
+    return redirect()->route('home');
+})->name('user.logout');
 Route::get('/categories', WebCategory::class)->name('web.category');
 Route::get('/products', ProductPage::class)->name('web.single.product');
 

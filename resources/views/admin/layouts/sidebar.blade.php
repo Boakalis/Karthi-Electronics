@@ -4,7 +4,7 @@
         <div class="ec-brand">
             <a href="javascript:void(0)" title="{{@$globalSetting->name }}">
                 <img class="ec-brand-icon" src="{{asset(@$globalSetting->logo)}}" alt="" />
-                <span class="ec-brand-name text-truncate">{{@$globalSetting->name}}</span>
+                <span class="ec-brand-name text-truncate" style="" >{{@$globalSetting->name}}</span>
             </a>
         </div>
 
