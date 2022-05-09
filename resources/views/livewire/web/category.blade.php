@@ -95,7 +95,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="ec-pro-content">
-                                                        <h5 class="ec-pro-title text-center"><a href="{{route('web.subcategory',$data->slug)}}">{{@$data->name}}</a></h5>
+                                                        <h5 class="ec-pro-title text-center"><a href="{{route('web.subcategory',$data->slug)}}">{{ Str::limit(@$data->name, 35, '...') }}</a></h5>
 
                                                         {{-- <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text.</div> --}}
                                                         {{-- <span class="ec-price">
