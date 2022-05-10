@@ -712,7 +712,7 @@
                 <div class="ec_ser_content ec_ser_content_1 col-sm-12 col-md-3">
                     <div class="ec_ser_inner">
                         <div class="ec-service-image">
-                            <img src="{{ asset('web/assets/images/icons/service_5_1.svg') }}" class="svg_img"
+                            <img src="{{ asset('web/assets/assets/images/icons/service_4_1.svg') }}" class="svg_img"
                                 alt="" />
                         </div>
                         <div class="ec-service-desc">
@@ -724,20 +724,21 @@
                 <div class="ec_ser_content ec_ser_content_2 col-sm-12 col-md-3">
                     <div class="ec_ser_inner">
                         <div class="ec-service-image">
-                            <img src="{{ asset('web/assets/images/icons/service_2.svg') }}" class="svg_img"
+                            <img src="{{ asset('web/assets/images/icons/service_4_4.svg') }}" class="svg_img"
                                 alt="" />
                         </div>
                         <div class="ec-service-desc">
-                            <h2>Lowest Price</h2>
-                            <p>We gurantee that our product is best and low price</p>
+                            <h2>Return Policy</h2>
+                            <p>Easy And Free Return</p>
                         </div>
                     </div>
                 </div>
                 <div class="ec_ser_content ec_ser_content_3 col-sm-12 col-md-3">
                     <div class="ec_ser_inner">
                         <div class="ec-service-image">
-                            <img src="{{ asset('web/assets/images/icons/service_3.svg') }}" class="svg_img"
-                                alt="" />
+                            <img src="{{ asset('web/assets/images/icons/service_2.svg') }}" class="svg_img"
+                            alt="" />
+
                         </div>
                         <div class="ec-service-desc">
                             <h2>online support</h2>
