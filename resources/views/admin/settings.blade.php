@@ -120,7 +120,7 @@
                         <img src="{{ asset($data->favicon) }}" height="50px" style="width: auto">
                         @endif
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="text" class="col-12 col-form-label">Banner Image </label>
                             <div class="col-7">
                                 <input type="file" name="banner_image[]" class="form-control" multiple="multiple" >
@@ -134,7 +134,7 @@
                     @endif
                         @if ($errors->has('banner_image'))
                         <span class="text-danger">{{ $errors->first('banner_image') }}</span>
-                        @endif
+                        @endif --}}
 
 
                         <div class="form-group row">
