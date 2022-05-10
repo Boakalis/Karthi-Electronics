@@ -1,4 +1,32 @@
 <div>
+    <style>
+
+        .responsive-image{
+          /* width: 800px; */
+          height: 300px;
+          }
+
+          @media only screen and (min-width: 801px) and (max-width: 1010px) {
+          .responsive-image {
+
+              /* width: 800px; */
+              height: 100px !important ;
+          }
+          }
+          @media only screen and (min-width: 450px) and (max-width: 800px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 200px;
+              }
+          }
+          @media only screen and (max-width: 449px) {
+              .responsive-image {
+                  /* width: 800px; */
+                  height: 100px;
+              }
+          }
+
+     </style>
  <!-- Sart Single product -->
  <section class="ec-page-content section-space-p">
     <div class="container">
