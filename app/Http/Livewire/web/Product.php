@@ -18,11 +18,15 @@ class Product extends Component
         $this->category = $category;
         $this->slug = $slug;
         $this->subcategory = SubCategory::where('slug',$slug)->first();
+
     }
 
     public function render()
     {
-        $datas = ModelsProduct::where('subcategory_id',$this->subcategory->id)->where('status',1)->orWhere('status',0)->orderBy('id','DESC')->paginate(42);
+
+        $datas = ModelsProduct::where('subcategory_id',$this->subcategory->id)->where(function($query){
+            $query->where('status',1)->orWhere('status',0) ;
+        })->orderBy('id','DESC')->paginate(42);
         return view('livewire.web.product',compact('datas'))->extends('web.layouts.master1')->section('content');
     }
 }

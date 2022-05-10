@@ -178,7 +178,7 @@
                                                             <div class="text-center
                                                             {{-- ec-pro-image --}}
                                                             ">
-                                                                <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}" class="">
+                                                                <a href="{{route('web.product.detail',['category' => $slug ,'product' =>$data->subcategory->slug ,'slug' => $data->slug])}}" class="">
                                                                     <img class="main-image responsive-image"
                                                                         src="{{asset($data->image)}}" alt="Product" />
                                                                     {{-- <img class="hover-image"
@@ -203,7 +203,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="ec-pro-content">
-                                                            <h5 class="ec-pro-title"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $data->slug])}}">{{ Str::limit(@$data->name, 35, '...') }}</a></h5>
+                                                            <h5 class="ec-pro-title"><a href="{{route('web.product.detail',['category' => $slug ,'product' =>$data->subcategory->slug ,'slug' => $data->slug])}}">{{ Str::limit(@$data->name, 35, '...') }}</a></h5>
 
                                                             <div class="ec-pro-list-desc">{{ \Illuminate\Support\Str::limit(@$data->short_description, 150, $end='...') }}</div>
                                                             <span class="ec-price">
