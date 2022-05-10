@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Web;
 
 use App\Models\CartDetail;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Variant;
@@ -26,6 +27,7 @@ class ProductDetail extends Component
     public function mount($category, $product ,$slug)
     {
         $this->category = $category;
+
         $this->product = $product;
         $this->data = Product::where('slug',$slug)->first();
         $this->cart = CartDetail::where([['product_id',$this->data->id],['user_id',@Auth::user()->id],['status',1]])->first();
@@ -208,6 +210,8 @@ class ProductDetail extends Component
 
     public function render()
     {
-        return view('livewire.web.product-detail')->extends('web.layouts.master1')->section('content');
+        $categoryData = Category::where('slug',$this->category)->first();
+        $relatedProducts = Product::where('category_id',$categoryData->id)->inRandomOrder()->take(4)->get()->unique();
+        return view('livewire.web.product-detail',compact('relatedProducts'))->extends('web.layouts.master1')->section('content');
     }
 }

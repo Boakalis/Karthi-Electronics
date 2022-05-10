@@ -343,6 +343,99 @@
 
         </div>
     </div>
+    <div class="col-md-12 my-4 section-title-block">
+        <div class="section-title text-center">
+            @php
+                $title = explode('&',request()->segment(count(request()->segments())));
+            @endphp
+        </h2>
+            <h2 class="ec-title">Related Products</h2>
+        </div>
+        <div class="container">
+
+            <div class="shop-pro-content">
+                <div class="shop-pro-inner">
+                    <div class="row">
+                        @if (isset($relatedProducts) && $relatedProducts->count() >0 )
+                            @foreach ($relatedProducts as $related)
+                                <div class="col-lg-3 col-md-4 my-2 col-sm-6 col-6 pro-gl-content">
+                                    <div class="ec-product-inner">
+                                        <div class="ec-pro-image-outer">
+                                            <div class="text-center
+                                            {{-- ec-pro-image --}}
+                                            ">
+                                                <a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $related->slug])}}" class="">
+                                                    <img class="main-image responsive-image"
+                                                        src="{{asset($related->image)}}" alt="Product" />
+                                                    {{-- <img class="hover-image"
+                                                        src="{{asset($related->image)}}" alt="Product" /> --}}
+                                                </a>
+                                                {{-- <a href="#" class="quickview" data-link-action="quickview"
+                                                    title="Quick view" data-bs-toggle="modal"
+                                                    data-bs-target="#ec_quickview_modal"><img
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a> --}}
+                                                {{-- <div class="ec-pro-actions">
+                                                    <a href="compare.html" class="ec-btn-group compare"
+                                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                                            class="svg_img pro_svg" alt="" /></a>
+                                                    <button title="Add To Cart" class=" add-to-cart"><img
+                                                            src="assets/images/icons/cart.svg" class="svg_img pro_svg"
+                                                            alt="" /> Add To Cart</button>
+                                                    <a class="ec-btn-group wishlist" title="Wishlist"><img
+                                                            src="assets/images/icons/wishlist.svg"
+                                                            class="svg_img pro_svg" alt="" /></a>
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                        <div class="ec-pro-content">
+                                            <h5 class="ec-pro-title"><a href="{{route('web.product.detail',['category' => $category ,'product' =>$slug ,'slug' => $related->slug])}}">{{ Str::limit(@$related->name, 35, '...') }}</a></h5>
+
+                                            <div class="ec-pro-list-desc">{{ \Illuminate\Support\Str::limit(@$related->short_description, 150, $end='...') }}</div>
+                                            <span class="ec-price">
+                                                @if ($related->is_products_variant != 1)
+                                                    <span class="new-price">&#8377;{{@$related->discounted_price != null ? $related->discounted_price:$related->sale_price}}</span>
+                                                    @if (isset($related->discounted_price) && !empty($related->discounted_price))
+                                                        <span class="old-price">&#8377;{{$related->sale_price}}</span>
+                                                    @endif
+                                                @else
+                                                    <span class="new-price"> From &#8377;{{@$related->variants->first()->seller_price }}</span >
+                                                @endif
+
+                                            </span>
+                                            <div class="ec-pro-option">
+                                                <div class="ec-pro-color">
+                                                    <span class="ec-pro-opt-label">Color</span>
+                                                    <ul class="">
+                                                        @foreach (array_unique(json_decode($related->colors)) as $key => $item)
+                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
+                                                                {{-- data-src="{{asset('web/assets/images/product-image/4_1.jpg')}}"
+                                                                data-src-hover="{{asset('web/assets/images/product-image/4_1.jpg')}}" --}}
+                                                                {{-- data-tooltip="Gray" --}}
+                                                                ><span
+                                                                    style="background-color:{{$item}};"></span></a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        @else
+                            {{-- <center><h1>No Products Found</h1></center> --}}
+                        @endif
+
+                    </div>
+                </div>
+                <!-- Ec Pagination Start -->
+
+                <!-- Ec Pagination End -->
+            </div>
+        </div>
+
+    </div>
 </section>
 <!-- End Single product -->
 <div class="modal fade" wire:ignore.self id="modal-login" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog">
