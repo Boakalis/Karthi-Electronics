@@ -712,7 +712,7 @@
                 <div class="ec_ser_content ec_ser_content_1 col-sm-12 col-md-3">
                     <div class="ec_ser_inner">
                         <div class="ec-service-image">
-                            <img src="{{ asset('web/assets/assets/images/icons/service_4_1.svg') }}" class="svg_img"
+                            <img src="{{ asset('web/assets/images/icons/service_4_1.svg') }}" class="svg_img"
                                 alt="" />
                         </div>
                         <div class="ec-service-desc">
