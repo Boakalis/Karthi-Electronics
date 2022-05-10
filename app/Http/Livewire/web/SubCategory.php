@@ -24,7 +24,9 @@ class SubCategory extends Component
     public function render()
     {
 
-        $allProducts = Product::where('status',1)->orWhere('status',0)->where('category_id',$this->category->id)->orderBy('id','DESC')->paginate(42);
+        $allProducts = Product::where('category_id',$this->category->id)->where(function($query){
+            $query->where('status',1)->orWhere('status',0) ;
+        })->orderBy('id','DESC')->paginate(42);
         return view('livewire.web.sub-category',compact('allProducts'))->extends('web.layouts.master1')->section('content');
     }
 }
