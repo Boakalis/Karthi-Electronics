@@ -32,7 +32,7 @@ class AdminController extends Controller
 
     public function settingsUpdate(Request $request)
     {
-        return $request;
+        
 
         $validatedData = $request->validate(
             [
