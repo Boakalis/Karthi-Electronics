@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <center>
-                                        <h6 class="ec-pro-title fw-bold"><a
+                                        <h6 class="ec-pro-title fw-bold mt-3"><a
                                                 href="{{ route('web.product.detail', ['category' => $featured->subcategory->category->slug, 'product' => $featured->subcategory->slug, 'slug' => $featured->slug]) }}">
                                                 {{ Str::limit($featured->name, 30,'...') }}</a></h6>
                                         <span class="ec-price">
@@ -462,7 +462,7 @@
                                         </div>
                                     </div>
                                     <center>
-                                        <h6 class="ec-pro-title fw-bold"><a
+                                        <h6 class="ec-pro-title fw-bold mt-3"><a
                                                 href="{{ route('web.product.detail', ['category' => $product->subcategory->category->slug, 'product' => $product->subcategory->slug, 'slug' => $product->slug]) }}">
                                                 {{ Str::limit($product->name, 30, '...') }}</a></h6>
                                         <span class="ec-price">
