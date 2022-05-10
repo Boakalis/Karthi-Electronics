@@ -3,50 +3,17 @@
 @endphp
 <header class="ec-header">
     <!--Ec Header Top Start -->
-    {{-- <div class="header-top">
+    <div class="header-top">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Header Top phone Start -->
-                <div class="col header-top-left">
-                    <!-- Social Start -->
-                    <div class="header-top-social">
-                        <ul class="mb-0">
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="ecicon eci-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- Social End -->
-                </div>
+
                 <!-- Header Top phone End -->
                 <!-- Header Top call Start -->
-                <div class="col header-top-center">
-                    <!-- Language Start -->
-                    <div class="header-top-lan-curr header-top-lan dropdown">
-                        <button class="dropdown-toggle" data-bs-toggle="dropdown">English <i
-                                class="ecicon eci-angle-down" aria-hidden="true"></i></button>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Italiano</a></li>
-                        </ul>
-                    </div>
-                    <!-- Language End -->
-                    <!-- Currency Start -->
-                    <div class="header-top-lan-curr header-top-curr dropdown">
-                        <button class="dropdown-toggle" data-bs-toggle="dropdown">USD <i
-                                class="ecicon eci-angle-down" aria-hidden="true"></i></button>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a class="dropdown-item" href="#">USD $</a></li>
-                            <li><a class="dropdown-item" href="#">EUR €</a></li>
-                        </ul>
-                    </div>
-                    <!-- Currency End -->
 
-                </div>
                 <!-- Header Top call End -->
                 <!-- Header Top Language Currency -->
-                <div class="col header-top-right d-none d-lg-block">
+                {{-- <div class="col header-top-right d-none d-lg-block">
                     <div class="header-top-right-inner d-flex justify-content-end">
 
                         <!-- Header User Start -->
@@ -70,7 +37,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Header Top Language Currency -->
                 <!-- Header Top responsive Action -->
                 <div class="col header-top-res d-lg-none">
@@ -87,7 +54,7 @@
                         </div>
                         <!-- Header User End -->
                         <!-- Header Cart Start -->
-                        <a href="#" class="ec-header-btn ec-header-wishlist">
+                        {{-- <a href="#" class="ec-header-btn ec-header-wishlist">
                             <div class="header-icon"><img src="{{asset('web/assets/images/icons/wishlist.svg')}}"
                                     class="svg_img header_svg" alt="" /></div>
                             <span class="ec-header-count ec-wishlist-count">0</span>
@@ -98,7 +65,7 @@
                             <div class="header-icon"><img src="{{asset('web/assets/images/icons/cart_5.svg')}}"
                                     class="svg_img header_svg" alt="" /></div>
                             <span class="ec-header-count ec-cart-count">3</span>
-                        </a>
+                        </a> --}}
                         <!-- Header Cart End -->
                         <!-- Header menu Start -->
                         <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
@@ -110,7 +77,7 @@
                 <!-- Header Top responsive Action -->
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- Ec Header Top  End -->
     <!-- Ec Header Bottom  Start -->
     <div class="ec-header-bottom d-none d-lg-block">
