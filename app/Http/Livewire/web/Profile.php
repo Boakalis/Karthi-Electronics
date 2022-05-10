@@ -10,6 +10,13 @@ class Profile extends Component
 
     public $name, $email, $mobile;
 
+    public function mount()
+    {
+        $this->name=Auth::user()->name;
+        $this->email=Auth::user()->email;
+        $this->mobile=Auth::user()->mobile;
+    }
+
     protected function rules()
     {
         return [
