@@ -13,7 +13,7 @@
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
                                     <li class="ec-footer-link">
-                                        <span class="call-img"><img src="{{asset('web/bassets/images/icons/call_5.svg')}}"
+                                        <span class="call-img"><img src="{{asset('web/assets/images/icons/call_5.svg')}}"
                                                 class="svg_img foo_img" alt="" /></span>
                                         <span class="call-desc">
                                             <span>Got questions? Call us 12/7! (10AM -10PM)</span>
