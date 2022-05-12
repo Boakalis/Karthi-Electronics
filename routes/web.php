@@ -12,10 +12,13 @@ use App\Http\Controllers\ReferalController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Area;
 use App\Http\Livewire\Banner;
+use App\Http\Livewire\CancelOrder;
 use App\Http\Livewire\Cart;
 use App\Http\Livewire\Category;
 use App\Http\Livewire\District;
+use App\Http\Livewire\Invoice;
 use App\Http\Livewire\Login;
+use App\Http\Livewire\NewOrder;
 use App\Http\Livewire\Order;
 use App\Http\Livewire\OrderIndex;
 use App\Http\Livewire\OrderSuccess;
@@ -24,6 +27,7 @@ use App\Http\Livewire\OrderView;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Referals;
 use App\Http\Livewire\Register;
+use App\Http\Livewire\RejectOrder;
 use App\Http\Livewire\State;
 use App\Http\Livewire\SubCategory;
 use App\Http\Livewire\User;
@@ -112,6 +116,9 @@ Route::middleware(['dashboard','auth'])->prefix('admin')->group(function () {
         ->name('logout');
 
     Route::get('/orders', Order::class)->name('order');
+    Route::get('/new-orders', NewOrder::class)->name('order.new');
+    Route::get('/cancelled-orders', CancelOrder::class)->name('order.cancel');
+    Route::get('/returned-orders', RejectOrder::class)->name('order.reject');
 
     Route::get('/products', [ProductController::class, 'index'])
         ->name('product.index');
@@ -161,8 +168,10 @@ Route::get('/log-out', function () {
 })->name('user.logout');
 Route::get('/categories', WebCategory::class)->name('web.category');
 Route::get('/products', ProductPage::class)->name('web.single.product');
-
+Route::get('/invoice/{id}', Invoice::class)->name('invoice');
+Route::get('/get-invoice/{id}', [ProductController::class, 'getInvoice'])->name('pdf');
 
 Route::get('/{slug}', WebSubCategory::class)->name('web.subcategory');
 Route::get('/{category}/{slug}', Product::class)->name('web.product');
 Route::get('/{category}/{product}/{slug}', ProductDetail::class)->name('web.product.detail');
+

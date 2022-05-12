@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Livewire\Vendor;
 use App\Models\admin\ImageUpload;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Settings;
 use App\Models\SubCategory;
 use App\Models\User;
 use App\Models\Variant;
@@ -13,7 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Str;
-
+use PDF;
 
 class ProductController extends Controller
 {
@@ -29,6 +31,16 @@ class ProductController extends Controller
 
 
         return view('admin.products.index', compact('products'));
+    }
+
+    public function getInvoice($id)
+    {
+        $data = Order::where('id',$id)->with('orders','address')->first();
+        $storeData =Settings::where('id',1)->first();
+        $pdf = PDF::loadView('livewire.invoice', compact('data','storeData'));
+        return $pdf->download('invoice.pdf');
+
+
     }
 
     public function newProducts()

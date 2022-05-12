@@ -12,6 +12,7 @@
         />
         <meta name="description" content="Best ecommerce html template for single and multi vendor store." />
         <meta name="author" content="dragonboa">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- site Favicon -->
         <link rel="icon" href="{{asset(@$globalSetting->favicon)}}" sizes="32x32" />

@@ -41,7 +41,15 @@
                 <!-- Header Top Language Currency -->
                 <!-- Header Top responsive Action -->
                 <div class="col header-top-res d-lg-none">
+
                     <div class="ec-header-bottons">
+                        <center>
+
+                            <a href="#ec-mobile-menu" class="">
+
+                                <a href="{{route('home')}}"><img style="width: 50px;height:50px;" src="{{asset(@$globalSetting->logo)}}" alt="Site Logo" />
+                            </a>
+                        </center>
                         <!-- Header User Start -->
                         <div class="ec-header-user dropdown">
                             <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
@@ -70,7 +78,9 @@
                         <!-- Header menu Start -->
                         <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
                             <i class="ecicon eci-bars"></i>
+
                         </a>
+
                         <!-- Header menu End -->
                     </div>
                 </div>

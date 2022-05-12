@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\OrderCreated;
 use App\Models\AddressBook;
 use App\Models\CartDetail;
 use App\Models\Coupon;
@@ -52,18 +53,17 @@ class Cart extends Component
         } else {
 
 
-
         $order = Order::create([
             'user_id' => Auth::user()->id,
             'address_id' => $this->addressSelect,
-            'amount' => $this->sum ,
+            'amount' => $this->sum -$this->walletAmount ,
             'wallet_amount' => $this->walletAmount ,
             'status' => 1 ,
             'payment_type' => 1 ,
             'payment_id' => null ,
             'ultra_coin' => $this->ultraCoin,
             'order_date' => Carbon::now() ,
-            'orderId' => Str::upper(Str::random(3).Carbon::now()->format('DYYYm').Str::random(4)    )  ,
+            'orderId' => Str::upper(Str::random(3).Carbon::now()->format('dM').Str::random(4))  ,
         ]);
 
 
@@ -93,6 +93,8 @@ class Cart extends Component
                  'amount' => Auth::user()->wallet->amount - $this->walletAmount,
              ]);
         }
+        $this->emit('order-created');
+        event(new OrderCreated('OrderCreated'));
 
         return redirect()->route('order-success');
     }

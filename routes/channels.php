@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Broadcast;
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+
+Broadcast::channel('orderCreated', function () {
+    return true;
+});
+Broadcast::channel('orderCancelled', function () {
+    return true;
+});
+Broadcast::channel('orderReturned', function () {
+    return true;
+});

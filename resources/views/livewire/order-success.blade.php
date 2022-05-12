@@ -80,7 +80,7 @@
                 <a href="{{ route('home') }}" class="btn btn-danger">Go Home</a>
             </div>
             <div class="col-6">
-                <a href="{{ route('track-order') }}" class="btn btn-success">Track Order</a>
+                <a href="{{ route('order.view') }}" class="btn btn-success">View Orders</a>
             </div>
         </div>
     </div>

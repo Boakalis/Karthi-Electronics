@@ -17,6 +17,7 @@
     <link rel="apple-touch-icon" href="{{asset(@$globalSetting->favicon)}}" />
     <meta name="msapplication-TileImage" content="{{asset(@$globalSetting->favicon)}}" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- css Icon Font -->
     <link rel="stylesheet" href="{{asset('web/assets/css/vendor/ecicons.min.css')}}" />

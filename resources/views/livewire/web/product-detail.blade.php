@@ -203,7 +203,7 @@
                                             @endif
 
                                             <div class="ec-single-cart ">
-                                                <button class="btn btn-primary cart {{empty($cart)?'' :'d-none'}} "  wire:click="cart" >Add To Cart</button>
+                                                <button class="btn btn-primary cart {{empty($cart)?'' :'d-none'}} " wire:loading.attr="disabled"  wire:click="cart" >Add To Cart</button>
                                             </div>
                                             <div class="ec-single-cart ">
                                                 <a href="{{route('cart')}}" class="btn btn-success buy {{!empty($cart)?'' :'d-none'}} ">Buy Now</a>

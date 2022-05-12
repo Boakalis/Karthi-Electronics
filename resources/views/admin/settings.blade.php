@@ -148,7 +148,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-12 col-form-label">Facebook</label>
+                            <label for="text" class="col-12 col-form-label">Pan Number</label>
                             <div class="col-7">
                                 <input id="facebook" name="facebook"  value="{{ @$data->facebook}}" class="form-control here slug-title" type="facebook">
                             </div>
@@ -158,7 +158,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="text" class="col-12 col-form-label">Whatsapp</label>
+                            <label for="text" class="col-12 col-form-label">GST Number</label>
                             <div class="col-7">
                                 <input id="whatsapp" name="whatsapp"  value="{{ @$data->whatsapp}}" class="form-control here slug-title" type="whatsapp">
                             </div>

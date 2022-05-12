@@ -132,13 +132,23 @@
                     <div class="collapse" style="display: block">
                         <ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="new-order.html">
-                                    <span class="nav-text">New Order</span>
+                                <a class="sidenav-item-link" href="{{route('order')}}">
+                                    <span class="nav-text">All Orders</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidenav-item-link" href="order-history.html">
-                                    <span class="nav-text">Order History</span>
+                                <a class="sidenav-item-link" href="{{route('order.new')}}">
+                                    <span class="nav-text">Today Order</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a class="sidenav-item-link" href="{{route('order.reject')}}">
+                                    <span class="nav-text">Returned Order</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a class="sidenav-item-link" href="{{route('order.cancel')}}">
+                                    <span class="nav-text">Cancelled Order</span>
                                 </a>
                             </li>
                         </ul>

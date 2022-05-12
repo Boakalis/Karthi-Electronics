@@ -11,6 +11,17 @@ class Order extends Model
 
     protected $guarded = [];
 
+
+    public function orders()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(AddressBook::class,'address_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

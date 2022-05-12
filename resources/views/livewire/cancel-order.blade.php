@@ -28,9 +28,9 @@
                                     <th>Payment Type</th>
                                     <th>Order Date</th>
                                     <th>Delivered Date</th>
-                                    <th>Assigned To</th>
+                                    {{-- <th>Assigned To</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Action</th> --}}
                                 </tr>
                             </thead>
 
@@ -45,27 +45,26 @@
                                             <td>{{@$data->payment_type == 1 ? 'COD' : 'ONLINE'}}</td>
                                             <td>{{ \Carbon\Carbon::parse(@$data->order_date)->format('d-m-Y') }}</td>
                                             <td>{{ $data->delivery_date ? \Carbon\Carbon::parse(@$data->order_date)->format('d-m-Y') : 'NA' }}</td>
-                                            <td>
+                                            {{-- <td>
                                                 <select name="" {{@$data->status >= 2 ? 'disabled' : ''}} class="form-select" id="">
                                                     <option value="1">Owner</option>
                                                     <option value="0">Dealer</option>
                                                 </select>
-                                            </td>
-                                            <td>
+                                            </td> --}}
+                                            {{-- <td>
                                                 <select name="" onchange="status(event,{{@$data->id}})" class="form-select" id="">
                                                     <option {{@$data->status == 0 ? 'selected' : '' }} {{@$data->status >= 5 ? 'disabled' : ''}} value="0">Rejeccted</option>
                                                     <option {{@$data->status == 1 ? 'selected' : ''}}  {{@$data->status >= 2 ? 'disabled' : ''}} value="1">Order Received</option>
                                                     <option {{@$data->status == 2 ? 'selected' : '' }} {{@$data->status >= 5 ? 'disabled' : ''}}  value="2">Dispatching</option>
-                                                    {{-- <option {{@$data->status == }} value="3">Order Received</option> --}}
                                                     <option {{@$data->status >= 5 ? 'disabled' : ''}} {{@$data->status == 4 ? 'selected' : '' }} value="4">On the way</option>
                                                     <option {{@$data->status == 5 ? 'selected' : '' }} {{@$data->status >= 5 ? 'disabled' : ''}} value="5">Delivered</option>
 
                                                 </select>
-                                            </td>
-                                            <td>
+                                            </td> --}}
+                                            {{-- <td>
                                                 <a href="{{route('invoice',@$data->id)}}" class="btn btn-success my-2 btn-sm" >View Invoice</a>
                                                 <a href="{{route('pdf',@$data->id)}}" class="btn btn-success btn-sm my-2" >Download Invoice</a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
 
                                     @endforeach

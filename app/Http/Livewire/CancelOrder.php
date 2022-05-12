@@ -2,14 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Order as ModelsOrder;
+use App\Models\Order;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Order extends Component
+class CancelOrder extends Component
 {
-
     use WithPagination;
     public $status ,$orderId ;
 
@@ -17,8 +16,6 @@ class Order extends Component
         'statusChange' => 'statusChange',
         'orderId' => 'orderId',
     ];
-
-
 
     public function mount()
     {
@@ -32,12 +29,12 @@ class Order extends Component
     public function statusChange($value)
     {
         if ($value == 5) {
-            ModelsOrder::where('id',$this->orderId)->update([
+            Order::where('id',$this->orderId)->update([
                 'status' => $value,
                 'delivery_date' => Carbon::now(),
             ]);
         }else{
-            ModelsOrder::where('id',$this->orderId)->update([
+            Order::where('id',$this->orderId)->update([
                 'status' => $value,
 
             ]);
@@ -48,7 +45,7 @@ class Order extends Component
     public function render()
     {
 
-        $datas = ModelsOrder::orderBy('id','DESC')->paginate(100);
-        return view('livewire.order',compact('datas'))->extends('admin.layouts.master')->section('content');
+        $datas = Order::where('status',0)->orderBy('id','DESC')->paginate(100);
+        return view('livewire.cancel-order',compact('datas'))->extends('admin.layouts.master')->section('content');
     }
 }

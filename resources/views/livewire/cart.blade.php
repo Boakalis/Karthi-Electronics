@@ -105,7 +105,7 @@
                                                 @endif
                                                 <p class="m-0" >{{$add->city}}-{{$add->pincode}}</p>
                                                 <p class="m-0" >Phone Number:{{$add->mobile}}</p>
-                                                <button class="btn btn-success mt-1" wire:click="setAddress({{$add->id}})" >Select</button>
+                                                <button class="btn btn-success mt-1" wire:click="setAddress({{$add->id}})" >Deliver Here</button>
                                                 <button class="btn btn-primary mt-1" wire:click="editAddress({{$add->id}})" >Edit</button>
                                                 <button class="btn btn-danger mt-1" wire:click="removeAddress({{$add->id}})" >Remove</button>
 
@@ -167,7 +167,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="ec-cart-update-bottom">
                                                         <span>&nbsp;</span>
-                                                        <button class="btn btn-success" type="button" wire:click="buyNow()" >Pay By COD</button>
+                                                        <button class="btn btn-success" type="button" wire:loading.attr="disabled" wire:click="buyNow()" >Pay By COD</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,12 +187,12 @@
                 </center>
                 <center>
                     <div class="ec-bg-swipe">
-                        <button class=" bg-success ec-btn-bg-swipe">
-                            <span class="circle bg-dark " aria-hidden="true">
-                                <span class="icon arrow"></span>
+                        <a href="{{route('web.single.product')}}" class=" bg-success btn">
+                            <span class="  " aria-hidden="true">
+
                             </span>
-                            <span class="button-text text-light ">GO HOME</span>
-                        </button>
+                            <span class="button-text text-light ">BUY NOW</span>
+                        </a>
                     </div>
                 </center>
             @endif
@@ -351,7 +351,7 @@
             toastr.success('Address updated');
         });
         Livewire.on("no-address", function(data) {
-            toastr.success('Please Provide Address');
+            toastr.error('Please Provide Address');
         });
         Livewire.on("not-deliverable",function(){
 
