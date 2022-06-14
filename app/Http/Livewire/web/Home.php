@@ -13,11 +13,11 @@ class Home extends Component
     {
         $categories = Category::where('status',1)->get();
         $products = Product::where('status',1)->orWhere('status',0)->with('subcategory','subcategory.category')->orderBy('id','DESC')->take(18)->get();
-        $sliderData = Banner::where('type_id', 1)->orderBy('id','DESC')->take(3)->get();
+        $sliderData = Banner::where('type_id', 1)->orderBy('id','DESC')->take(5)->get();
         $productBannerData = Banner::where('type_id', 2)->with('product','product.subcategory.category')->orderBy('id','DESC')->take(2)->get();
         // dd($productBannerData);
         $adData = Banner::where('type_id', 0)->inRandomOrder()->first();
-      
+
         $featuredProduct = Product::where([['is_featured',1]])->where(function($query){
             $query->where('status',1)->orWhere('status',0) ;
         })->orderBy('id','DESC')->take(16)->get();
