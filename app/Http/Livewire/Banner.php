@@ -65,6 +65,12 @@ class Banner extends Component
             ]);
             $image =   $this->image->store('public/media');
             $exploded_image =explode('/',$image);
+
+            if ($this->type_id == 1 || $this->type_id == 2) {
+                $this->emit('option');
+                return;
+            }
+
             ModelsBanner::create([
                 'type_id' => $this->type_id,
                 'option_id' => $this->option_id,

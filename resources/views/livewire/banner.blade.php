@@ -208,6 +208,9 @@
             toastr.info('Banner Updated');
             location.reload();
         });
+        Livewire.on('option', function() {
+            toastr.error('Select Option Before Update');
+        });
     </script>
     <script>
         function resetData(params) {
