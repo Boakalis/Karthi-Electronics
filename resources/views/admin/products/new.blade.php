@@ -74,13 +74,17 @@
                                                 <div class=" mb-1">
 
                                                     <button type="button"
+                                                        onclick="addClass({{@$product->id}})"
+                                                        id="button{{@$product->id}}"
                                                         class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false" data-display="static">
                                                         <span class="sr-only">Info</span>
                                                     </button>
 
-                                                    <div class="dropdown-menu">
+                                                    <div class="dropdown-menu"
+                                                    id="buttonA{{@$product->id}}"
+                                                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 31px);" >
                                                         {{-- <a class="dropdown-item" href="{{route('product.show',$product->slug)}}">View</a> --}}
                                                         <a class="dropdown-item" href="{{ Auth::user()->user_type ==1 ? route('product.review',$product->slug) : route('product.edit',$product->slug)}}">Review Product</a>
                                                         {{-- <a class="dropdown-item" onclick="deleteData('{{route('product.delete')}}','{{@$product->id}}')" href="#">Delete</a> --}}

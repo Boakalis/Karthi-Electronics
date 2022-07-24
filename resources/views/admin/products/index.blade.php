@@ -71,16 +71,19 @@
                                             <td id="status{{$product->id}}"><badge class="badge badge-{{$product->status == 1 ? 'success' : ($product->status == 2 ? 'warning' : ($product->status == 3 ? 'danger' : 'danger') )}}">{{$product->status == 1 ? 'Active' : ($product->status == 2 ? 'Waiting For Approval' : ($product->status == 3 ? 'Rejected' : 'Inactive') )}}</badge>
                                             </td>
                                             <td>
-                                                <div class=" mb-1">
-
+                                                <div class="btn-group mb-1">
+                                                    <button type="button" class="btn btn-outline-success">Info</button>
                                                     <button type="button"
+                                                        onclick="addClass({{@$product->id}})"
                                                         class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        id="button{{@$product->id}}"
                                                         aria-expanded="false" data-display="static">
                                                         <span class="sr-only">Info</span>
                                                     </button>
-
-                                                    <div class="dropdown-menu">
+                                                    <div class="dropdown-menu"
+                                                    id="buttonA{{@$product->id}}"
+                                                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 31px);" >
                                                         <a class="dropdown-item" href="{{route('product.show',$product->slug)}}">View</a>
                                                         <a class="dropdown-item" href="{{route('product.edit',$product->slug)}}">Edit</a>
                                                         <a class="dropdown-item" onclick="deleteData('{{route('product.delete')}}','{{@$product->id}}')" href="#">Delete</a>
@@ -133,5 +136,6 @@
         });
     }
     </script>
+
 @endsection
 

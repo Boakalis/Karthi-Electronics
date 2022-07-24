@@ -280,6 +280,12 @@
       <script >
 
 </script>
+<script>
+    function addClass(id) {
+        $('#button'+id).addClass('show')
+        $('#buttonA'+id).addClass('show')
+    }
+</script>
     @stack('scripts')
 </body>
 
