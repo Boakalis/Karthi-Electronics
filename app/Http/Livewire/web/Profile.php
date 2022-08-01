@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Web;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -21,7 +22,7 @@ class Profile extends Component
     {
         return [
             'email' => 'required|email|unique:users,email,' . Auth::user()->id,
-            'mobile' => 'required|numeric|digits_between:8,15|unique:users,phone,' . Auth::user()->id,
+            'mobile' => 'required|numeric|digits_between:8,15|unique:users,mobile,' . Auth::user()->id,
             'name' => 'required|string|max:244',
         ];
     }
@@ -31,6 +32,18 @@ class Profile extends Component
     {
         $this->validate();
     }
+
+
+    public function save()
+    {
+        User::where('id',Auth::user()->id)->update([
+           'name' => $this->name,
+            'email' => $this->email,
+            'mobile' => $this->mobile,
+        ]);
+        $this->emit('updated');
+    }
+
 
     public function render()
     {

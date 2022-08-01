@@ -2,7 +2,7 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                
+
                 <div class="col-md-12 text-center">
                     <div class="section-title">
                         <h2 class="ec-bg-title">Profile Details</h2>
@@ -14,7 +14,7 @@
                     <div class="ec-register-container">
                         <div class="ec-register-form">
                             <form>
-                                
+
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Name*</label>
                                     <input class="mb-0" type="text" wire:model="name" value="{{@Auth::user()->name}}" placeholder="Enter your first name" required="">
@@ -39,17 +39,17 @@
                                     @enderror
                                 </span>
 
-                              
+
 
                                 <span class="ec-register-wrap ec-register-btn">
-                                    <button class="btn btn-primary " style="font-size: 13px;" wire:click="register()" type="button">Update Profile</button>
+                                    <button class="btn btn-primary " style="font-size: 13px;" wire:click="save()" type="button">Update Profile</button>
                                 </span>
-                               
+
                             </form>
                         </div>
                     </div>
-     
-     
+
+
                 </div>
             </div>
         </div>
@@ -57,9 +57,8 @@
 </div>
 @push('scripts')
     <script>
-        Livewire.on('registered',function(){
-            toastr.success('Registered Successfully')
-            window.location.href = '{{route('login')}}'
+        Livewire.on('updated',function(){
+            toastr.success('Profile Updated Successfully')
         });
     </script>
 @endpush

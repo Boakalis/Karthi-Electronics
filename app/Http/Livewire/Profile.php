@@ -43,9 +43,9 @@ class Profile extends Component
 
     public function save()
     {
-     
+
         $this->validate();
-        dd|(1);
+        dd(1);
     }
 
 }

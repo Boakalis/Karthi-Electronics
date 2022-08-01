@@ -142,6 +142,8 @@ Route::middleware(['dashboard','auth'])->prefix('admin')->group(function () {
 
     Route::post('/change-status', [ProductController::class, 'changeStatus'])
         ->name('product.status');
+    Route::post('/pdf-dowmload', [ProductController::class, 'pdfDownload'])
+        ->name('pdf-download');
     Route::post('/delete-product', [ProductController::class, 'deleteProduct'])
         ->name('product.delete');
 
@@ -166,6 +168,7 @@ Route::get('/log-out', function () {
     Auth::logout();
     return redirect()->route('home');
 })->name('user.logout');
+
 Route::get('/categories', WebCategory::class)->name('web.category');
 Route::get('/products', ProductPage::class)->name('web.single.product');
 Route::get('/invoice/{id}', Invoice::class)->name('invoice');

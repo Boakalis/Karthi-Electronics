@@ -23,12 +23,13 @@
                 @php
                     $user= Auth::user();
                 @endphp
+
                 <li class="dropdown user-menu">
-                    <button class="dropdown-toggle nav-link ec-drop" data-bs-toggle="dropdown"
+                    <button class="dropdown-toggle nav-link  ec-drop" onclick="showProfile()" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <img src="{{asset($user->image)}}" class="user-image" alt="User Image" />
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right ec-dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-right profile ec-dropdown-menu">
                         <!-- User image -->
                         <li class="dropdown-header">
                             <img src="{{asset($user->image)}}" class="img-circle" alt="User Image" />
@@ -630,3 +631,4 @@
         </div>
     </nav>
 </header>
+

@@ -125,8 +125,9 @@
                             <td>
                                 <b> Sold By: {{@$storeData->name}} </b> <br>
                                 {!!@$storeData->address!!} <br>
-                                PAN: {{@$storeData->facebook}} <br>
-                                GSTIN: {{@$storeData->whatsapp}} <br>
+                                {{-- PAN: {{@$storeData->facebook}} <br>
+                                GSTIN: {{@$storeData->whatsapp}} <br> --}}
+                                Contact Number : {{@$data->address->mobile}}
                             </td>
                         </tr>
                     </table>
@@ -184,7 +185,10 @@
                             PRICE (INR)
                         </td>
                         <td style="width:15%; text-align:right;">
-                            TAX RATE
+                            CGST
+                        </td>
+                        <td style="width:15%; text-align:right;">
+                            SGST
                         </td>
                         <td style="width:15%; text-align:right;">
                             TAX AMOUNT (INR)
@@ -203,6 +207,7 @@
                         <tr class="item">
                             <td style="width:25%;">
                                 {{@$order->product->name}}{{@$order->variant_id != null ? '-'.@$order->variant->name : ''}}
+                                <p class="py-0 my-0" style="font-size: 10px"> {{@$imei != null ? 'IMEI:'.$imei : ''  }} </p>
                             </td>
                             <td style="width:10%; text-align:center;">
                                 {{ @$order->qty}}
@@ -217,7 +222,10 @@
                                 @endphp
                             </td>
                             <td style="width:15%; text-align:right;">
-                                18%
+                                9%
+                            </td>
+                            <td style="width:15%; text-align:right;">
+                                9%
                             </td>
                             <td style="width:15%; text-align:right;">
                                {{@$order->qty*(round(( @$order->amount-(@$order->amount/1.18)),2))}}
@@ -240,6 +248,8 @@
                         </td>
                         <td style="width:10%; text-align:right;">
                             {{@$price}}
+                        </td>
+                        <td style="width:15%; text-align:right;">
                         </td>
                         <td style="width:15%; text-align:right;">
                         </td>

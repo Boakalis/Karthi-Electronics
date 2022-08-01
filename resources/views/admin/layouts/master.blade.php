@@ -57,6 +57,7 @@
 
         var module = { }; /*   <-----THIS LINE */
     </script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
     @livewireStyles
 
@@ -285,7 +286,21 @@
         $('#button'+id).addClass('show')
         $('#buttonA'+id).addClass('show')
     }
+    function showProfile() {
+        $('.profile').addClass('show')
+    }
+
+    $('.ec-content-wrapper').on('click',function(){
+        if ( $(".profile").hasClass("show") ){
+            $('.profile').removeClass('show')
+        }
+
+    });
 </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
     @stack('scripts')
 </body>
 

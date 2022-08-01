@@ -48,6 +48,7 @@ class Cart extends Component
 
     public function buyNow()
     {
+
         if ($this->addressSelect == null) {
             $this->emit('no-address');
         } else {
@@ -182,7 +183,13 @@ class Cart extends Component
     public function removeAddress($id)
     {
         AddressBook::where('id',$id)->delete();
+        User::where([['id',Auth::user()->id],['address_id',$id]])->update([
+            'address_id' =>null,
+        ]);
         $this->addresses = AddressBook::where('user_id',@Auth::user()->id)->get();
+        if (User::where('id',Auth::user()->id)->pluck('address_id')->first() == null) {
+            $this->addressSelect = null;
+        }
         $this->emit('remove');
 
     }
@@ -208,7 +215,7 @@ class Cart extends Component
 
     public function mount()
     {
-        $this->datas = CartDetail::where([['user_id',Auth::user()->id],['status',1]])->get();
+        $this->datas = CartDetail::where([['user_id',Auth::user()->id],['status',1]])->with('variant')->get();
         $this->addresses = AddressBook::where('user_id',@Auth::user()->id)->get();
         $this->addressSelect = @Auth::user()->address_id;
         $this->coupons = Coupon::whereDate('valid_date', '<=', Carbon::now())->where('status',1)->orderBy('status','DESC')->get();
@@ -239,7 +246,7 @@ class Cart extends Component
         $ultraCoin = 0;
         foreach ($this->datas as $key => $value) {
             $ultraCoin += $value->qty*$value->product->ultra_coin;
-         }
+        }
          if ($ultraCoin <= 200) {
             $this->ultraCoin = $ultraCoin ;
         }else{

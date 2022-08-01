@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrdersExport;
 use App\Http\Livewire\Vendor;
 use App\Models\admin\ImageUpload;
 use App\Models\Category;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Str;
 use PDF;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -31,6 +33,28 @@ class ProductController extends Controller
 
 
         return view('admin.products.index', compact('products'));
+    }
+
+    public function pdfDownload(Request $request)
+    {
+        $request->validate([
+            'start' => 'required',
+            'end' => 'required',
+        ]);
+        if ($request->type == 2) {
+            $datas1 = [
+                'datas' => Order::
+                whereBetween('created_at',[$request->start,$request->end])->
+                with('user','address','orders')->get()
+            ];
+            $pdf = PDF::loadView('exports.pdf',compact('datas1'));
+
+            return $pdf->download('orders.pdf');
+        } else {
+            return Excel::download(new OrdersExport($request->start,$request->end), 'orders.xlsx');
+        }
+
+
     }
 
     public function getInvoice($id)

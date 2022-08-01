@@ -31,8 +31,24 @@
                                                                 <a href="javascript:void(0)">
                                                                     <img class="ec-cart-pro-img mr-4"
                                                                         src="{{ asset($item->product->image) }}"
-                                                                        alt="" />{{ $item->product->name }}
+                                                                        alt="" />{{ $item->product->name}}
                                                                 </a>
+                                                                <div class="row mt-2">
+                                                                    <div class="col-7 pr-0">
+                                                                        <span class="float-left" >Selected Color:</span>
+                                                                    </div>
+                                                                    <div class="col-5 px-0">
+                                                                        <span class="float-left" ><div style="height:20px;width:30px;background:{{@$item->color_id}}" ></div></span>
+                                                                    </div>
+                                                                    @if ($item->variant_id != null)
+                                                                        <div class="col-7 pr-0">
+                                                                            <span class="float-left" >Seleced Variant :</span>
+                                                                        </div>
+                                                                        <div class="col-5 px-0">
+                                                                            <span class="float-left" >{{@$item->variant->name}}</span>
+                                                                        </div>
+                                                                    @endif
+                                                                </div>
                                                             </td>
                                                             <td data-label="Price" class="ec-cart-pro-price">
                                                                 @php
@@ -351,7 +367,7 @@
             toastr.success('Address updated');
         });
         Livewire.on("no-address", function(data) {
-            toastr.error('Please Provide Address');
+            $('#addAddress').modal('show');
         });
         Livewire.on("not-deliverable",function(){
 
